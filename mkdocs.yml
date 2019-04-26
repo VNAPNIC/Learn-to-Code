@@ -37,11 +37,11 @@ extra:
   manifest: 'manifest.webmanifest'
   social:
     - type: 'globe'
-      link: 'https://www.facebook.com/apnic.net'
+      link: 'http://finishcoding.com/'
     - type: 'github'
       link: 'https://github.com/VNAPNIC'
     - type: 'facebook'
-      link: 'http://finishcoding.com/'
+      link: 'https://www.facebook.com/NankaiNotes'
     - type: 'youtube'
       link: 'https://www.youtube.com/channel/UCECQ8GHamKx4H5jHMmNi2Ag'
       
@@ -86,6 +86,8 @@ nav:
   - About: index.md
   - Kotlin:
     - Cơ bản: kotlin/kotlin_basic.md
+    - Class và kế thừa: kotlin/kotlin_class_inheritance
+    - Property và field: kotlin/kotlin_property_field.md
     - Funtion: kotlin/kotlin_function.md
     - Higher order funtion: kotlin/kotlin_higher-order-function.md
     - Lambda: kotlin/kotlin_lambda.md

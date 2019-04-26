@@ -9,7 +9,7 @@ hide_thumbnail: true
 image: /assets/img/posts/dart-core/thumbnail.jpeg
 ---
 
-Trong bài viết [Trước](https://www.buihainam.com/dart_environment_settings/) mình đã hướng dẫn các bạn cài đặt môi trường và setup các kiểu dự án Dart trên Intellij IDEA. Ở bài viết này mình sẽ mô tả chi tiết về cú pháp cũng như các tính năng của Dart :expressionless:.
+Trong bài viết [Trước](/dart_environment_settings/) mình đã hướng dẫn các bạn cài đặt môi trường và setup các kiểu dự án Dart trên Intellij IDEA. Ở bài viết này mình sẽ mô tả chi tiết về cú pháp cũng như các tính năng của Dart :expressionless:.
 
 Nếu các bạn vẫn chưa sẵn sàng cài `Dart SDK` lên máy tính thì dùng tạm `Dartpad` để chạy thử code nhé :yum: Bấm vào nút :arrow_forward: để compile và run code.
 

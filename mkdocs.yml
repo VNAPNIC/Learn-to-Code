@@ -27,9 +27,9 @@ theme:
   palette:
     primary: 'Cyan'
     accent: 'Cyan'
-  font:
-    text: 'Roboto Light'
-    code: 'Roboto Light'
+  font: false
+    #text: 'Roboto Light'
+    #code: 'Roboto Light'
   language: vi
   feature:
       tabs: false
@@ -84,6 +84,8 @@ google_analytics:
 # Page tree
 nav:
   - Flutter: index.md
+  - Kotlin:
+    - Kotlin cơ bản: kotlin_basic.md
   - Dart:
     - Cài đặt môi trường: dart_environment_settings.md
     - Dart cơ bản: dart_core.md

@@ -1,0 +1,87 @@
+# Project information
+site_name: Bùi Hải Nam
+site_description: Tổng hợp tài liệu học lập trình
+site_author: Bùi Hải Nam
+site_url: https://buihainam.com/
+
+# Repository
+repo_name: VNAPNIC/Learn-to-Code
+repo_url: https://github.com/VNAPNIC/Learn-to-Code
+edit_uri: ""
+
+# Copyright
+copyright: 'Copyright &copy; 2019 - 2020 Bùi Hải Nam'
+
+# Configuratio
+theme:
+  name: 'material'
+  # 404 page
+  static_templates:
+    - 404.html
+    
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+    
+  palette:
+    primary: 'Cyan'
+    accent: 'Cyan'
+  font:
+    text: 'Medium'
+    code: 'Medium Mono'
+  language: vi
+  feature:
+      tabs: true
+extra:
+  manifest: 'manifest.webmanifest'
+  disqus: 'your-shortname'
+  social:
+    - type: 'link'
+      link: 'https://www.facebook.com/apnic.net'
+    - type: 'github'
+      link: 'https://github.com/VNAPNIC'
+    - type: 'facebook'
+      link: 'http://finishcoding.com/'
+    - type: 'youtube'
+      link: 'https://www.youtube.com/channel/UCECQ8GHamKx4H5jHMmNi2Ag'
+      
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Google Analytics
+google_analytics:
+  - 'UA-XXXXXXXX-X'
+  - 'auto'
+
+# Page tree
+#nav:
+#  - Flutter: index.md
+#  - Dart: dart.md

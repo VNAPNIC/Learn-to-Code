@@ -1,16 +1,17 @@
-# Learn-to-Code
-Learn to Code - for Free 
-Github Page: https://buihainam.com/
+# Learn to Code - for Free 
+
+Website: https://buihainam.com/
+
 Fanpage: https://www.facebook.com/NankaiNotes
 
 # Lessons
 
-### Dart
+### 1. Dart
 
 - [Bắt đầu](https://buihainam.com/dart/dart_environment_settings/)
 - [Cơ bản](https://buihainam.com/http://127.0.0.1:8000/dart/dart_core/)
 
-### Kotlin
+### 2. Kotlin
 
 - [Cơ bản](https://buihainam.com/kotlin/kotlin_basic/)
 - [Funtion](https://buihainam.com/kotlin/kotlin_function/)

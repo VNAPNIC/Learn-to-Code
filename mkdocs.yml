@@ -83,9 +83,12 @@ google_analytics:
 
 # Page tree
 nav:
-  - Flutter: index.md
+  - About: index.md
   - Kotlin:
-    - Kotlin cơ bản: kotlin_basic.md
+    - Cơ bản: kotlin/kotlin_basic.md
+    - Funtion: kotlin/kotlin_function.md
+    - Higher order funtion: kotlin/kotlin_higher-order-function.md
+    - Lambda: kotlin/kotlin_lambda.md
   - Dart:
-    - Cài đặt môi trường: dart_environment_settings.md
-    - Dart cơ bản: dart_core.md
+    - Cài đặt môi trường: dart/dart_environment_settings.md
+    - Dart cơ bản: dart/dart_core.md

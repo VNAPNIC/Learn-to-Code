@@ -196,7 +196,7 @@ DONE ! :sunglasses:
 
 Nếu bạn đã có kiến thức về lập trình thì việc học Dart 2 không hề khó. Dart và Java theo mình chắc phải giống nhau tới 99,99% mất tuy nhiên 0,01% đó cũng rất nhiều thức cần học.
 
-Đọc bài viết [này](/dart_core/) nếu bạn muốn có cái nhìn toàn cảnh về Dart 2 nhé.
+Đọc bài viết [này](/dart/dart_core/) nếu bạn muốn có cái nhìn toàn cảnh về Dart 2 nhé.
 
 ## References
 

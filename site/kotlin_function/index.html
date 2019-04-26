@@ -1,0 +1,1500 @@
+
+
+
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Tổng hợp tài liệu học lập trình">
+      
+      
+        <link rel="canonical" href="https://buihainam.com/kotlin_function/">
+      
+      
+        <meta name="author" content="Bùi Hải Nam">
+      
+      
+        <meta name="lang:clipboard.copy" content="Sao chép vào bộ nhớ">
+      
+        <meta name="lang:clipboard.copied" content="Sao chép xong">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Không tìm thấy tài liệu liên quan">
+      
+        <meta name="lang:search.result.one" content="1 tài liệu liên quan">
+      
+        <meta name="lang:search.result.other" content="# tài liệu liên quan">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Kotlin function - Bùi Hải Nam</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#00bcd4">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="cyan" data-md-color-accent="cyan">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#146-val-va-var" tabindex="1" class="md-skip">
+        Vào thẳng nội dung
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Bùi Hải Nam
+            </span>
+            <span class="md-header-nav__topic">
+              Kotlin function
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Nhập để bắt đầu tìm kiếm
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/VNAPNIC/Learn-to-Code" title="Đến kho lưu trữ mã nguồn" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    VNAPNIC/Learn-to-Code
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Bùi Hải Nam
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/VNAPNIC/Learn-to-Code" title="Đến kho lưu trữ mã nguồn" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    VNAPNIC/Learn-to-Code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Flutter" class="md-nav__link">
+      Flutter
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Kotlin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Kotlin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_basic/" title="Kotlin cơ bản" class="md-nav__link">
+      Kotlin cơ bản
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Dart
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Dart
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dart_environment_settings/" title="Cài đặt môi trường" class="md-nav__link">
+      Cài đặt môi trường
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dart_core/" title="Dart cơ bản" class="md-nav__link">
+      Dart cơ bản
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Mục lục</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#146-val-va-var" title="1. Val và var" class="md-nav__link">
+    1. Val và var
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#246-kieu-du-lieu" title="2. Kiểu dữ liệu" class="md-nav__link">
+    2. Kiểu dữ liệu
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-numbers" title="a. Numbers" class="md-nav__link">
+    a. Numbers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#size" title="Size" class="md-nav__link">
+    Size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant-literal" title="Constant literal" class="md-nav__link">
+    Constant literal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dau-gach-ngang-_" title="Dấu gạch ngang '_'" class="md-nav__link">
+    Dấu gạch ngang '_'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representation-bieu-dien-number" title="Representation (Biểu diễn number)" class="md-nav__link">
+    Representation (Biểu diễn number)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicity-conversion-chuyen-oi-kieu-tuong-minh" title="Explicity conversion (Chuyển đổi kiểu tường minh)" class="md-nav__link">
+    Explicity conversion (Chuyển đổi kiểu tường minh)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toan-tu" title="Toán tử" class="md-nav__link">
+    Toán tử
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-characters" title="b. Characters" class="md-nav__link">
+    b. Characters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-boolean" title="c. Boolean" class="md-nav__link">
+    c. Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-string" title="d. String" class="md-nav__link">
+    d. String
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-literals" title="String Literals" class="md-nav__link">
+    String Literals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-template" title="String template" class="md-nav__link">
+    String template
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-arrays" title="e. Arrays" class="md-nav__link">
+    e. Arrays
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#khoi-tao" title="Khởi tạo" class="md-nav__link">
+    Khởi tạo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bat-bien" title="Bất biến" class="md-nav__link">
+    Bất biến
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-lop-array-khac" title="Các lớp Array khác" class="md-nav__link">
+    Các lớp Array khác
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#346-null-safety" title="3. Null safety" class="md-nav__link">
+    3. Null safety
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-call" title="Safe call" class="md-nav__link">
+    Safe call
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toan-tu-elvis" title="Toán tử elvis ?:" class="md-nav__link">
+    Toán tử elvis ?:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toan-tu_1" title="Toán tử !!" class="md-nav__link">
+    Toán tử !!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#446-toan-tu-so-sanh" title="4. Toán tử so sánh" class="md-nav__link">
+    4. Toán tử so sánh
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#referential-equality" title="Referential equality" class="md-nav__link">
+    Referential equality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-equality" title="Structural equality" class="md-nav__link">
+    Structural equality
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#546-check-kieu-va-casting" title="5. Check kiểu và casting" class="md-nav__link">
+    5. Check kiểu và casting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kiem-tra-kieu-bien" title="Kiểm tra kiểu biến" class="md-nav__link">
+    Kiểm tra kiểu biến
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casting" title="Casting" class="md-nav__link">
+    Casting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unsafe-cast" title="Unsafe cast" class="md-nav__link">
+    Unsafe cast
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-cast" title="Safe cast" class="md-nav__link">
+    Safe cast
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smart-casting" title="Smart casting" class="md-nav__link">
+    Smart casting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#646-cau-truc-ieu-khien" title="6. Cấu trúc điều khiển" class="md-nav__link">
+    6. Cấu trúc điều khiển
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-cau-truc-if" title="a. Cấu trúc if" class="md-nav__link">
+    a. Cấu trúc if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-cau-truc-when" title="b. Cấu trúc when:" class="md-nav__link">
+    b. Cấu trúc when:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-cau-truc-for" title="c. Cấu trúc for" class="md-nav__link">
+    c. Cấu trúc for
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-cau-truc-while" title="d. Cấu trúc while" class="md-nav__link">
+    d. Cấu trúc while
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-break-continue-va-return" title="e. break, continue và return" class="md-nav__link">
+    e. break, continue và return
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#label-voi-break-va-continue" title="Label với break và continue" class="md-nav__link">
+    Label với break và continue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#label-voi-return" title="Label với return" class="md-nav__link">
+    Label với return
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#746-visibility-modifier" title="7. Visibility modifier" class="md-nav__link">
+    7. Visibility modifier
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#846-khoi-tao-mot-lop" title="8. Khởi tạo một lớp" class="md-nav__link">
+    8. Khởi tạo một lớp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#946-bieu-thuc-this" title="9. Biểu thức This" class="md-nav__link">
+    9. Biểu thức This
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#label-chi-inh" title="Label chỉ định" class="md-nav__link">
+    Label chỉ định
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1046-package" title="10. Package" class="md-nav__link">
+    10. Package
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Kotlin function</h1>
+                
+                <h2 id="146-val-va-var">1. Val và var<a class="headerlink" href="#146-val-va-var" title="Permanent link">&para;</a></h2>
+<p>Trong <em>Java</em> chúng ta khai báo biến như vầy:</p>
+<div class="codehilite"><pre><span></span>  <span class="n">String</span> <span class="n">s</span><span class="o">;</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="o">;</span>
+
+  <span class="kd">final</span> <span class="n">String</span> <span class="n">u</span> <span class="o">=</span> <span class="s">&quot;hi&quot;</span><span class="o">;</span> <span class="c1">//khai báo một constant</span>
+</pre></div>
+
+<p>Với <em>Kotlin</em>, chúng ta có từ khóa <code>var</code> để khai báo biến và <code>val</code> để khai báo một constant, cú pháp sẽ là:</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">s</span><span class="p">:</span> <span class="n">String</span>
+  <span class="n">s</span> <span class="p">=</span> <span class="s">&quot;hello&quot;</span>
+
+  <span class="k">val</span> <span class="py">v</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;hi&quot;</span> <span class="c1">//khai báo một constant, bắt buộc phải khởi tạo khi khai báo</span>
+
+  <span class="k">var</span> <span class="py">u</span> <span class="p">=</span> <span class="s">&quot;hey&quot;</span> <span class="c1">//Có thể không xác định kiểu cho biến mà để tự compiler xác định</span>
+</pre></div>
+
+<p>Note:</p>
+<ul>
+<li><em>Kotlin</em> không yêu cầu dấu <code>;</code> sau mỗi statement nữa</li>
+<li>Cơ chế giúp <em>Kotlin</em> tự xác định kiểu của biến gọi là Type inference, ngoài tự suy ra kiểu biến, cơ chế này còn sử dụng trong single-expression function (sẽ nói sau), làm cho boilerplate code giảm đi rất nhiều</li>
+</ul>
+<h2 id="246-kieu-du-lieu">2. Kiểu dữ liệu<a class="headerlink" href="#246-kieu-du-lieu" title="Permanent link">&para;</a></h2>
+<p>Everything trong <em>Kotlin</em> đều là đối tượng, không còn dữ liệu kiểu nguyên thủy (primitive type) nữa. Điều này giúp cho mọi biến đều sử dụng được generic, gọi được các function, property hoặc có thể gán được bằng null</p>
+<p>Tiếp theo, chúng ta sẽ nói về các kiểu dữ liệu trong <em>Kotlin</em>:</p>
+<ul>
+<li>numbers</li>
+<li>characters</li>
+<li>booleans</li>
+<li>strings</li>
+<li>arrays</li>
+</ul>
+<h3 id="a-numbers">a. Numbers<a class="headerlink" href="#a-numbers" title="Permanent link">&para;</a></h3>
+<h4 id="size">Size<a class="headerlink" href="#size" title="Permanent link">&para;</a></h4>
+<p>Độ dài bit của từng kiểu được thể hiện trong bảng sau:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Bit width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Double</td>
+<td>46</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Int</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Short</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Byte</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>Note: character không được coi là kiểu số trong <em>Kotlin</em></p>
+<h4 id="constant-literal">Constant literal<a class="headerlink" href="#constant-literal" title="Permanent link">&para;</a></h4>
+<p>Tương tự như trong <em>Java</em>, <em>Kotlin</em> cũng có các constant literal để xác định kiểu dữ liệu cho các số:</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">int</span> <span class="p">=</span> <span class="m">123</span>
+  <span class="k">val</span> <span class="py">long</span> <span class="p">=</span> <span class="m">123456L</span>
+  <span class="k">val</span> <span class="py">double</span> <span class="p">=</span> <span class="m">123.45</span>
+  <span class="k">val</span> <span class="py">float</span> <span class="p">=</span> <span class="m">123.45F</span>
+  <span class="k">val</span> <span class="py">hexa</span> <span class="p">=</span> <span class="m">0</span><span class="n">xAB</span>
+  <span class="k">val</span> <span class="py">binary</span> <span class="p">=</span> <span class="m">0</span><span class="n">b0001</span>
+</pre></div>
+
+<h4 id="dau-gach-ngang-_">Dấu gạch ngang '_'<a class="headerlink" href="#dau-gach-ngang-_" title="Permanent link">&para;</a></h4>
+<p>Từ <em>Kotlin</em> 1.1, khi sử dụng một số có nhiều chữ số, ta có thể sử dụng dấu gạch ngang để code dễ đọc hơn</p>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="py">million</span> <span class="p">=</span> <span class="m">1</span><span class="n">_000_000</span>
+<span class="k">val</span> <span class="py">billion</span> <span class="p">=</span> <span class="m">1</span><span class="n">_000_000_000L</span>
+</pre></div>
+
+<h4 id="representation-bieu-dien-number">Representation (Biểu diễn number)<a class="headerlink" href="#representation-bieu-dien-number" title="Permanent link">&para;</a></h4>
+<p>Trong <em>Java</em>, number được lưu trữ một cách vật lý như kiểu dữ liệu nguyên thủy của JVM trừ khi chúng ta cần biến đó có thể gán được bằng null (VD: <code>Int?</code>) hoặc có thể sử dụng với generic. Trong trường hợp đó, number sẽ được boxing - tức là tự wrap kiểu nguyên thủy đó để nó trở thành kiểu <code>Object</code>.</p>
+<p>Note: khi boxing, định danh của number không nhất thiết được giữ lại</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">10000</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">a</span> <span class="p">===</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// Prints &#39;true&#39;</span>
+  <span class="k">val</span> <span class="py">boxedA</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span>
+  <span class="k">val</span> <span class="py">anotherBoxedA</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">boxedA</span> <span class="p">===</span> <span class="n">anotherBoxedA</span><span class="p">)</span> <span class="c1">// !!!Prints &#39;false&#39;!!!</span>
+</pre></div>
+
+<p>Với toán tử <code>===</code>, <code>boxedA</code> và <code>anotherBoxedA</code> bằng nhau khi và chỉ khi 2 biến này trỏ đến cùng 1 đối tượng. Trong trường hợp này, khi gán giá trị <code>10000</code> cho biến <code>a</code>. <code>10000</code> sẽ được boxing thành kiểu <code>Int</code>. Bởi vậy, theo như suy luận bình thường, biến <code>boxedA</code> và <code>anotherBoxedA</code> được gán bằng <code>a</code> sẽ bằng nhau vì cùng trỏ tới cùng một object là <code>a</code>. Tuy nhiên, với các giá trị từ 0 -&gt; 127 (2^7 - 1), các đối tượng này sẽ được lưu trong cùng một vùng nhớ. Với các giá trị lớn hơn mốc 127 này, vì boxing, các định danh sẽ không được giữ, tức là 2 biến <code>boxedA</code> và <code>anotherBoxedA</code> sẽ trỏ đến 2 vùng nhớ khác nhau. Bởi vậy, <code>boxedA ==== anotherBoxedA</code> trả về <code>false</code></p>
+<p>Thử lại với <code>a = 127</code></p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">127</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">a</span> <span class="p">===</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// Prints &#39;true&#39;</span>
+  <span class="k">val</span> <span class="py">boxedA</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span>
+  <span class="k">val</span> <span class="py">anotherBoxedA</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">boxedA</span> <span class="p">===</span> <span class="n">anotherBoxedA</span><span class="p">)</span> <span class="c1">// !!!Prints &#39;true&#39;!!!</span>
+</pre></div>
+
+<p>Mặt khác, nó giữ lại sự bằng nhau</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">10000</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">a</span> <span class="p">==</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// Prints &#39;true&#39;</span>
+  <span class="k">val</span> <span class="py">boxedA</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span>
+  <span class="k">val</span> <span class="py">anotherBoxedA</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">boxedA</span> <span class="p">==</span> <span class="n">anotherBoxedA</span><span class="p">)</span> <span class="c1">// Prints &#39;true&#39;</span>
+</pre></div>
+
+<p>Toán tử <code>==</code> trả về <code>true</code> nếu 2 biến không null và có giá trị bằng nhau</p>
+<h4 id="explicity-conversion-chuyen-oi-kieu-tuong-minh">Explicity conversion (Chuyển đổi kiểu tường minh)<a class="headerlink" href="#explicity-conversion-chuyen-oi-kieu-tuong-minh" title="Permanent link">&para;</a></h4>
+<p>Trong <em>Java</em>, khi muốn convert một biến có kiểu dữ liệu nhỏ hơn sang kiểu lớn hơn, ta chỉ cần gán biến đó cho một biến khác với kiểu dữ liệu ta muốn convert</p>
+<div class="codehilite"><pre><span></span>  <span class="kt">byte</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="o">;</span> <span class="c1">// ngon</span>
+</pre></div>
+
+<p>Với <em>Kotlin</em>, việc này là không thể bởi: <em>Kotlin</em> không hỗ trợ việc mở rộng size của một số như trong <em>Java</em>.</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">b</span><span class="p">:</span> <span class="n">Byte</span> <span class="p">=</span> <span class="m">1</span>
+  <span class="k">val</span> <span class="py">i</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">b</span> <span class="c1">//compiler báo lỗi: type mismatch</span>
+</pre></div>
+
+<p>Để làm việc này, ta bắt buộc phải dùng các function được hỗ trợ bởi <em>Kotlin</em> như:</p>
+<ul>
+<li><code>toByte(): Byte</code></li>
+<li><code>toShort(): Short</code></li>
+<li><code>toInt(): Int</code></li>
+<li><code>toLong(): Long</code></li>
+<li><code>toFloat(): Float</code></li>
+<li><code>toDouble(): Double</code></li>
+<li><code>toChar(): Char</code></li>
+</ul>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">b</span><span class="p">:</span> <span class="n">Byte</span> <span class="p">=</span> <span class="m">1</span>
+  <span class="k">val</span> <span class="py">i</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">b</span><span class="p">.</span><span class="n">toInt</span><span class="p">()</span> <span class="c1">//ngon</span>
+</pre></div>
+
+<h4 id="toan-tu">Toán tử<a class="headerlink" href="#toan-tu" title="Permanent link">&para;</a></h4>
+<p>Với <em>Kotlin</em>, các toán tử là một function member của các lớp, chúng ta có thể sử dụng các toán tử này như một function hoặc gọi chúng như một toán tử trung tố(infix) và overload các toán tử này. Các toán tử thao tác về bit bao gồm:</p>
+<ul>
+<li><code>shl(bits)</code> -- signed shift left (Java's &lt;&lt;)</li>
+<li><code>shr(bits)</code> -- signed shift right (Java's &gt;&gt;)</li>
+<li><code>ushr(bits)</code> -- unsigned shift right (Java's &gt;&gt;&gt;)</li>
+<li><code>and(bits)</code> -- bitwise and</li>
+<li><code>or(bits)</code> -- bitwise or</li>
+<li><code>xor(bits)</code> -- bitwise xor</li>
+<li><code>inv()</code> -- bitwise inversion</li>
+</ul>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">x</span> <span class="p">=</span> <span class="p">(</span><span class="m">1</span> <span class="n">shl</span> <span class="m">2</span><span class="p">)</span> <span class="n">and</span> <span class="m">0</span><span class="n">x000FF000</span>
+  <span class="k">val</span> <span class="py">y</span> <span class="p">=</span> <span class="m">1.</span><span class="n">shl</span><span class="p">(</span><span class="m">2</span><span class="p">).</span><span class="n">and</span><span class="p">(</span><span class="m">0</span><span class="n">x000FF000</span><span class="p">)</span>
+</pre></div>
+
+<h3 id="b-characters">b. Characters<a class="headerlink" href="#b-characters" title="Permanent link">&para;</a></h3>
+<p>Lớp đại diện cho character trong <em>Kotlin</em> là <code>Char</code>. Để biểu diễn một ký tự, ta dùng dấu nháy đơn</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">c</span><span class="p">:</span> <span class="n">Char</span> <span class="p">=</span> <span class="sc">&#39;a&#39;</span>
+  <span class="k">val</span> <span class="py">d</span><span class="p">:</span> <span class="n">Char</span> <span class="p">=</span> <span class="m">4</span> <span class="c1">//compiler sẽ báo lỗi</span>
+</pre></div>
+
+<p>Note: <code>Char</code> không được coi là số trong <em>Kotlin</em>. Bởi vậy, việc gán như trên sẽ không thành công</p>
+<h3 id="c-boolean">c. Boolean<a class="headerlink" href="#c-boolean" title="Permanent link">&para;</a></h3>
+<p>Lớp đại diện cho kiểu Boolean trong <em>Kotlin</em> là <code>Boolean</code>. Boolean có 2 giá trị là <code>true</code> và <code>false</code>. Các toán tử được hỗ trợ cho Boolean là:</p>
+<ul>
+<li><code>||</code> - phép tuyển</li>
+<li><code>&amp;&amp;</code> - phép hội</li>
+<li><code>!</code> - phủ định</li>
+</ul>
+<h3 id="d-string">d. String<a class="headerlink" href="#d-string" title="Permanent link">&para;</a></h3>
+<p>Đại diện cho string trong <em>Kotlin</em> là lớp <code>String</code>. String là kiểu immutable. Thành phần của string là các character, có thể truy cập bằng cách dùng <code>[]</code></p>
+<p>Java</p>
+<div class="codehilite"><pre><span></span>  <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="o">;</span>
+  <span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// &#39;h&#39;</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">s</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;hello&quot;</span>
+  <span class="n">s</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="c1">// &#39;h&#39;</span>
+</pre></div>
+
+<h4 id="string-literals">String Literals<a class="headerlink" href="#string-literals" title="Permanent link">&para;</a></h4>
+<p><em>Kotlin</em> có 2 loại literal:</p>
+<ul>
+<li>Double quote: để xuống dòng hoặc tab thì sử dụng các ký tự đặc biệt: <code>\n</code>, <code>\t</code>...</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="py">s1</span> <span class="p">=</span> <span class="s">&quot;hello\n&quot;</span>
+</pre></div>
+
+<ul>
+<li>Triple quote: chúng ta sẽ tạo được một raw string, có thể bao gồm cả một dòng mới</li>
+</ul>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">text</span> <span class="p">=</span> <span class="s">&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="k">in</span> <span class="s">&quot;foo&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="s">&quot;&quot;&quot;</span>
+</pre></div>
+
+<h4 id="string-template">String template<a class="headerlink" href="#string-template" title="Permanent link">&para;</a></h4>
+<p><em>Kotlin</em> cho phép truyền biến vào string bằng cách sử dụng từ khóa <code>${}</code></p>
+<p>Java</p>
+<div class="codehilite"><pre><span></span>  <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+  <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;Kết quả là &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="o">;</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="py">s3</span> <span class="p">=</span> <span class="s">&quot;abc&quot;</span>
+<span class="k">val</span> <span class="py">str</span> <span class="p">=</span> <span class="s">&quot;$s3.length is ${s3.length}&quot;</span> <span class="c1">// &quot;abc.length is 3&quot;</span>
+</pre></div>
+
+<h3 id="e-arrays">e. Arrays<a class="headerlink" href="#e-arrays" title="Permanent link">&para;</a></h3>
+<p>Lớp đại diện cho mảng trong <em>Kotlin</em> là <code>Array</code>. Việc truy cập vào các phần tử sử dụng get, set hoặc [], <code>size</code> là một thuộc tính của lớp <code>Array</code>.</p>
+<h4 id="khoi-tao">Khởi tạo<a class="headerlink" href="#khoi-tao" title="Permanent link">&para;</a></h4>
+<p>Để tạo mảng, ta sử dụng function <code>arrayOf</code> hoặc hàm tạo</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">)</span> <span class="c1">// [1,2,3,4]</span>
+  <span class="k">var</span> <span class="py">a1</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">Array</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="p">{</span> <span class="n">it</span> <span class="p">-&gt;</span>
+        <span class="n">it</span> <span class="p">*</span> <span class="m">3</span>
+  <span class="p">})</span> <span class="c1">//[0,3,6,9]</span>
+</pre></div>
+
+<h4 id="bat-bien">Bất biến<a class="headerlink" href="#bat-bien" title="Permanent link">&para;</a></h4>
+<p><code>Array</code> trong <em>Kotlin</em> là một đại lượng bất biến. Bởi vậy, không thể gán một <code>Array&lt;String&gt;</code> cho một <code>Array&lt;Any&gt;</code> (Mọi lớp trong <em>Kotlin</em> đều extends từ đối tượng <code>Any</code>) Java</p>
+<div class="codehilite"><pre><span></span>  <span class="n">String</span> <span class="n">a1</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span> <span class="o">[</span><span class="mi">3</span><span class="o">];</span>
+  <span class="n">Object</span> <span class="n">a</span><span class="o">[]</span> <span class="o">=</span> <span class="n">a1</span><span class="o">;</span> <span class="c1">//ngon</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">a2</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+  <span class="k">var</span> <span class="py">a3</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">Any</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">a2</span> <span class="c1">//compiler sẽ báo lỗi</span>
+</pre></div>
+
+<h4 id="cac-lop-array-khac">Các lớp Array khác<a class="headerlink" href="#cac-lop-array-khac" title="Permanent link">&para;</a></h4>
+<p><em>Kotlin</em> có hỗ trợ một số các lớp để chuyên lưu trữ các giá trị nguyên thủy nhằm giảm bớt chi phí boxing: <code>ByteArray</code>, <code>ShortArray</code>, <code>IntArray</code>... Tuy nhiên thì các lớp này k có quan hệ kế thừa gì với <code>Array</code>. Tuy nhiên, các lớp này vẫn có thuộc tính và function tương tự như <code>Array</code></p>
+<h2 id="346-null-safety">3. Null safety<a class="headerlink" href="#346-null-safety" title="Permanent link">&para;</a></h2>
+<p><em>Kotlin</em> cung cấp cả 2 kiểu là non-null và nullable(như trong Java). Từ bây giờ, exception chỉ có thể null trong trường hợp</p>
+<ul>
+<li>Tự throw <code>NullPointerException()</code></li>
+<li>Sử dụng toán tử !! (sẽ được nói sau)</li>
+<li>Java code gây ra</li>
+<li>1 trường hợp chưa hiểu</li>
+</ul>
+<p>Mặc định, kiểu của biến là non-null. Để khai báo một biến kiểu nullable, ta sử dụng <code>?</code></p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">e</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+</pre></div>
+
+<p>Với một biến non-null, việc gán null sẽ là không thể</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">e</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="k">null</span> <span class="c1">//compiler báo lỗi</span>
+</pre></div>
+
+<p>Khi kiểu biến là non null, việc gọi đến các biến, function hoàn toàn safe. Ngược lại, nếu truy cập đến một biến có kiểu nullable, NPE vẫn có thể xảy ra -&gt; unsafe call</p>
+<h3 id="safe-call">Safe call<a class="headerlink" href="#safe-call" title="Permanent link">&para;</a></h3>
+<p>Sử dụng dấu <code>?</code> để safe call</p>
+<div class="codehilite"><pre><span></span>  <span class="n">e</span><span class="o">?.</span><span class="n">length</span>
+</pre></div>
+
+<p>Trong trường hợp này, nếu biến e null, kết quả trả về sẽ là null. Ngược lại, kết quả là độ dài của xâu e.</p>
+<p>Đặc biệt, cơ chế safe call có thể gọi theo chain:</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">user</span> <span class="p">:</span><span class="n">User</span><span class="p">?</span> <span class="p">=</span> <span class="n">User</span><span class="p">(</span><span class="s">&quot;tu&quot;</span><span class="p">,</span> <span class="m">22</span><span class="p">)</span>
+  <span class="k">var</span> <span class="py">length</span> <span class="p">=</span> <span class="n">user</span><span class="o">?.</span><span class="n">name</span><span class="o">?.</span><span class="n">length</span>
+</pre></div>
+
+<p>Trong trường hợp này, nếu user null hoặc name null, giá trị trả về cho length là null. Nếu tất cả không null, length khi này mới có giá trị.</p>
+<p>Để thực hiện việc gì chỉ với các giá trị khác null, ta có thể sử dụng toán tử <code>?.</code> và các hàm <code>apply</code>, <code>let</code>...</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">listWithNulls</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">String</span><span class="p">?&gt;</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="k">null</span><span class="p">)</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">item</span> <span class="k">in</span> <span class="n">listWithNulls</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">item</span><span class="o">?.</span><span class="n">let</span> <span class="p">{</span> <span class="n">println</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="p">}</span> <span class="c1">// chỉ thực hiện với các giá trị khác null</span>
+  <span class="p">}</span>
+</pre></div>
+
+<h3 id="toan-tu-elvis">Toán tử elvis <code>?:</code><a class="headerlink" href="#toan-tu-elvis" title="Permanent link">&para;</a></h3>
+<p>Bình thường, để gán giá trị cho một biến, ta làm như thế này</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">b</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;hello&quot;</span>
+  <span class="k">val</span> <span class="py">l</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span> <span class="k">else</span> <span class="p">-</span><span class="m">1</span>
+</pre></div>
+
+<p>Với toán tử elvis, ta có thể làm như thế này</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">b</span><span class="o">?.</span><span class="n">length</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span>
+</pre></div>
+
+<p>Nếu b khác null, l = b.length, nếu b null, l = -1</p>
+<p>Ngoài ra, vì <code>throw</code> và <code>return</code> là biểu thức trong <em>Kotlin</em>, ta có thể làm như thế này</p>
+<div class="codehilite"><pre><span></span>  <span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">):</span> <span class="n">String</span><span class="p">?</span> <span class="p">{</span>
+      <span class="k">val</span> <span class="py">parent</span> <span class="p">=</span> <span class="n">node</span><span class="p">.</span><span class="n">getParent</span><span class="p">()</span> <span class="o">?:</span> <span class="k">return</span> <span class="k">null</span>
+      <span class="k">val</span> <span class="py">name</span> <span class="p">=</span> <span class="n">node</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">?:</span> <span class="k">throw</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;name expected&quot;</span><span class="p">)</span>
+      <span class="c1">// ...</span>
+  <span class="p">}</span>
+</pre></div>
+
+<h3 id="toan-tu_1">Toán tử <code>!!</code><a class="headerlink" href="#toan-tu_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">b</span><span class="o">!!</span><span class="p">.</span><span class="n">length</span>
+</pre></div>
+
+<p>Với !!, nếu b không null, l = b.length. Nếu b null, NPE sẽ được throw</p>
+<p>-&gt; Với Kotlin, NPE xuất hiện nếu nó được yêu cầu một cách tường minh chứ không thể xuất hiện nếu bạn không mong muốn</p>
+<h2 id="446-toan-tu-so-sanh">4. Toán tử so sánh<a class="headerlink" href="#446-toan-tu-so-sanh" title="Permanent link">&para;</a></h2>
+<p>Trong <em>Kotlin</em>, có 2 loại đẳng thức:</p>
+<ul>
+<li>Referential equality: 2 references trỏ tớ cùng một object</li>
+<li>Structural equality: function <code>equals</code></li>
+</ul>
+<h3 id="referential-equality">Referential equality<a class="headerlink" href="#referential-equality" title="Permanent link">&para;</a></h3>
+<p>Toán tử <code>===</code> và khác là <code>!==</code>. a === b khi và chỉ khi a và b cùng trỏ đến cùng một object</p>
+<h3 id="structural-equality">Structural equality<a class="headerlink" href="#structural-equality" title="Permanent link">&para;</a></h3>
+<p>Toán tử <code>==</code> và khác <code>!=</code>. Theo quy ước, khi gọi a == b, compiler sẽ tự động translate thành</p>
+<div class="codehilite"><pre><span></span>  <span class="n">a</span><span class="p">?</span><span class="n">equals</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">?:</span> <span class="p">(</span><span class="n">b</span><span class="p">===</span><span class="k">null</span><span class="p">)</span>
+</pre></div>
+
+<p>Tức là nếu a không null, sẽ gọi function equals để kiểm tra với b, nếu a null, thì sẽ kiểm tra b có trỏ tới null không</p>
+<p>Note: Lưu ý: khi sử dụng a==null, mặc định compiler sẽ tự động chuyển thành a===null</p>
+<h2 id="546-check-kieu-va-casting">5. Check kiểu và casting<a class="headerlink" href="#546-check-kieu-va-casting" title="Permanent link">&para;</a></h2>
+<h3 id="kiem-tra-kieu-bien">Kiểm tra kiểu biến<a class="headerlink" href="#kiem-tra-kieu-bien" title="Permanent link">&para;</a></h3>
+<p>Với <em>Java</em>, ta sử dụng từ khóa <code>instanceOf</code>. Với <em>Kotlin</em>, để kiểm tra kiểu biến trong <em>Kotlin</em>, ta sử dụng <code>is</code> và <code>!is</code> Java</p>
+<div class="codehilite"><pre><span></span>  <span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="n">instanceOf</span> <span class="n">String</span><span class="o">){</span>
+
+  <span class="o">}</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="k">is</span> <span class="n">String</span><span class="p">){</span>
+
+  <span class="p">}</span>
+</pre></div>
+
+<h3 id="casting">Casting<a class="headerlink" href="#casting" title="Permanent link">&para;</a></h3>
+<p>Sử dụng toán tử <code>as</code></p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">t</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span>  <span class="n">y</span> <span class="k">as</span> <span class="n">String</span>
+</pre></div>
+
+<h4 id="unsafe-cast">Unsafe cast<a class="headerlink" href="#unsafe-cast" title="Permanent link">&para;</a></h4>
+<p>Trong Java, nếu việc cast không thành công, sẽ có một exception có thể được throw: <code>ClassCastException</code>. Đối tượng có kiểu nullable không thể cast thành đối tượng non-null. Nếu y = null trong trường hợp trên, sẽ có exception được bắn ra. Để cast được, Kotlin cung cấp như sau</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">t</span><span class="p">:</span><span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span> <span class="k">as</span> <span class="n">String</span><span class="p">?</span>
+</pre></div>
+
+<h4 id="safe-cast">Safe cast<a class="headerlink" href="#safe-cast" title="Permanent link">&para;</a></h4>
+<p>Để tránh việc exception được bắn ra, <em>Kotlin</em> cung cấp <code>as?</code></p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">s4</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="n">s5</span> <span class="k">as</span><span class="p">?</span> <span class="n">String</span>
+</pre></div>
+
+<p>s4 sẽ có giá trị của s5 nếu s5 không null, ngược lại, s4 = null.</p>
+<h4 id="smart-casting">Smart casting<a class="headerlink" href="#smart-casting" title="Permanent link">&para;</a></h4>
+<p>Trong một số trường hợp, chúng ta không phải cast một cách tường minh vì compiler sẽ track việc check kiểu bằng <code>is</code> và sẽ tự động cast nếu cần:</p>
+<div class="codehilite"><pre><span></span>  <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="k">is</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="c1">// x được tự động cast thành kiểu String</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="p">!</span><span class="k">is</span> <span class="n">String</span><span class="p">)</span> <span class="k">return</span>
+  <span class="n">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="c1">// x được tự động cast thành kiểu String</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="p">!</span><span class="k">is</span> <span class="n">String</span> <span class="p">||</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">return</span> <span class="c1">// x được tự động cast thành kiểu String</span>
+</pre></div>
+
+<h2 id="646-cau-truc-ieu-khien">6. Cấu trúc điều khiển<a class="headerlink" href="#646-cau-truc-ieu-khien" title="Permanent link">&para;</a></h2>
+<h3 id="a-cau-truc-if">a. Cấu trúc if<a class="headerlink" href="#a-cau-truc-if" title="Permanent link">&para;</a></h3>
+<p>Trong <em>Kotlin</em>, if là một biểu thức. Bởi vậy, <em>Kotlin</em> không còn toán tử 3 yếu tố Java</p>
+<div class="codehilite"><pre><span></span>  <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">result</span><span class="o">?</span> <span class="mi">1</span> <span class="o">:</span><span class="mi">0</span><span class="o">;</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="m">1</span> <span class="k">else</span> <span class="m">0</span>
+
+  <span class="k">var</span> <span class="py">r</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">print</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">)</span>
+      <span class="m">1</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">print</span><span class="p">(</span><span class="s">&quot;fail&quot;</span><span class="p">)</span>
+      <span class="m">0</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Nếu là khối lệnh, giá trị ở cuối khối lệnh là giá trị trả về. Khi gán giá trị, nhánh else bắt buộc phải có</p>
+<h3 id="b-cau-truc-when">b. Cấu trúc when:<a class="headerlink" href="#b-cau-truc-when" title="Permanent link">&para;</a></h3>
+<p>Cấu trúc when thay thế switch trong <em>Java</em>. Cấu trúc của when là</p>
+<div class="codehilite"><pre><span></span>  <span class="n">when</span> <span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+      <span class="mi">1</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="s">&quot;x == 1&quot;</span><span class="o">)</span>
+      <span class="mi">2</span> <span class="o">-&gt;</span> <span class="n">print</span><span class="o">(</span><span class="s">&quot;x == 2&quot;</span><span class="o">)</span>
+      <span class="k">else</span> <span class="o">-&gt;</span> <span class="o">{</span>
+          <span class="n">print</span><span class="o">(</span><span class="s">&quot;x chả bằng 1 cũng méo bằng 2&quot;</span><span class="o">)</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</pre></div>
+
+<p>Note: else là bắt buộc , trừ khi compiler có thể chứng minh được tất cả cá trường hợp đã được cover. Có thể sử dụng when để thay thế việc sử dụng if else if</p>
+<ul>
+<li>Nếu việc xử lý của 1 số trường hợp giống nhau:</li>
+</ul>
+<div class="codehilite"><pre><span></span>  <span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="m">0</span><span class="p">,</span> <span class="m">1</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;x == 0 or x == 1&quot;</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;ngược lại&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Các trường hợp của when không nhất thiết phải là constant, chúng có thể là một function</li>
+</ul>
+<div class="codehilite"><pre><span></span>  <span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">parseInt</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;s encodes x&quot;</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;s does not encode x&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Hoặc kiểu dữ liệu</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">result1</span> <span class="p">=</span> <span class="k">when</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">is</span> <span class="n">String</span> <span class="p">-&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">&quot;prefix&quot;</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">-&gt;</span> <span class="k">false</span>
+  <span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Có thể sử dụng when để gán giá trị</li>
+</ul>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">l</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">when</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s">&quot;hello&quot;</span> <span class="p">-&gt;</span> <span class="m">0</span>
+    <span class="s">&quot;hi&quot;</span> <span class="p">-&gt;</span> <span class="m">1</span>
+    <span class="k">else</span> <span class="p">-&gt;</span> <span class="m">2</span>
+  <span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Điều kiện có thể sử dụng để kiểm tra trong khoảng</li>
+</ul>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">validNumbers</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">11</span><span class="p">,</span> <span class="m">13</span><span class="p">,</span> <span class="m">17</span><span class="p">,</span> <span class="m">19</span><span class="p">)</span>
+  <span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">10</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;x is in the range&quot;</span><span class="p">)</span>
+    <span class="k">in</span> <span class="n">validNumbers</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;x is valid&quot;</span><span class="p">)</span>
+    <span class="p">!</span><span class="k">in</span> <span class="m">10.</span><span class="p">.</span><span class="m">20</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;x is outside the range&quot;</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;none of the above&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+</pre></div>
+
+<h3 id="c-cau-truc-for">c. Cấu trúc for<a class="headerlink" href="#c-cau-truc-for" title="Permanent link">&para;</a></h3>
+<p>Vòng lặp <code>for</code> có thể sử dụng để duyệt bất kỳ thứ gì cung cấp một iterator. VD:</p>
+<ul>
+<li>Có một member hoặc extension function tên là <code>iterator()</code>, kiểu trả về là <code>Iterator</code><ul>
+<li>Có một member hoặc extension function <code>next()</code></li>
+<li>Có một member hoặc extension function <code>hasNext</code> trả về kiểu <code>Boolean</code> Tất cả 3 function này đều cần được đánh dấu là <code>operator</code></li>
+</ul>
+</li>
+</ul>
+<p>VD:</p>
+<div class="codehilite"><pre><span></span>  <span class="k">class</span> <span class="nc">DateRange</span><span class="p">(</span><span class="n">start</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">val</span> <span class="py">end</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">var</span> <span class="py">current</span> <span class="p">=</span> <span class="n">start</span>
+
+      <span class="k">operator</span> <span class="k">fun</span> <span class="nf">iterator</span><span class="p">():</span> <span class="n">Iterator</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;{</span>
+          <span class="k">return</span> <span class="k">object</span> <span class="err">: </span><span class="nc">Iterator</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;{</span>
+              <span class="k">override</span> <span class="k">fun</span> <span class="nf">next</span><span class="p">():</span> <span class="n">Int</span> <span class="p">{</span>
+                  <span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">current</span>
+                  <span class="n">current</span><span class="p">++</span>
+                  <span class="k">return</span> <span class="n">result</span>
+              <span class="p">}</span>
+
+              <span class="k">override</span> <span class="k">fun</span> <span class="nf">hasNext</span><span class="p">():</span> <span class="n">Boolean</span> <span class="p">{</span>
+                  <span class="k">return</span> <span class="n">current</span> <span class="p">&lt;=</span> <span class="n">end</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">//for</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">DateRange</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">10</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1">//1..10</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Một vòng lặp <code>for</code> đối với một array sẽ được compile thành một vòng lặp index mà không cần tạo một iterator object:</p>
+<div class="codehilite"><pre><span></span>  <span class="c1">//Kotlin</span>
+  <span class="k">var</span> <span class="py">array</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">)</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">array</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+  <span class="p">}</span>
+
+  <span class="c1">//Decompile code</span>
+  <span class="n">Object</span><span class="p">[]</span> <span class="n">elements</span><span class="err">$</span><span class="n">iv</span> <span class="p">=</span> <span class="n">new</span> <span class="n">Integer</span><span class="p">[]{</span><span class="n">Integer</span><span class="p">.</span><span class="n">valueOf</span><span class="p">(</span><span class="m">1</span><span class="p">),</span> <span class="n">Integer</span><span class="p">.</span><span class="n">valueOf</span><span class="p">(</span><span class="m">2</span><span class="p">),</span> <span class="n">Integer</span><span class="p">.</span><span class="n">valueOf</span><span class="p">(</span><span class="m">5</span><span class="p">),</span><span class="n">Integer</span><span class="p">.</span><span class="n">valueOf</span><span class="p">(</span><span class="m">6</span><span class="p">),</span> <span class="n">Integer</span><span class="p">.</span><span class="n">valueOf</span><span class="p">(</span><span class="m">7</span><span class="p">)};</span>
+  <span class="n">Integer</span><span class="p">[]</span> <span class="n">array</span> <span class="p">=</span> <span class="n">elements</span><span class="err">$</span><span class="n">iv</span><span class="p">;</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="n">int</span> <span class="n">var4</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">var4</span> <span class="p">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="n">length</span><span class="p">;</span> <span class="p">++</span><span class="n">var4</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">int</span> <span class="n">i</span> <span class="p">=</span> <span class="n">array</span><span class="p">[</span><span class="n">var4</span><span class="p">].</span><span class="n">intValue</span><span class="p">();</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Nếu bạn muốn duyệt qua một array hoặc một list bằng các chỉ số, bạn có thể làm như sau:</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">array</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">)</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">array</span><span class="p">.</span><span class="n">indices</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">print</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//13268</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Lưu ý rằng việc duyệt qua một phạm vi (iteration through a range) được compile thanh một cách thực thi tối ưu mà không phải cần thêm object nào được tạo ra</p>
+<p>Ngoài ra, bạn có thể sử dụng function <code>withIndex</code> trong thư viện chuẩn:</p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">array</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">)</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">pair</span> <span class="k">in</span> <span class="n">array</span><span class="p">.</span><span class="n">withIndex</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">println</span><span class="p">(</span><span class="s">&quot;element at ${pair.index} is ${pair.value}&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="c1">//result</span>
+  <span class="c1">//element at 0 is 1</span>
+  <span class="c1">//element at 1 is 3</span>
+  <span class="c1">//element at 2 is 2</span>
+  <span class="c1">//element at 3 is 6</span>
+  <span class="c1">//element at 4 is 8</span>
+</pre></div>
+
+<p>Một số so sánh</p>
+<ul>
+<li>Vòng lặp xuôi</li>
+</ul>
+<p>Java</p>
+<div class="codehilite"><pre><span></span>  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">11</span> <span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+  <span class="o">}</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">11</span><span class="p">){</span>
+
+  <span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Vòng lặp bước 2</li>
+</ul>
+<p>Java</p>
+<div class="codehilite"><pre><span></span>  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">11</span> <span class="o">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+  <span class="o">}</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">11</span> <span class="n">step</span> <span class="m">2</span><span class="p">){</span>
+
+  <span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Vòng lặp lùi</li>
+</ul>
+<p>Java</p>
+<div class="codehilite"><pre><span></span>  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+  <span class="o">}</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">11</span> <span class="n">downTo</span> <span class="m">1</span><span class="p">){</span>
+
+  <span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Vòng lặp từng giá trị</li>
+</ul>
+<p>Java</p>
+<div class="codehilite"><pre><span></span>  <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">s</span> <span class="o">:</span> <span class="n">arrayList</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//...</span>
+  <span class="o">}</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">for</span> <span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Int</span> <span class="k">in</span> <span class="n">ints</span><span class="p">){</span>
+
+  <span class="p">}</span>
+</pre></div>
+
+<h3 id="d-cau-truc-while">d. Cấu trúc while<a class="headerlink" href="#d-cau-truc-while" title="Permanent link">&para;</a></h3>
+<p>Tương tự như <em>Java</em></p>
+<div class="codehilite"><pre><span></span>  <span class="k">while</span> <span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">x</span><span class="o">--</span>
+  <span class="o">}</span>
+
+  <span class="k">do</span> <span class="o">{</span>
+      <span class="n">val</span> <span class="n">y</span> <span class="o">=</span> <span class="n">retrieveData</span><span class="o">()</span>
+  <span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">y</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="c1">// y is visible here!</span>
+</pre></div>
+
+<h3 id="e-break-continue-va-return">e. break, continue và return<a class="headerlink" href="#e-break-continue-va-return" title="Permanent link">&para;</a></h3>
+<p>Chức năng của từng từ khóa mặc định như sau:</p>
+<ul>
+<li><code>return</code>: thoát khỏi function gần nhất</li>
+<li><code>break</code>: thoát khỏi vòng lặp gần nhất</li>
+<li><code>continue</code>: tiếp tục bước tiếp theo của vòng lặp gần nhất</li>
+</ul>
+<h4 id="label-voi-break-va-continue">Label với break và continue<a class="headerlink" href="#label-voi-break-va-continue" title="Permanent link">&para;</a></h4>
+<p>Để chỉ định break và continue đến một expression nào đó, sử dụng label: <code>@label</code></p>
+<div class="codehilite"><pre><span></span>  <span class="n">loop</span><span class="err">@</span> <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">100</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">100</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="p">&gt;</span> <span class="m">2</span><span class="p">)</span> <span class="k">break</span><span class="n">@loop</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Mặc định, nếu không có label <code>@loop</code>, <code>break</code> sẽ thoát ra khỏi vòng lặp gần nhất, vòng lặp j. Với label <code>@loop</code>, <code>break@loop</code> sẽ thoát ra cả 2 vòng lặp. Tương tự như vậy, <code>continue</code> cũng có thể dung label để đi đến bước tiếp theo của vòng lặp</p>
+<h4 id="label-voi-return">Label với return<a class="headerlink" href="#label-voi-return" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>  <span class="k">fun</span> <span class="nf">foo</span><span class="p">(){</span>
+    <span class="k">var</span> <span class="py">ints</span><span class="p">:</span><span class="n">Array</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">)</span>
+
+    <span class="n">ints</span><span class="p">.</span><span class="n">forEach</span> <span class="n">lit</span><span class="err">@</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">@lit</span>
+      <span class="n">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Với trường hợp trên, câu lệnh <code>return</code> sẽ chỉ thoát ra khỏi function <code>forEach</code>, và sẽ làm tiếp các công việc phía sau. Nếu không có label, <code>return</code> sẽ thoát ra khỏi function <code>foo()</code>. Ta có thể đặt label hoặc sử dụng implicit label được định nghĩa dựa theo tên function</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">foo</span><span class="p">(){</span>
+  <span class="k">var</span> <span class="py">ints</span><span class="p">:</span><span class="n">Array</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">arrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">)</span>
+
+  <span class="n">ints</span><span class="p">.</span><span class="n">forEach</span> <span class="n">lit</span><span class="err">@</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">@forEach</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Ngoài ra, ta còn có thể sử dụng label vs <code>return</code> trong trường hợp muốn trả về một giá trị nào đó tại label đó bằng cách sử dụng</p>
+<div class="codehilite"><pre><span></span>  <span class="k">return</span> <span class="n">lit</span><span class="err">@</span> <span class="m">4</span>
+</pre></div>
+
+<h2 id="746-visibility-modifier">7. Visibility modifier<a class="headerlink" href="#746-visibility-modifier" title="Permanent link">&para;</a></h2>
+<p>Trong <em>Java</em>, để định nghĩa khả năng truy cập của các property, function của một class, ta sử dụng access modifier. Trong <em>Kotlin</em>, đó là visibility modifier. Visibility modifier của Kotlin gồm 4 mức, tương đương như với Java:</p>
+<ul>
+<li><code>public</code></li>
+<li><code>internal</code></li>
+<li><code>protected</code></li>
+<li><code>private</code> Để hiểu chi tiết hơn, hãy xem <a href="https://github.com/ngohado/Kotlin-Docs/wiki/Visibility-Modifiers">Visibility modifier</a></li>
+</ul>
+<h2 id="846-khoi-tao-mot-lop">8. Khởi tạo một lớp<a class="headerlink" href="#846-khoi-tao-mot-lop" title="Permanent link">&para;</a></h2>
+<p>Trong <em>Java</em>, để khởi tạo một class, ta sử dụng từ khóa <code>new</code>, với <em>Kotlin</em>. Function tạo được gọi như một function bình thường</p>
+<p>Java</p>
+<div class="codehilite"><pre><span></span>  <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">(</span><span class="s">&quot;nam&quot;</span><span class="o">,</span> <span class="mi">22</span><span class="o">);</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">user</span><span class="p">:</span> <span class="n">User</span> <span class="p">=</span> <span class="n">User</span><span class="p">(</span><span class="s">&quot;nam&quot;</span><span class="p">,</span> <span class="m">22</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="946-bieu-thuc-this">9. Biểu thức This<a class="headerlink" href="#946-bieu-thuc-this" title="Permanent link">&para;</a></h2>
+<p>Để biểu thị đối tượng hiện tại, ta sử dụng bieru thức <code>this</code></p>
+<ul>
+<li>Trong một thành phần của class, <code>this</code> tham chiếu đến đối tượng hiện tại của class</li>
+<li>Trong extension function, hoặc function literal with receiver, <code>this</code> biểu thị param của function - tức là giá trị được truyền vào bên trái dấu <code>.</code> Nếu <code>this</code> không có label chỉ định đối tượng chỉ vào, <code>this</code> tham chiếu tới phạm vi chứa gần nhất. Để tham chiếu đến một phạm vi khác, <em>label chỉ định</em> sẽ được sử dụng</li>
+</ul>
+<h3 id="label-chi-inh">Label chỉ định<a class="headerlink" href="#label-chi-inh" title="Permanent link">&para;</a></h3>
+<p>Để truy cập đến <code>this</code> từ phạm vi bên ngoài (một class hoặc extension function), chúng ta sử dụng <code>this@label</code> với <code>@label</code> là chỉ định đến phạm vi <code>this</code> mong muốn</p>
+<div class="codehilite"><pre><span></span>  <span class="k">class</span> <span class="nc">A</span> <span class="p">{</span> <span class="c1">// implicit label @A</span>
+      <span class="k">inner</span> <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span> <span class="c1">// implicit label @B</span>
+          <span class="k">fun</span> <span class="nf">Int</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// implicit label @foo</span>
+              <span class="k">val</span> <span class="py">a</span> <span class="p">=</span> <span class="k">this</span><span class="n">@A</span> <span class="c1">// trỏ đến lớp A</span>
+              <span class="k">val</span> <span class="py">b</span> <span class="p">=</span> <span class="k">this</span><span class="n">@B</span> <span class="c1">// trỏ đến lớp B</span>
+
+              <span class="k">val</span> <span class="py">c</span> <span class="p">=</span> <span class="k">this</span> <span class="c1">// trỏ đến param (một số Int) của function foo() bởi foo() là một extension function</span>
+              <span class="k">val</span> <span class="py">c1</span> <span class="p">=</span> <span class="k">this</span><span class="n">@foo</span> <span class="c1">// trỏ đến param (một số Int) của function foo() bởi foo() là một extension function</span>
+
+              <span class="k">val</span> <span class="py">funLit</span> <span class="p">=</span> <span class="n">lambda</span><span class="err">@</span> <span class="k">fun</span> <span class="nf">String</span><span class="p">.()</span> <span class="p">{</span>
+                  <span class="k">val</span> <span class="py">d</span> <span class="p">=</span> <span class="k">this</span> <span class="c1">// trỏ đến param (một String) của function funLit()</span>
+              <span class="p">}</span>
+
+                <span class="k">val</span> <span class="py">funLit2</span> <span class="p">=</span> <span class="p">{</span> <span class="n">s</span><span class="p">:</span> <span class="n">String</span> <span class="p">-&gt;</span>
+                  <span class="c1">// trỏ đến param (một số Int) của function foo() bởi foo() là một extension function</span>
+                  <span class="k">val</span> <span class="py">d1</span> <span class="p">=</span> <span class="k">this</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<h2 id="1046-package">10. Package<a class="headerlink" href="#1046-package" title="Permanent link">&para;</a></h2>
+<p>Package cho phép chúng ta chia nhỏ code bằng namspace. Bất kỳ file nào cũng có thể bắt đầu bằng việc khai báo một package</p>
+<div class="codehilite"><pre><span></span>  <span class="k">package</span> <span class="nn">com.packt.myproject</span>
+  <span class="k">class</span> <span class="nc">Foo</span>
+  <span class="k">fun</span> <span class="nf">bar</span><span class="p">():</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;bar&quot;</span>
+</pre></div>
+
+<p>Ở đây, tất cả các nội dung(VD: class, function...) đều thuộc package đã được khai báo. Bởi vậy, fully qualified name (FQN) của các thành phần trong đó tương ứng là: <code>com.packt.myproject.Foo</code> là tên của class <code>Foo</code>, <code>com.packt.myproject.bar</code> là tên của function <code>bar</code>.</p>
+<p>Nếu package không được khai báo, các thành phần trong file đó sẽ thuộc về <code>root package</code>.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2020 Bùi Hải Nam
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://www.facebook.com/apnic.net" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/VNAPNIC" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="http://finishcoding.com/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.youtube.com/channel/UCECQ8GHamKx4H5jHMmNi2Ag" class="md-footer-social__link fa fa-youtube"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.267712eb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

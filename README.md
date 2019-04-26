@@ -1,5 +1,7 @@
 # Learn-to-Code
-Learn to Code - for Free https://buihainam.com/
+Learn to Code - for Free 
+Github Page: https://buihainam.com/
+Fanpage: https://www.facebook.com/NankaiNotes
 
 # Lessons
 

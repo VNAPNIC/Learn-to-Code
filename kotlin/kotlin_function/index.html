@@ -1,0 +1,1110 @@
+
+
+
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Tổng hợp tài liệu học lập trình">
+      
+      
+        <link rel="canonical" href="https://buihainam.com/kotlin/kotlin_function/">
+      
+      
+        <meta name="author" content="Bùi Hải Nam">
+      
+      
+        <meta name="lang:clipboard.copy" content="Sao chép vào bộ nhớ">
+      
+        <meta name="lang:clipboard.copied" content="Sao chép xong">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Không tìm thấy tài liệu liên quan">
+      
+        <meta name="lang:search.result.one" content="1 tài liệu liên quan">
+      
+        <meta name="lang:search.result.other" content="# tài liệu liên quan">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Funtion - Bùi Hải Nam</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#00bcd4">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="cyan" data-md-color-accent="cyan">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#146-inh-nghia-function" tabindex="1" class="md-skip">
+        Vào thẳng nội dung
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Bùi Hải Nam
+            </span>
+            <span class="md-header-nav__topic">
+              Funtion
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Nhập để bắt đầu tìm kiếm
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/VNAPNIC/Learn-to-Code" title="Đến kho lưu trữ mã nguồn" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    VNAPNIC/Learn-to-Code
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Bùi Hải Nam
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/VNAPNIC/Learn-to-Code" title="Đến kho lưu trữ mã nguồn" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    VNAPNIC/Learn-to-Code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Kotlin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Kotlin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_basic/" title="Cơ bản" class="md-nav__link">
+      Cơ bản
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Funtion
+      </label>
+    
+    <a href="./" title="Funtion" class="md-nav__link md-nav__link--active">
+      Funtion
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Mục lục</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#146-inh-nghia-function" title="1. Định nghĩa Function" class="md-nav__link">
+    1. Định nghĩa Function
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-expression-function" title="Single-Expression Function" class="md-nav__link">
+    Single-Expression Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-scope" title="Function Scope" class="md-nav__link">
+    Function Scope
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#246-parameter" title="2. Parameter" class="md-nav__link">
+    2. Parameter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gia-tri-mac-inh-cho-parameter" title="3. Giá trị mặc định cho parameter" class="md-nav__link">
+    3. Giá trị mặc định cho parameter
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#at-ten-cho-oi-truyen-vao" title="Đặt tên cho đối truyền vào" class="md-nav__link">
+    Đặt tên cho đối truyền vào
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-unit-returning-functions" title="4. Unit-returning functions" class="md-nav__link">
+    4. Unit-returning functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-extension-functions" title="5. Extension functions" class="md-nav__link">
+    5. Extension functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-return-nhieu-gia-tri-mutiple-return-values" title="6. Return nhiều giá trị (Mutiple return values)" class="md-nav__link">
+    6. Return nhiều giá trị (Mutiple return values)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#destructuring-declarations" title="Destructuring Declarations" class="md-nav__link">
+    Destructuring Declarations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-generic-functions" title="7. Generic functions" class="md-nav__link">
+    7. Generic functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-infix-notation" title="8. Infix notation" class="md-nav__link">
+    8. Infix notation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-function-voi-parameter-khong-xac-inh" title="9. Function với parameter không xác định" class="md-nav__link">
+    9. Function với parameter không xác định
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1046-inline-function" title="10. Inline function" class="md-nav__link">
+    10. Inline function
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_higher-order-function/" title="Higher order funtion" class="md-nav__link">
+      Higher order funtion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_lambda/" title="Lambda" class="md-nav__link">
+      Lambda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Dart
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Dart
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dart/dart_environment_settings/" title="Cài đặt môi trường" class="md-nav__link">
+      Cài đặt môi trường
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dart/dart_core/" title="Dart cơ bản" class="md-nav__link">
+      Dart cơ bản
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Mục lục</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#146-inh-nghia-function" title="1. Định nghĩa Function" class="md-nav__link">
+    1. Định nghĩa Function
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-expression-function" title="Single-Expression Function" class="md-nav__link">
+    Single-Expression Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-scope" title="Function Scope" class="md-nav__link">
+    Function Scope
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#246-parameter" title="2. Parameter" class="md-nav__link">
+    2. Parameter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gia-tri-mac-inh-cho-parameter" title="3. Giá trị mặc định cho parameter" class="md-nav__link">
+    3. Giá trị mặc định cho parameter
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#at-ten-cho-oi-truyen-vao" title="Đặt tên cho đối truyền vào" class="md-nav__link">
+    Đặt tên cho đối truyền vào
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-unit-returning-functions" title="4. Unit-returning functions" class="md-nav__link">
+    4. Unit-returning functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-extension-functions" title="5. Extension functions" class="md-nav__link">
+    5. Extension functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-return-nhieu-gia-tri-mutiple-return-values" title="6. Return nhiều giá trị (Mutiple return values)" class="md-nav__link">
+    6. Return nhiều giá trị (Mutiple return values)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#destructuring-declarations" title="Destructuring Declarations" class="md-nav__link">
+    Destructuring Declarations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-generic-functions" title="7. Generic functions" class="md-nav__link">
+    7. Generic functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-infix-notation" title="8. Infix notation" class="md-nav__link">
+    8. Infix notation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-function-voi-parameter-khong-xac-inh" title="9. Function với parameter không xác định" class="md-nav__link">
+    9. Function với parameter không xác định
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1046-inline-function" title="10. Inline function" class="md-nav__link">
+    10. Inline function
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Funtion</h1>
+                
+                <h2 id="146-inh-nghia-function">1. Định nghĩa Function<a class="headerlink" href="#146-inh-nghia-function" title="Permanent link">&para;</a></h2>
+<p>Function ở trong Kotlin được định nghĩa bằng từ khóa <code>fun</code></p>
+<p>Java</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">doSomething</span><span class="o">(</span><span class="n">String</span> <span class="n">matter</span><span class="o">)</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">doSomething</span><span class="p">(</span><span class="n">matter</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">String</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Tên function: <code>doSomething</code></li>
+<li>Khai báo parameter truyền vào function: <code>&lt;tên param&gt; : &lt;type param&gt;</code></li>
+<li>Return type của function là <code>String</code>: <code>func &lt;tên function&gt;(): &lt;return type&gt; {//body}</code></li>
+</ul>
+<h3 id="single-expression-function">Single-Expression Function<a class="headerlink" href="#single-expression-function" title="Permanent link">&para;</a></h3>
+<p>Nếu function với return type chỉ có một biểu thức (expression) thì định nghĩa function theo 2 cách dưới tương đương nhau: (<code>getInfo()</code> gọi là Single-Expression Function)</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">getInfo</span><span class="p">()</span> <span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;Hello world...&quot;</span>
+
+<span class="k">fun</span> <span class="nf">getInfo2</span><span class="p">()</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;Hello world...&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="function-scope">Function Scope<a class="headerlink" href="#function-scope" title="Permanent link">&para;</a></h3>
+<p>Có 3 loại function (dựa vào mức truy cập):</p>
+<ul>
+<li>
+<p>Member function: Là các function được khai báo ở trong class, object hoặc interface. Các function này được sử dụng thông các instance của class, object hoặc interface. Giống như việc sử dụng method trong Java.</p>
+</li>
+<li>
+<p>Local function: Có thể hiểu rằng local function là các function được khai báo bên trong một function khác (nested). Local function không được sử dụng ở ngoài function định nghĩa nó. Ví dụ như trong <code>printArea()</code>, ta định nghĩa một function khác là <code>calculateArea()</code>, do đó ta gọi <code>calculateArea()</code> là local function:</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">printArea</span><span class="p">(</span><span class="n">width</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Unit</span> <span class="p">{</span>
+  <span class="k">fun</span> <span class="nf">calculateArea</span><span class="p">(</span><span class="n">width</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">width</span> <span class="p">*</span> <span class="n">height</span>
+  <span class="k">val</span> <span class="py">area</span> <span class="p">=</span> <span class="n">calculateArea</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+  <span class="n">println</span><span class="p">(</span><span class="s">&quot;The area is $area&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Lưu ý: Local function có thể sử dụng các <code>param</code> và các biến khai báo trước nó trong function. Lưu ý các biến khai báo sau nó thì không thể sử dụng:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">fun</span> <span class="nf">reformat</span><span class="p">(</span><span class="n">age</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">somethingUnknown</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;hello&quot;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="py">birthMonth</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">8</span>
+
+        <span class="k">fun</span> <span class="nf">localRefomat</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">birthMonth</span> <span class="p">=</span> <span class="m">5</span>
+
+            <span class="c1">//không sử dụng được variable birthYear</span>
+        <span class="p">}</span>
+
+        <span class="k">var</span> <span class="py">birthYear</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1995</span>
+    <span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Top-level function: Có thể hiểu rằng đây là những function được khai báo ngoài tất cả như <code>class</code>, <code>object</code>, <code>interface</code> và được định nghĩa trong file Kotlin (<code>.kt</code>). Các method được truy cập thông qua tên của file vs kí hiệu "kt" (đối với Java), trong Kotlin các function này được gọi trực tiếp qua tên của function. Việc này rất hữu ích trong việc định nghĩa các các function <code>hepler</code>, <code>util</code> mà trong Java hay làm thông qua các method <code>static</code>:</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="c1">//file name is DataManager.kt</span>
+<span class="k">fun</span> <span class="nf">isTokenExpired</span><span class="p">()</span> <span class="p">:</span> <span class="n">Boolean</span><span class="p">{</span>
+    <span class="k">var</span> <span class="py">isExpired</span> <span class="p">=</span> <span class="k">false</span>
+
+    <span class="c1">//......</span>
+
+    <span class="k">return</span> <span class="n">isExpired</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Gọi function Kotlin trong Java:</p>
+<div class="codehilite"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">JavaMain</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//call top-level function in java</span>
+        <span class="n">DataManagerKt</span><span class="p">.</span><span class="n">isTokenExpired</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="246-parameter">2. Parameter<a class="headerlink" href="#246-parameter" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">powerOf</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">exponent</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Function <code>powerOf</code> có param <code>number</code> và <code>exponent</code> kiểu <code>Int</code>.</p>
+<p>Khai báo param theo cú pháp: <code>&lt;tên param&gt; : &lt;type param&gt;</code></p>
+<h2 id="3-gia-tri-mac-inh-cho-parameter">3. Giá trị mặc định cho parameter<a class="headerlink" href="#3-gia-tri-mac-inh-cho-parameter" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">read</span><span class="p">(</span><span class="n">b</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">Byte</span><span class="p">&gt;,</span> <span class="n">off</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">len</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+<span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Mỗi param trong function có thể được gán giá trị mặc định hoặc không gán. Giá trị mặc định cho phép lúc truyền param cho function có thể bỏ qua các giá trị mặc định. Điều này giúp không phải viết quá nhiều <code>overload</code> function.</p>
+<p>Lưu ý:</p>
+<div class="codehilite"><pre><span></span><span class="k">open</span> <span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+    <span class="k">open</span> <span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">10</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">B</span> <span class="p">:</span> <span class="n">A</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">i</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>  <span class="c1">// no default value allowed</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Khi function <code>foo()</code> của <code>class A</code> đã khai báo giá trị mặc định cho param, thì khi<code>class B</code> kế thừa <code>class A</code> và <code>override</code> lại function <code>foo()</code> đó, thì giá trị mặc định của param ở function <code>foo()``class A</code> được giữ lại và ở <code>class B</code> không được định nghĩa lại giá trị mặc định đó.</p>
+<h3 id="at-ten-cho-oi-truyen-vao">Đặt tên cho đối truyền vào<a class="headerlink" href="#at-ten-cho-oi-truyen-vao" title="Permanent link">&para;</a></h3>
+<p>Đầu tiên ta có function <code>reformat()</code> với các param, trong đó có 4 param có giá trị mặc định.</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">reformat</span><span class="p">(</span><span class="n">str</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+             <span class="n">normalizeCase</span><span class="p">:</span> <span class="n">Boolean</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+             <span class="n">upperCaseFirstLetter</span><span class="p">:</span> <span class="n">Boolean</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span>
+             <span class="n">divideByCamelHumps</span><span class="p">:</span> <span class="n">Boolean</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span>
+             <span class="n">wordSeparator</span><span class="p">:</span> <span class="n">Char</span> <span class="p">=</span> <span class="sc">&#39; &#39;</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Có thể gọi function theo các cách:</p>
+<ul>
+<li>Sử dụng các giá trị mặc định của param</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="n">reformat</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</pre></div>
+
+<ul>
+<li>Không sử dụng các giá trị mặc định của param</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="n">reformat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="k">true</span><span class="p">,</span> <span class="k">true</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="sc">&#39;_&#39;</span><span class="p">)</span>
+</pre></div>
+
+<ul>
+<li>Hoặc có thể đặt tên cho các đối truyền vào để dễ đọc hơn (tùy chọn). Lưu ý là tên được đặt sẽ phải giống với tên param của function đó</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="n">reformat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">wordSeparator</span> <span class="p">=</span> <span class="sc">&#39;_&#39;</span><span class="p">)</span>
+</pre></div>
+
+<p>Lưu ý:</p>
+<ul>
+<li>Khi sử function của <code>Kotlin</code> trong Java, các param được khai báo giá trị mặc định sẽ không có tác dụng. Vì <code>Java</code> không thể bỏ qua các param có giá trị mặc định.</li>
+<li>Khi sử dụng <code>method</code> của <code>Java</code> trong <code>Kotlin</code>, không thể sử dụng được chức năng đặt tên cho đối truyền vào.</li>
+</ul>
+<h2 id="4-unit-returning-functions">4. Unit-returning functions<a class="headerlink" href="#4-unit-returning-functions" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">printHello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">?):</span> <span class="n">Unit</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello ${name}&quot;</span><span class="p">)</span>
+    <span class="k">else</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;Hi there!&quot;</span><span class="p">)</span>
+    <span class="c1">// `return Unit` or `return` is optional</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><code>Unit</code> ở đây có thể hiểu như là <code>Void</code> ở trong <code>Java</code> hoặc các ngôn ngữ khác. Việc khai báo return type là <code>Unit</code> là không bắt buộc. Ví dụ như:</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">printHello</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><code>Unit</code> cũng được sử dụng trong việc khai báo các Higher-Order Function ở phần sắp tới.</p>
+<h2 id="5-extension-functions">5. Extension functions<a class="headerlink" href="#5-extension-functions" title="Permanent link">&para;</a></h2>
+<p>Giống với <code>Swift</code>, <code>Kotlin</code> cho phép ta mở rộng <code>class</code> mà không phải kế thừa từ <code>class</code> khác. Ví dụ như ta muốn thêm function <code>swap()</code> cho <code>class MutableList&lt;Int&gt;</code>:</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">MutableList</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;.</span><span class="n">swap</span><span class="p">(</span><span class="n">index1</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">index2</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">tmp</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="c1">// &#39;this&#39; corresponds to the list</span>
+    <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span>
+    <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span> <span class="p">=</span> <span class="n">tmp</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Từ khóa <code>this</code> ở đây dùng để chỉ đến <code>instance</code> <code>MutableList&lt;Int&gt;</code> mà gọi function <code>swap()</code></p>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">mutableListOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="n">l</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span> <span class="c1">// &#39;this&#39; inside &#39;swap()&#39; will hold the value of &#39;l&#39;</span>
+</pre></div>
+
+<p>Tuy nhiên nếu <code>extension</code> cho <code>MutableList&lt;Int&gt;</code> chúng ta chỉ sử dụng được với các <code>instance</code> của <code>MutableList&lt;Int&gt;</code>, chúng ta cũng có thể khởi tạo chung bằng cách sử dụng Generic Function:</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;.</span><span class="n">swap</span><span class="p">(</span><span class="n">index1</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">index2</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">tmp</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="c1">// &#39;this&#39; corresponds to the list</span>
+    <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span>
+    <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span> <span class="p">=</span> <span class="n">tmp</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="6-return-nhieu-gia-tri-mutiple-return-values">6. Return nhiều giá trị (Mutiple return values)<a class="headerlink" href="#6-return-nhieu-gia-tri-mutiple-return-values" title="Permanent link">&para;</a></h2>
+<p>Xem ví dụ dưới đây:</p>
+<div class="codehilite"><pre><span></span><span class="k">data</span> <span class="k">class</span> <span class="nc">Result</span><span class="p">(</span><span class="k">val</span> <span class="py">result</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">val</span> <span class="py">status</span><span class="p">:</span> <span class="n">Status</span><span class="p">)</span>
+<span class="k">fun</span> <span class="nf">function</span><span class="p">(...):</span> <span class="n">Result</span> <span class="p">{</span>
+    <span class="c1">// computations</span>
+
+    <span class="k">return</span> <span class="n">Result</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Now, to use this function:</span>
+<span class="k">val</span> <span class="err">(</span><span class="py">result</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span> <span class="p">=</span> <span class="n">function</span><span class="p">(...)</span>
+</pre></div>
+
+<p>Như ta thấy, function có thể trả về đồng thời 2 giá trị <code>result</code> và <code>status</code>. Bản chất của việc này là gói chúng vào một <code>data class</code> mà thôi và sử <code>Destructure</code> (trình bày phần tiếp theo) để gán chúng cho các biến. Nhìn đến đây ta có thể nghĩ đến sử dụng <code>Pair&lt;L, R&gt;</code>. Tuy nhiên việc sử dụng <code>class</code>với các tên có nghĩa giúp code dễ đọc hơn việc sử dụng <code>first</code> và <code>second</code> trong <code>Pair</code>.</p>
+<h3 id="destructuring-declarations">Destructuring Declarations<a class="headerlink" href="#destructuring-declarations" title="Permanent link">&para;</a></h3>
+<p>Xem ví dụ dưới đây:</p>
+<div class="codehilite"><pre><span></span><span class="k">data</span> <span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">var</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span>
+
+<span class="k">val</span> <span class="err">(</span><span class="py">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="p">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Hado&quot;</span><span class="p">,</span> <span class="m">22</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Name: $name&quot;</span><span class="p">)</span> <span class="c1">//print: Name: Hado</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Age: $age&quot;</span><span class="p">)</span> <span class="c1">//print: Age: 22</span>
+</pre></div>
+
+<p>Đoạn code trên sau khi được complie thực ra sẽ như thế này:</p>
+<div class="codehilite"><pre><span></span><span class="k">data</span> <span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">var</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span>
+
+<span class="k">val</span> <span class="py">person</span> <span class="p">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Hado&quot;</span><span class="p">,</span> <span class="m">22</span><span class="p">)</span>
+
+<span class="k">val</span> <span class="py">name</span> <span class="p">=</span> <span class="n">person</span><span class="p">.</span><span class="n">component1</span><span class="p">()</span>
+<span class="k">val</span> <span class="py">age</span> <span class="p">=</span> <span class="n">person</span><span class="p">.</span><span class="n">component2</span><span class="p">()</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Name: $name&quot;</span><span class="p">)</span> <span class="c1">//print: Name: Hado</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Age: $age&quot;</span><span class="p">)</span> <span class="c1">//print: Age: 22</span>
+</pre></div>
+
+<p>Ta có <code>data class</code> với <code>primary constructor</code> có 2 param <code>name</code> và <code>age</code>, <code>class</code> sẽ lần lượt tự động tạo ra các function <code>componentN</code> (N: 1, 2, 3, ...) cho các param.</p>
+<p>Lưu ý chỉ có các param trong <code>primary constructor</code> mới được tự động tạo ra function <code>component</code>. Nếu chúng ta khai báo thêm biến trong <code>class</code> và muốn sử dụng <code>Destructure</code> thì cần khởi tạo thêm các function <code>component</code> tương ứng với param đó. Ví dụ như:</p>
+<div class="codehilite"><pre><span></span><span class="k">data</span> <span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">var</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="py">province</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;Ha Noi&quot;</span>
+
+    <span class="k">operator</span> <span class="k">fun</span> <span class="nf">component3</span><span class="p">():</span> <span class="n">String</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">province</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">val</span> <span class="err">(</span><span class="py">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">province</span><span class="p">)</span> <span class="p">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Hado&quot;</span><span class="p">,</span> <span class="m">22</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Name: $name&quot;</span><span class="p">)</span> <span class="c1">//print: Name: Hado</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Age: $age&quot;</span><span class="p">)</span> <span class="c1">//print: Age: 22</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Province: $province&quot;</span><span class="p">)</span> <span class="c1">//print: Province: Ha Noi</span>
+</pre></div>
+
+<p>Nếu như trong class <code>Person</code>, ta chỉ cần lấy 2 giá trị là <code>age</code> và <code>province</code>, đồng thời không muốn tạo ra biến <code>name</code> ta sử dụng dấu <code>"_"</code> để thay cho các biến không cần sử dụng:</p>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="err">(</span><span class="py">_</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">province</span><span class="p">)</span> <span class="p">=</span> <span class="n">Person</span><span class="p">(</span><span class="s">&quot;Hado&quot;</span><span class="p">,</span> <span class="m">22</span><span class="p">)</span>
+
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Age: $age&quot;</span><span class="p">)</span> <span class="c1">//print: Age: 22</span>
+<span class="n">println</span><span class="p">(</span><span class="s">&quot;Province: $province&quot;</span><span class="p">)</span> <span class="c1">//print: Province: Ha Noi</span>
+</pre></div>
+
+<h2 id="7-generic-functions">7. Generic functions<a class="headerlink" href="#7-generic-functions" title="Permanent link">&para;</a></h2>
+<p>Giống như <code>Java</code>, <code>Kotlin</code> cho phép sử dụng <code>generic function</code> giúp cho việc giảm số lượng code, function có thể sử dụng với nhiều kiểu khác nhau Để định nghĩa <code>generic function</code>, ta sử dụng form sau:</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">singletonList</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">T</span><span class="p">.</span><span class="n">basicToString</span><span class="p">()</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span>  <span class="c1">// extension function</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Để gọi function, cần xác định kiểu cho function:</p>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">singletonList</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;(</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+
+<p>Ngoài ra, giống như <code>Java</code>, ta cũng có thể tạo <code>generic function</code> với kiểu được <code>extends</code> từ một kiểu khác:</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span> <span class="p">:</span> <span class="n">Comparable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;&gt;</span> <span class="n">sort</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Bây giờ, ta có thể gọi function với các biến có kiểu là <code>subclass</code> của <code>Comparable</code>:</p>
+<div class="codehilite"><pre><span></span><span class="n">sort</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span> <span class="c1">// OK. Int is a subtype of Comparable&lt;Int&gt;</span>
+<span class="n">sort</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="n">HashMap</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">String</span><span class="p">&gt;()))</span> <span class="c1">// Error: HashMap&lt;Int, String&gt; is not a subtype of Comparable&lt;HashMap&lt;Int, String&gt;&gt;</span>
+</pre></div>
+
+<h2 id="8-infix-notation">8. Infix notation<a class="headerlink" href="#8-infix-notation" title="Permanent link">&para;</a></h2>
+<p>Xem ví dụ dưới đây:</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">Fly</span><span class="p">(</span><span class="k">var</span> <span class="py">currentPlace</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">infix</span> <span class="k">fun</span> <span class="nf">flyTo</span><span class="p">(</span><span class="n">nextPlace</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;The plane fly from $currentPlace to $nextPlace&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">val</span> <span class="py">plane1</span> <span class="p">=</span> <span class="n">Fly</span><span class="p">(</span><span class="s">&quot;Ha Noi&quot;</span><span class="p">)</span>
+
+<span class="n">plane1</span> <span class="n">flyTo</span> <span class="s">&quot;Ho Chi Minh&quot;</span> <span class="c1">//print: The plane fly from Ha Noi to Ho Chi Minh</span>
+
+<span class="n">plane1</span><span class="p">.</span><span class="n">flyTo</span><span class="p">(</span><span class="s">&quot;Ho Chi Minh&quot;</span><span class="p">)</span> <span class="c1">//print: The plane fly from Ha Noi to Ho Chi Minh</span>
+</pre></div>
+
+<p>Nhờ sử dụng ký hiệu <code>infix</code> cho function <code>flyTo()</code>, ta có thể sự dụng tên function như trung tố liên kết giữa <code>instance class</code> và <code>param</code> truyền vào. Function có thể sử dụng <code>infix notation</code> (trung tố) khi</p>
+<ul>
+<li>Function là member của một class hoặc là extension của class</li>
+<li>Function chỉ có một param duy nhất</li>
+<li>Function được mark bằng <code>infix</code> ở đầu function</li>
+</ul>
+<h2 id="9-function-voi-parameter-khong-xac-inh">9. Function với parameter không xác định<a class="headerlink" href="#9-function-voi-parameter-khong-xac-inh" title="Permanent link">&para;</a></h2>
+<p>Tương tự trong <code>Java</code>, <code>Kotlin</code> cho phép một function không cần xác định số lượng param một cách cụ thể.</p>
+<p>Java</p>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span><span class="o">...</span> <span class="n">array</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">array</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">add</span><span class="p">(</span><span class="k">vararg</span> <span class="n">array</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">:</span> <span class="n">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="py">s</span> <span class="p">=</span> <span class="m">0</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">array</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">s</span> <span class="p">+=</span> <span class="n">i</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">s</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Ta sử dụng từ khóa <code>vararg</code>. Và cũng tương tự như <code>Java</code>, biến array được coi là một mảng.</p>
+<p>Lưu ý: Chỉ có một param được đánh dấu là <code>vararg</code>. Nếu param không phải là param cuối cùng, khi gọi hàm, ta phải chỉ định rõ các param sau đó</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">multiPrint</span><span class="p">(</span><span class="n">prefix</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">vararg</span> <span class="n">strings</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">suffix</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//.....</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Sử dụng function <code>multiPrint()</code>:</p>
+<div class="codehilite"><pre><span></span><span class="n">multiPrint</span><span class="p">(</span><span class="s">&quot;Start&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">,</span> <span class="n">suffix</span> <span class="p">=</span> <span class="s">&quot;End&quot;</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="1046-inline-function">10. Inline function<a class="headerlink" href="#1046-inline-function" title="Permanent link">&para;</a></h2>
+<p>Inline function được giải thích <a href="/kotlin/kotlin_inline_function">ở đây</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../kotlin_basic/" title="Cơ bản" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Trước
+                </span>
+                Cơ bản
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../kotlin_higher-order-function/" title="Higher order funtion" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Sau
+                </span>
+                Higher order funtion
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2020 Bùi Hải Nam
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://www.facebook.com/apnic.net" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/VNAPNIC" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="http://finishcoding.com/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.youtube.com/channel/UCECQ8GHamKx4H5jHMmNi2Ag" class="md-footer-social__link fa fa-youtube"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

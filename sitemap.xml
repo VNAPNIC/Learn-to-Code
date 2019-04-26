@@ -6,17 +6,32 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://buihainam.com/kotlin_basic/</loc>
+     <loc>https://buihainam.com/kotlin/kotlin_basic/</loc>
      <lastmod>2019-04-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://buihainam.com/dart_environment_settings/</loc>
+     <loc>https://buihainam.com/kotlin/kotlin_function/</loc>
      <lastmod>2019-04-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://buihainam.com/dart_core/</loc>
+     <loc>https://buihainam.com/kotlin/kotlin_higher-order-function/</loc>
+     <lastmod>2019-04-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://buihainam.com/kotlin/kotlin_lambda/</loc>
+     <lastmod>2019-04-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://buihainam.com/dart/dart_environment_settings/</loc>
+     <lastmod>2019-04-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://buihainam.com/dart/dart_core/</loc>
      <lastmod>2019-04-26</lastmod>
      <changefreq>daily</changefreq>
     </url>

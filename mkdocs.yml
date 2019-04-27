@@ -78,7 +78,7 @@ markdown_extensions:
 
 # Google Analytics
 google_analytics:
-  - 'UA-XXXXXXXX-X'
+  - 'UA-139140751-1'
   - 'auto'
 
 # Page tree

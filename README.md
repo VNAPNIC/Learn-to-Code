@@ -14,6 +14,8 @@ Fanpage: https://www.facebook.com/NankaiNotes
 ### 2. Kotlin
 
 - [Cơ bản](https://buihainam.com/kotlin/kotlin_basic/)
+- [Class Kế thừa](https://buihainam.com/kotlin/kotlin_class_inheritance/)
+- [Property và field](https://buihainam.com/kotlin/kotlin_property_field/)
 - [Funtion](https://buihainam.com/kotlin/kotlin_function/)
 - [Higher order funtion](https://buihainam.com/kotlin/kotlin_higher-order-function/)
 - [Lambda](https://buihainam.com/kotlin/kotlin_lambda/)

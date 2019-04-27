@@ -14,6 +14,8 @@ copyright: 'Copyright &copy; 2019 - 2020 Bùi Hải Nam'
 
 # Configuratio
 theme:
+  logo: 'img/logo.png'
+  favicon: 'img/logo.png'
   name: material
   #custom_dir: 'mkdocs-material'
   # 404 page
@@ -85,12 +87,16 @@ google_analytics:
 nav:
   - About: index.md
   - Kotlin:
-    - Cơ bản: kotlin/kotlin_basic.md
-    - Class và kế thừa: kotlin/kotlin_class_inheritance
-    - Property và field: kotlin/kotlin_property_field.md
-    - Funtion: kotlin/kotlin_function.md
-    - Higher order funtion: kotlin/kotlin_higher-order-function.md
-    - Lambda: kotlin/kotlin_lambda.md
+    - Kotlin Basic: kotlin/kotlin_basic.md
+    - Kotlin Class và kế thừa: kotlin/kotlin_class_inheritance.md
+    - Kotlin Property và field: kotlin/kotlin_property_field.md
+    - Kotlin Funtion: kotlin/kotlin_function.md
+    - Kotlin Inteface: kotlin/kotlin_inteface.md
+    - Kotlin Data class: kotlin/kotlin_data_class.md
+    - Kotlin Nested class: kotlin/kotlin_nested_class.md
+    - Kotlin Visibility Modifiers: kotlin/kotlin_visibility_modifiers.md
+    - Kotlin Higher order funtion: kotlin/kotlin_higher_order_function.md
+    - Kotlin Lambda: kotlin/kotlin_lambda.md
   - Dart:
-    - Cài đặt môi trường: dart/dart_environment_settings.md
-    - Dart cơ bản: dart/dart_core.md
+    - Dart Cài đặt môi trường: dart/dart_environment_settings.md
+    - Dart Basic: dart/dart_core.md

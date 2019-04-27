@@ -19,3 +19,7 @@ Fanpage: https://www.facebook.com/NankaiNotes
 - [Funtion](https://buihainam.com/kotlin/kotlin_function/)
 - [Higher order funtion](https://buihainam.com/kotlin/kotlin_higher-order-function/)
 - [Lambda](https://buihainam.com/kotlin/kotlin_lambda/)
+- [Inteface](https://buihainam.com/kotlin/kotlin_inteface/)
+- [Data class](https://buihainam.com/kotlin/kotlin_data_class/)
+- [Nested class](https://buihainam.com/kotlin/kotlin_nested_class/)
+- [Visibility Modifiers](https://buihainam.com/kotlin/kotlin_visibility_modifiers/)

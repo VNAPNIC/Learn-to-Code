@@ -225,7 +225,7 @@ class Derived() : Base() {
 
 ### verriding property
 
-Các phần liên quan đến overriding property được trình bày [tại đây](https://github.com/ngohado/Kotlin-Docs/wiki/Property-v%C3%A0-field#7-overriding-property-ghi-%C4%91%C3%A8-c%C3%A1c-property)
+Các phần liên quan đến overriding property được trình bày [tại đây](/kotlin/kotlin_property_field/#746-overriding-property-ghi-e-cac-property)
 
 ### Overriding rule
 

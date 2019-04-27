@@ -833,7 +833,7 @@ Trong *Java*, để định nghĩa khả năng truy cập của các property, 
 -   `public`
 -   `internal`
 -   `protected`
--   `private` Để hiểu chi tiết hơn, hãy xem [Visibility modifier](https://github.com/ngohado/Kotlin-Docs/wiki/Visibility-Modifiers)
+-   `private` Để hiểu chi tiết hơn, hãy xem [Visibility modifier](/kotlin/kotlin_visibility_modifiers/)
 
 8\. Khởi tạo một lớp
 ----------------------------------------------------------------------------------------------------------------------------

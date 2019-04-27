@@ -13,7 +13,7 @@
         <meta name="description" content="Tổng hợp tài liệu học lập trình">
       
       
-        <link rel="canonical" href="https://buihainam.com/">
+        <link rel="canonical" href="https://buihainam.com/kotlin/kotlin_higher_order_function/">
       
       
         <meta name="author" content="Bùi Hải Nam">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="img/logo.png">
+      <link rel="shortcut icon" href="../../img/logo.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
-        <title>Bùi Hải Nam</title>
+        <title>Kotlin Higher order funtion - Bùi Hải Nam</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -57,14 +57,14 @@
       
     
     
-      <script src="assets/javascripts/modernizr.01ccdecf.js"></script>
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
     
-    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
-      <link rel="manifest" href="manifest.webmanifest">
+      <link rel="manifest" href="../../manifest.webmanifest">
     
     
     
@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#thong-tin-cua-toi" tabindex="1" class="md-skip">
+      <a href="#function-references" tabindex="1" class="md-skip">
         Vào thẳng nội dung
       </a>
     
@@ -142,7 +142,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-header-nav__button md-logo">
           
-            <img src="img/logo.png" width="24" height="24">
+            <img src="../../img/logo.png" width="24" height="24">
           
         </a>
       </div>
@@ -156,7 +156,7 @@
               Bùi Hải Nam
             </span>
             <span class="md-header-nav__topic">
-              About
+              Kotlin Higher order funtion
             </span>
           
         </div>
@@ -232,7 +232,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-nav__button md-logo">
       
-        <img src="img/logo.png" width="48" height="48">
+        <img src="../../img/logo.png" width="48" height="48">
       
     </a>
     Bùi Hải Nam
@@ -264,20 +264,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="." title="About" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="About" class="md-nav__link">
       About
     </a>
-    
   </li>
 
     
@@ -285,10 +276,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Kotlin
@@ -306,7 +299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="kotlin/kotlin_basic/" title="Kotlin Basic" class="md-nav__link">
+    <a href="../kotlin_basic/" title="Kotlin Basic" class="md-nav__link">
       Kotlin Basic
     </a>
   </li>
@@ -318,7 +311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="kotlin/kotlin_class_inheritance/" title="Kotlin Class và kế thừa" class="md-nav__link">
+    <a href="../kotlin_class_inheritance/" title="Kotlin Class và kế thừa" class="md-nav__link">
       Kotlin Class và kế thừa
     </a>
   </li>
@@ -330,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="kotlin/kotlin_property_field/" title="Kotlin Property và field" class="md-nav__link">
+    <a href="../kotlin_property_field/" title="Kotlin Property và field" class="md-nav__link">
       Kotlin Property và field
     </a>
   </li>
@@ -342,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="kotlin/kotlin_function/" title="Kotlin Funtion" class="md-nav__link">
+    <a href="../kotlin_function/" title="Kotlin Funtion" class="md-nav__link">
       Kotlin Funtion
     </a>
   </li>
@@ -354,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="kotlin/kotlin_inteface/" title="Kotlin Inteface" class="md-nav__link">
+    <a href="../kotlin_inteface/" title="Kotlin Inteface" class="md-nav__link">
       Kotlin Inteface
     </a>
   </li>
@@ -366,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="kotlin/kotlin_data_class/" title="Kotlin Data class" class="md-nav__link">
+    <a href="../kotlin_data_class/" title="Kotlin Data class" class="md-nav__link">
       Kotlin Data class
     </a>
   </li>
@@ -378,7 +371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="kotlin/kotlin_nested_class/" title="Kotlin Nested class" class="md-nav__link">
+    <a href="../kotlin_nested_class/" title="Kotlin Nested class" class="md-nav__link">
       Kotlin Nested class
     </a>
   </li>
@@ -390,7 +383,7 @@
 
 
   <li class="md-nav__item">
-    <a href="kotlin/kotlin_visibility_modifiers/" title="Kotlin Visibility Modifiers" class="md-nav__link">
+    <a href="../kotlin_visibility_modifiers/" title="Kotlin Visibility Modifiers" class="md-nav__link">
       Kotlin Visibility Modifiers
     </a>
   </li>
@@ -400,11 +393,52 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="kotlin/kotlin_higher_order_function/" title="Kotlin Higher order funtion" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Kotlin Higher order funtion
+      </label>
+    
+    <a href="./" title="Kotlin Higher order funtion" class="md-nav__link md-nav__link--active">
       Kotlin Higher order funtion
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Mục lục</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function-references" title="Function References:" class="md-nav__link">
+    Function References:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-anonymous" title="Function Anonymous" class="md-nav__link">
+    Function Anonymous
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -414,7 +448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="kotlin/kotlin_lambda/" title="Kotlin Lambda" class="md-nav__link">
+    <a href="../kotlin_lambda/" title="Kotlin Lambda" class="md-nav__link">
       Kotlin Lambda
     </a>
   </li>
@@ -450,7 +484,7 @@
 
 
   <li class="md-nav__item">
-    <a href="dart/dart_environment_settings/" title="Dart Cài đặt môi trường" class="md-nav__link">
+    <a href="../../dart/dart_environment_settings/" title="Dart Cài đặt môi trường" class="md-nav__link">
       Dart Cài đặt môi trường
     </a>
   </li>
@@ -462,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="dart/dart_core/" title="Dart Basic" class="md-nav__link">
+    <a href="../../dart/dart_core/" title="Dart Basic" class="md-nav__link">
       Dart Basic
     </a>
   </li>
@@ -487,8 +521,29 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">Mục lục</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#function-references" title="Function References:" class="md-nav__link">
+    Function References:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-anonymous" title="Function Anonymous" class="md-nav__link">
+    Function Anonymous
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -501,83 +556,42 @@
               
                 
                 
-                <h1 id="thong-tin-cua-toi">Thông tin của tôi<a class="headerlink" href="#thong-tin-cua-toi" title="Permanent link">&para;</a></h1>
-<table style="width:100%">
-    <thead>
-        <tr >
-            <th align="left" colspan=5></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr colspan=3>
-            <td rowspan=8 style="width:30%"><img alt="about" src="/img/posts/about/about.jpg" /></td>
-            <td>
-                <tr>
-                    <td width=30%>
-                        <b>Name:</b>
-                    <td>
-                    <td>
-                        Bui Hai Nam
-                    <td>
-                <tr>
-                <tr>
-                    <td>
-                        <b>Date of birth:</b>
-                    <td>
-                    <td>
-                        25/09/1992
-                    <td>
-                <tr>
-                <tr>
-                    <td>
-                        <b>Skype:</b>
-                    <td>
-                    <td>
-                        <a href="https://join.skype.com/invite/NIr3wukf6lPE">Connect</a>
-                    <td>
-                <tr>
+                  <h1>Kotlin Higher order funtion</h1>
+                
+                <p>Higher-Order function là function có thể nhận một function như một param hoặc có thể trả về một function:</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">doSomethingWithNumber</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">receiver</span><span class="p">:</span> <span class="p">(</span><span class="n">String</span><span class="p">?)</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="py">result</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+    <span class="c1">//...do complex work with number</span>
 
-                <tr>
-                    <td colspan=3>
-                        I started my coding journey when I was 21 year old.<br/>
-                        As a Mobile programmer, working on both platform <b>Android</b> and <b>IOS</b> I have had numerous opportunity to use the programming languages <b>C++</b> <b>Java</b>, <b>Kotlin</b>, <b>Swift</b> and <b>Dart</b>.
-                    <td>
-                <tr>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <span class="n">receiver</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 
-<p>No matter the route you take, it doesn’t really matter as long as you practice a shit ton. Look through the popular languages and decide which one you want to start with. I’d go with one of the following: Java, Swift, Kotlin, C, C++, Dart, PHP. It doesn’t matter that much, and before you get a job doing it you’ll probably want to have bounced around a little bit.</p>
-<p>Instead of giving step by step instructions, I'm going to give you a few pointers. Please pay attention to these, don't just be like "yeah whatever." Following these tips will make you grow way faster, and if you actually follow these tips completely, you'll probably be the fastest learning programmer in history. **Nobody follows these rules until way later than they should have, and everyone regrets it a bit. **It's not a huge deal because everyone does it, but you can seriously make a huge difference. You could be job-ready in 3 months easy if you practice every day and do this stuff. If you don't, I'd say you're probably looking at about 1--3 years of practice at least before anyone hires you.</p>
-<p>So without further ado, and in somewhat of a loose order of most to least important, my guide to learning how to program:</p>
-<ul>
-<li>
-<p><strong>Practice way more than you study/read.</strong> Don't just read how to do things, try them. You'll find that most of the time, there's complexities that aren't mentioned in the text, and you'll learn way more. Just because you think you know how to make a class in C++ doesn't mean you even know how to get the code to compile. <strong>This is by far the most important point.</strong></p>
-</li>
-<li>
-<p><strong>Don't learn a programming language, learn to program.</strong> Sure, you'll use a programming language and get proficient with it, but it's just a tool. If you pick up a book from start to finish on a language, you'll have learned so much stuff you are never going to use. If you insist on using a textbook, use one that emphasizes examples, or teaches you a programming practice like web development or machine learning. Most programming language focused textbooks aren't good as anything but a reference. Furthermore, it's really important not to be tied to any one language, especially as a beginner. There's a ton of great material out there that is taught in a certain language, but is universally important. You should be able to learn from examples that are written in a language you've never used.</p>
-</li>
-<li>
-<p><strong>Try random stuff.</strong> Try new frameworks, packages, languages, ideas, etc. just to see how they work. Never made an app? Try it. Never used a front end JS framework? Try it. Buy an arduino. Get a book on object oriented design. Try using a NoSQL database for your next project, or try using a hosted database on AWS.</p>
-</li>
-<li>
-<p><strong>Don't take days off.</strong> Taking time off takes you 'out of the zone.' You want these problems in the back of your mind at all times. Taking days off forces you to get back in the zone, and remember things. I come up with solutions to problems or cool ideas all the time, whether I'm driving home from work or at the gym.</p>
-</li>
-<li>
-<p><strong>Make programming a hobby.</strong> Learn to enjoy it. This comes with straying away from reading textbooks, and practicing more. Make cool shit. Get experience. Don't say "I heard that's a bad idea." Say "that's a bad idea, this is what happened to me when I tried that." Nobody gives a shit about what you read in a textbook, I promise. Well at least not nearly as much as they care about what you experienced firsthand.</p>
-</li>
-<li>
-<p><strong>Finish proects 100%.</strong> Don't say 'eh it's pretty much done.' and move on. Finish it. Publish it. Tell your parents and friends to use it. You'll never know how much work was actually left. The very end of a project can introduce massive holes in your code. Even moreso, once you've launched it, your users will find plenty more. Get it published and get people using it.</p>
-</li>
-<li>
-<p><strong>Network.</strong> Internet has introduced me to a lot of cool programmers that have tons of knowledge to give me. Work in a team as much as possible, it will teach you how companies do things at scale. Version control, task management, code documentation, code readability, loose coupling of objects, etc. are all way more important when working on projects with others.</p>
-</li>
-<li>
-<p><strong>Read tech blogs and info sites.</strong> Techcrunch, Techmeme, Medium,quora, Stackoverflow, Linkedin, and facebook are the ones I use the most. My newsfeeds on all of those are filled with the newest info on the tech industry.</p>
-</li>
-</ul>
-<p>If people read this I'll edit it as I think of more.</p>
+<p>Function <code>doSomethingWithNumber()</code> có 2 param là <code>number</code> kiểu <code>Int</code> và <code>receiver</code> là một function <code>(String?) -&gt; Unit</code> với <code>String</code> là kiểu của tham số truyền vào và <code>Unit</code> (<code>Void</code>) là kiểu trả về của hàm. Ta có thể gọi <code>doSomethingWithNumber()</code> bằng những cách sau:</p>
+<h2 id="function-references">Function References:<a class="headerlink" href="#function-references" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">doSomethingWithNumber</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="o">::</span><span class="n">processWithResult</span><span class="p">)</span>
+
+<span class="k">fun</span> <span class="nf">processWithResult</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">String</span><span class="p">?)</span> <span class="p">:</span> <span class="n">Unit</span> <span class="p">{</span>
+    <span class="c1">// do something with result</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Lúc này sau khi mà function <code>doSomethingWithNumber()</code> gọi <code>receiver(result)</code>, sẽ nhảy vào function <code>processWithResult()</code> với <code>result</code> được truyền từ function <code>doSomethingWithNumber()</code>, điều này giống với <code>callback</code> trong <code>Java</code> hay các ngôn ngữ khác. Thay vì ta truyền <code>interface</code> thì ở đây ta truyền <code>reference</code> của function vào bằng cách sử dụng toán tử <code>::</code> và tên function.</p>
+<p>Nói thêm một chút về <code>Function References</code>. Toán tử <code>::</code> có thể sử dụng với các overload function ví dụ như:</p>
+<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">isOdd</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">x</span> <span class="p">%</span> <span class="m">2</span> <span class="p">!=</span> <span class="m">0</span>
+<span class="k">fun</span> <span class="nf">isOdd</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">=</span> <span class="n">s</span> <span class="p">==</span> <span class="s">&quot;brillig&quot;</span> <span class="p">||</span> <span class="n">s</span> <span class="p">==</span> <span class="s">&quot;slithy&quot;</span> <span class="p">||</span> <span class="n">s</span> <span class="p">==</span> <span class="s">&quot;tove&quot;</span>
+
+<span class="k">val</span> <span class="py">numbers</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">numbers</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">::</span><span class="n">isOdd</span><span class="p">))</span> <span class="c1">// refers to isOdd(x: Int)</span>
+</pre></div>
+
+<h2 id="function-anonymous">Function Anonymous<a class="headerlink" href="#function-anonymous" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">doSomethingWithNumber</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="k">fun</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">String</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="c1">// do something with result</span>
+<span class="p">})</span>
+</pre></div>
+
+<p>Thay vì truyền reference của function vào, ta định nghĩa luôn function ở argument. Function Anonymous khá giống với với các function thông thường, chỉ khác một điều là tên của function bị bỏ qua.</p>
                 
                   
                 
@@ -598,14 +612,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../kotlin_visibility_modifiers/" title="Kotlin Visibility Modifiers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Trước
+                </span>
+                Kotlin Visibility Modifiers
+              </span>
+            </div>
+          </a>
         
-          <a href="kotlin/kotlin_basic/" title="Kotlin Basic" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../kotlin_lambda/" title="Kotlin Lambda" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Sau
                 </span>
-                Kotlin Basic
+                Kotlin Lambda
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -632,7 +660,7 @@
       </div>
       
   <div class="md-footer-social">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
       <a href="http://finishcoding.com/" class="md-footer-social__link fa fa-globe"></a>
     
@@ -650,9 +678,9 @@
       
     </div>
     
-      <script src="assets/javascripts/application.267712eb.js"></script>
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
   </body>

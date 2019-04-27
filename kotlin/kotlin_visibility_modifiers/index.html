@@ -13,7 +13,7 @@
         <meta name="description" content="Tổng hợp tài liệu học lập trình">
       
       
-        <link rel="canonical" href="https://buihainam.com/kotlin/kotlin_higher-order-function/">
+        <link rel="canonical" href="https://buihainam.com/kotlin/kotlin_visibility_modifiers/">
       
       
         <meta name="author" content="Bùi Hải Nam">
@@ -37,12 +37,12 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../img/logo.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
-        <title>Higher order funtion - Bùi Hải Nam</title>
+        <title>Kotlin Visibility Modifiers - Bùi Hải Nam</title>
       
     
     
@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#function-references" tabindex="1" class="md-skip">
+      <a href="#packages" tabindex="1" class="md-skip">
         Vào thẳng nội dung
       </a>
     
@@ -142,7 +142,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <img src="../../img/logo.png" width="24" height="24">
           
         </a>
       </div>
@@ -156,7 +156,7 @@
               Bùi Hải Nam
             </span>
             <span class="md-header-nav__topic">
-              Higher order funtion
+              Kotlin Visibility Modifiers
             </span>
           
         </div>
@@ -232,7 +232,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <img src="../../img/logo.png" width="48" height="48">
       
     </a>
     Bùi Hải Nam
@@ -299,8 +299,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../kotlin_basic/" title="Cơ bản" class="md-nav__link">
-      Cơ bản
+    <a href="../kotlin_basic/" title="Kotlin Basic" class="md-nav__link">
+      Kotlin Basic
     </a>
   </li>
 
@@ -311,8 +311,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../kotlin_class_inheritance" title="Class và kế thừa" class="md-nav__link">
-      Class và kế thừa
+    <a href="../kotlin_class_inheritance/" title="Kotlin Class và kế thừa" class="md-nav__link">
+      Kotlin Class và kế thừa
     </a>
   </li>
 
@@ -323,8 +323,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../kotlin_property_field/" title="Property và field" class="md-nav__link">
-      Property và field
+    <a href="../kotlin_property_field/" title="Kotlin Property và field" class="md-nav__link">
+      Kotlin Property và field
     </a>
   </li>
 
@@ -335,8 +335,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../kotlin_function/" title="Funtion" class="md-nav__link">
-      Funtion
+    <a href="../kotlin_function/" title="Kotlin Funtion" class="md-nav__link">
+      Kotlin Funtion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_inteface/" title="Kotlin Inteface" class="md-nav__link">
+      Kotlin Inteface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_data_class/" title="Kotlin Data class" class="md-nav__link">
+      Kotlin Data class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_nested_class/" title="Kotlin Nested class" class="md-nav__link">
+      Kotlin Nested class
     </a>
   </li>
 
@@ -354,11 +390,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Higher order funtion
+        Kotlin Visibility Modifiers
       </label>
     
-    <a href="./" title="Higher order funtion" class="md-nav__link md-nav__link--active">
-      Higher order funtion
+    <a href="./" title="Kotlin Visibility Modifiers" class="md-nav__link md-nav__link--active">
+      Kotlin Visibility Modifiers
     </a>
     
       
@@ -370,15 +406,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#function-references" title="Function References:" class="md-nav__link">
-    Function References:
+  <a href="#packages" title="Packages" class="md-nav__link">
+    Packages
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#function-anonymous" title="Function Anonymous" class="md-nav__link">
-    Function Anonymous
+  <a href="#classes-va-interfaces" title="Classes và Interfaces" class="md-nav__link">
+    Classes và Interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" title="Constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-declarations" title="Local declarations" class="md-nav__link">
+    Local declarations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules" title="Modules" class="md-nav__link">
+    Modules
   </a>
   
 </li>
@@ -400,8 +457,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../kotlin_lambda/" title="Lambda" class="md-nav__link">
-      Lambda
+    <a href="../kotlin_higher_order_function/" title="Kotlin Higher order funtion" class="md-nav__link">
+      Kotlin Higher order funtion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_lambda/" title="Kotlin Lambda" class="md-nav__link">
+      Kotlin Lambda
     </a>
   </li>
 
@@ -436,8 +505,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../dart/dart_environment_settings/" title="Cài đặt môi trường" class="md-nav__link">
-      Cài đặt môi trường
+    <a href="../../dart/dart_environment_settings/" title="Dart Cài đặt môi trường" class="md-nav__link">
+      Dart Cài đặt môi trường
     </a>
   </li>
 
@@ -448,8 +517,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../dart/dart_core/" title="Dart cơ bản" class="md-nav__link">
-      Dart cơ bản
+    <a href="../../dart/dart_core/" title="Dart Basic" class="md-nav__link">
+      Dart Basic
     </a>
   </li>
 
@@ -478,15 +547,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#function-references" title="Function References:" class="md-nav__link">
-    Function References:
+  <a href="#packages" title="Packages" class="md-nav__link">
+    Packages
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#function-anonymous" title="Function Anonymous" class="md-nav__link">
-    Function Anonymous
+  <a href="#classes-va-interfaces" title="Classes và Interfaces" class="md-nav__link">
+    Classes và Interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructors" title="Constructors" class="md-nav__link">
+    Constructors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-declarations" title="Local declarations" class="md-nav__link">
+    Local declarations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules" title="Modules" class="md-nav__link">
+    Modules
   </a>
   
 </li>
@@ -508,42 +598,85 @@
               
                 
                 
-                  <h1>Higher order funtion</h1>
+                  <h1>Kotlin Visibility Modifiers</h1>
                 
-                <p>Higher-Order function là function có thể nhận một function như một param hoặc có thể trả về một function:</p>
-<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">doSomethingWithNumber</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">receiver</span><span class="p">:</span> <span class="p">(</span><span class="n">String</span><span class="p">?)</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="py">result</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
-    <span class="c1">//...do complex work with number</span>
+                <p>Class, object, interface, constructor, function, property(và function <code>set()</code> của nó) đều có <em>visibility modifiers (hay thường gọi là access modifiers)</em>.(function <code>get()</code> của property luôn có visibility modifier giống với property). Kotlin có 4 visibility modifiers: <code>private</code>, <code>protected</code>, <code>internal</code> và <code>public</code>. Nếu không xác định rõ ràng visibility modifier thì mặc định sẽ là <code>public</code>.</p>
+<h2 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h2>
+<p>Function, property, class, object và interface đều có thể khai báo ở mức "top-level" (được hiểu là nó không ở bên trong bất cứ thành phần nào). Ví dụ như trong <code>package</code>(đại diện cho đường dẫn đến file):</p>
+<div class="codehilite"><pre><span></span><span class="c1">// file name: example.kt</span>
+<span class="k">package</span> <span class="nn">foo</span>
 
-    <span class="n">receiver</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="k">fun</span> <span class="nf">baz</span><span class="p">()</span> <span class="p">{}</span>
+<span class="k">class</span> <span class="nc">Bar</span> <span class="p">{}</span>
+</pre></div>
+
+<ul>
+<li>Nếu không xác định rõ ràng visibility modifier thì mặc định sẽ là <code>public</code>. Điều đó có nghĩa là bạn có thể sử dụng nó ở bất kì đâu.</li>
+<li>Nếu khai báo là <code>private</code>, nó chỉ được sử dụng ở trong file mà nó khai báo.</li>
+<li>Nếu khai báo là <code>internal</code>, nó chỉ được sử dụng ở các nơi cùng <code>module</code>.</li>
+<li><code>protected</code> không được sử dụng khi khai báo ở mức "top-level".</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// file name: example.kt</span>
+<span class="k">package</span> <span class="nn">foo</span>
+
+<span class="k">private</span> <span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{}</span> <span class="c1">// visible inside example.kt</span>
+
+<span class="k">public</span> <span class="k">var</span> <span class="py">bar</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">5</span> <span class="c1">// property is visible everywhere</span>
+    <span class="k">private</span> <span class="k">set</span>         <span class="c1">// setter is visible only in example.kt</span>
+
+<span class="k">internal</span> <span class="k">val</span> <span class="py">baz</span> <span class="p">=</span> <span class="m">6</span>    <span class="c1">// visible inside the same module</span>
+</pre></div>
+
+<h2 id="classes-va-interfaces">Classes và Interfaces<a class="headerlink" href="#classes-va-interfaces" title="Permanent link">&para;</a></h2>
+<p>Đối với các thành phần khai báo ở trong <code>Class</code>:</p>
+<ul>
+<li><code>private</code> chỉ được sử dụng trong class đó (không thể truy cập qua instance của class đó)</li>
+<li><code>protected</code> giống với <code>private</code> + có thể sử dụng ở trong các subclass (các class kế thừa nó).</li>
+<li><code>internal</code> khả năng truy cập rộng hơn 2 loại trên và được truy cập bởi các instance của class khai báo nó (các instance và nơi khai báo class thuộc cùng module)</li>
+<li><code>public</code> rộng nhất và được sử dụng ở bất kì đâu thông qua instance khai báo nó.</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="codehilite"><pre><span></span><span class="k">open</span> <span class="k">class</span> <span class="nc">Outer</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">a</span> <span class="p">=</span> <span class="m">1</span>
+    <span class="k">protected</span> <span class="k">open</span> <span class="k">val</span> <span class="py">b</span> <span class="p">=</span> <span class="m">2</span>
+    <span class="k">internal</span> <span class="k">val</span> <span class="py">c</span> <span class="p">=</span> <span class="m">3</span>
+    <span class="k">val</span> <span class="py">d</span> <span class="p">=</span> <span class="m">4</span>  <span class="c1">// public by default</span>
+
+    <span class="k">protected</span> <span class="k">class</span> <span class="nc">Nested</span> <span class="p">{</span>
+        <span class="k">public</span> <span class="k">val</span> <span class="py">e</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">5</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Subclass</span> <span class="p">:</span> <span class="n">Outer</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// a is not visible</span>
+    <span class="c1">// b, c and d are visible</span>
+    <span class="c1">// Nested and e are visible</span>
+
+    <span class="k">override</span> <span class="k">val</span> <span class="py">b</span> <span class="p">=</span> <span class="m">5</span>   <span class="c1">// &#39;b&#39; is protected</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Unrelated</span><span class="p">(</span><span class="n">o</span><span class="p">:</span> <span class="n">Outer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// o.a, o.b are not visible</span>
+    <span class="c1">// o.c and o.d are visible (same module)</span>
+    <span class="c1">// Outer.Nested is not visible, and Nested::e is not visible either</span>
 <span class="p">}</span>
 </pre></div>
 
-<p>Function <code>doSomethingWithNumber()</code> có 2 param là <code>number</code> kiểu <code>Int</code> và <code>receiver</code> là một function <code>(String?) -&gt; Unit</code> với <code>String</code> là kiểu của tham số truyền vào và <code>Unit</code> (<code>Void</code>) là kiểu trả về của hàm. Ta có thể gọi <code>doSomethingWithNumber()</code> bằng những cách sau:</p>
-<h2 id="function-references">Function References:<a class="headerlink" href="#function-references" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">doSomethingWithNumber</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="o">::</span><span class="n">processWithResult</span><span class="p">)</span>
-
-<span class="k">fun</span> <span class="nf">processWithResult</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">String</span><span class="p">?)</span> <span class="p">:</span> <span class="n">Unit</span> <span class="p">{</span>
-    <span class="c1">// do something with result</span>
-<span class="p">}</span>
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h2>
+<p>Để xác định rõ visibility của primary constructor, sử dụng cú pháp dưới đây(chú ý khi xác định visibility phải sử dụng từ khóa <code>constructor</code>, bình thường không có visibility modifier hoặc annotation thì <code>constructor</code> có thể bỏ qua):</p>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">C</span> <span class="k">private</span> <span class="k">constructor</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
 </pre></div>
 
-<p>Lúc này sau khi mà function <code>doSomethingWithNumber()</code> gọi <code>receiver(result)</code>, sẽ nhảy vào function <code>processWithResult()</code> với <code>result</code> được truyền từ function <code>doSomethingWithNumber()</code>, điều này giống với <code>callback</code> trong <code>Java</code> hay các ngôn ngữ khác. Thay vì ta truyền <code>interface</code> thì ở đây ta truyền <code>reference</code> của function vào bằng cách sử dụng toán tử <code>::</code> và tên function.</p>
-<p>Nói thêm một chút về <code>Function References</code>. Toán tử <code>::</code> có thể sử dụng với các overload function ví dụ như:</p>
-<div class="codehilite"><pre><span></span><span class="k">fun</span> <span class="nf">isOdd</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">x</span> <span class="p">%</span> <span class="m">2</span> <span class="p">!=</span> <span class="m">0</span>
-<span class="k">fun</span> <span class="nf">isOdd</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">=</span> <span class="n">s</span> <span class="p">==</span> <span class="s">&quot;brillig&quot;</span> <span class="p">||</span> <span class="n">s</span> <span class="p">==</span> <span class="s">&quot;slithy&quot;</span> <span class="p">||</span> <span class="n">s</span> <span class="p">==</span> <span class="s">&quot;tove&quot;</span>
-
-<span class="k">val</span> <span class="py">numbers</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-<span class="n">println</span><span class="p">(</span><span class="n">numbers</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">::</span><span class="n">isOdd</span><span class="p">))</span> <span class="c1">// refers to isOdd(x: Int)</span>
-</pre></div>
-
-<h2 id="function-anonymous">Function Anonymous<a class="headerlink" href="#function-anonymous" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">doSomethingWithNumber</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="k">fun</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">String</span><span class="p">?)</span> <span class="p">{</span>
-    <span class="c1">// do something with result</span>
-<span class="p">})</span>
-</pre></div>
-
-<p>Thay vì truyền reference của function vào, ta định nghĩa luôn function ở argument. Function Anonymous khá giống với với các function thông thường, chỉ khác một điều là tên của function bị bỏ qua.</p>
+<p>Mặc định các constructor là <code>public</code>.</p>
+<h2 id="local-declarations">Local declarations<a class="headerlink" href="#local-declarations" title="Permanent link">&para;</a></h2>
+<p>Local variables, <a href="/kotlin/kotlin_function/#function-scope">functions</a> và class không có visibility modifier</p>
+<h2 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h2>
+<p><code>internal</code> visibility modifier có thể truy cập nếu cùng module. Chi tiết hơn thì module là một tập hợp các file Kotlin được complie cùng nhau như:</p>
+<ul>
+<li>Intellij IDEA module</li>
+<li>Maven hoặc Gradle project</li>
+</ul>
                 
                   
                 
@@ -564,7 +697,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../kotlin_function/" title="Funtion" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../kotlin_nested_class/" title="Kotlin Nested class" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -573,19 +706,19 @@
                 <span class="md-footer-nav__direction">
                   Trước
                 </span>
-                Funtion
+                Kotlin Nested class
               </span>
             </div>
           </a>
         
         
-          <a href="../kotlin_lambda/" title="Lambda" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../kotlin_higher_order_function/" title="Kotlin Higher order funtion" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Sau
                 </span>
-                Lambda
+                Kotlin Higher order funtion
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

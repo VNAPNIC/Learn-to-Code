@@ -37,12 +37,12 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../img/logo.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
-        <title>Kotlin class inheritance - Bùi Hải Nam</title>
+        <title>Kotlin Class và kế thừa - Bùi Hải Nam</title>
       
     
     
@@ -142,7 +142,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <img src="../../img/logo.png" width="24" height="24">
           
         </a>
       </div>
@@ -156,7 +156,7 @@
               Bùi Hải Nam
             </span>
             <span class="md-header-nav__topic">
-              Kotlin class inheritance
+              Kotlin Class và kế thừa
             </span>
           
         </div>
@@ -232,7 +232,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <img src="../../img/logo.png" width="48" height="48">
       
     </a>
     Bùi Hải Nam
@@ -276,10 +276,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Kotlin
@@ -297,8 +299,147 @@
 
 
   <li class="md-nav__item">
-    <a href="../kotlin_basic/" title="Cơ bản" class="md-nav__link">
-      Cơ bản
+    <a href="../kotlin_basic/" title="Kotlin Basic" class="md-nav__link">
+      Kotlin Basic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Kotlin Class và kế thừa
+      </label>
+    
+    <a href="./" title="Kotlin Class và kế thừa" class="md-nav__link md-nav__link--active">
+      Kotlin Class và kế thừa
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Mục lục</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-class" title="1. Class" class="md-nav__link">
+    1. Class
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constructor" title="Constructor" class="md-nav__link">
+    Constructor
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-constructor" title="Primary Constructor" class="md-nav__link">
+    Primary Constructor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary-constructors" title="Secondary Constructors" class="md-nav__link">
+    Secondary Constructors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tao-instance-cho-class" title="Tạo instance cho class" class="md-nav__link">
+    Tạo instance cho class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ke-thua-inheritance" title="2. Kế thừa (Inheritance)" class="md-nav__link">
+    2. Kế thừa (Inheritance)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overriding-method" title="Overriding method" class="md-nav__link">
+    Overriding method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verriding-property" title="verriding property" class="md-nav__link">
+    verriding property
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-rule" title="Overriding rule" class="md-nav__link">
+    Overriding rule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abstract-classes" title="Abstract Classes" class="md-nav__link">
+    Abstract Classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_property_field/" title="Kotlin Property và field" class="md-nav__link">
+      Kotlin Property và field
     </a>
   </li>
 
@@ -309,8 +450,8 @@
 
 
   <li class="md-nav__item">
-    <a href="." title="Class và kế thừa" class="md-nav__link">
-      Class và kế thừa
+    <a href="../kotlin_function/" title="Kotlin Funtion" class="md-nav__link">
+      Kotlin Funtion
     </a>
   </li>
 
@@ -321,8 +462,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../kotlin_property_field/" title="Property và field" class="md-nav__link">
-      Property và field
+    <a href="../kotlin_inteface/" title="Kotlin Inteface" class="md-nav__link">
+      Kotlin Inteface
     </a>
   </li>
 
@@ -333,8 +474,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../kotlin_function/" title="Funtion" class="md-nav__link">
-      Funtion
+    <a href="../kotlin_data_class/" title="Kotlin Data class" class="md-nav__link">
+      Kotlin Data class
     </a>
   </li>
 
@@ -345,8 +486,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../kotlin_higher-order-function/" title="Higher order funtion" class="md-nav__link">
-      Higher order funtion
+    <a href="../kotlin_nested_class/" title="Kotlin Nested class" class="md-nav__link">
+      Kotlin Nested class
     </a>
   </li>
 
@@ -357,8 +498,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../kotlin_lambda/" title="Lambda" class="md-nav__link">
-      Lambda
+    <a href="../kotlin_visibility_modifiers/" title="Kotlin Visibility Modifiers" class="md-nav__link">
+      Kotlin Visibility Modifiers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_higher_order_function/" title="Kotlin Higher order funtion" class="md-nav__link">
+      Kotlin Higher order funtion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_lambda/" title="Kotlin Lambda" class="md-nav__link">
+      Kotlin Lambda
     </a>
   </li>
 
@@ -393,8 +558,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../dart/dart_environment_settings/" title="Cài đặt môi trường" class="md-nav__link">
-      Cài đặt môi trường
+    <a href="../../dart/dart_environment_settings/" title="Dart Cài đặt môi trường" class="md-nav__link">
+      Dart Cài đặt môi trường
     </a>
   </li>
 
@@ -405,8 +570,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../dart/dart_core/" title="Dart cơ bản" class="md-nav__link">
-      Dart cơ bản
+    <a href="../../dart/dart_core/" title="Dart Basic" class="md-nav__link">
+      Dart Basic
     </a>
   </li>
 
@@ -539,7 +704,7 @@
               
                 
                 
-                  <h1>Kotlin class inheritance</h1>
+                  <h1>Kotlin Class và kế thừa</h1>
                 
                 <h2 id="1-class">1. Class<a class="headerlink" href="#1-class" title="Permanent link">&para;</a></h2>
 <p>Tương tự với <code>Java</code>, để tạo ra một class ta sử dụng từ khóa <code>class</code> để khai báo.</p>
@@ -691,7 +856,7 @@
 </pre></div>
 
 <h3 id="verriding-property">verriding property<a class="headerlink" href="#verriding-property" title="Permanent link">&para;</a></h3>
-<p>Các phần liên quan đến overriding property được trình bày <a href="https://github.com/ngohado/Kotlin-Docs/wiki/Property-v%C3%A0-field#7-overriding-property-ghi-%C4%91%C3%A8-c%C3%A1c-property">tại đây</a></p>
+<p>Các phần liên quan đến overriding property được trình bày <a href="/kotlin/kotlin_property_field/#746-overriding-property-ghi-e-cac-property">tại đây</a></p>
 <h3 id="overriding-rule">Overriding rule<a class="headerlink" href="#overriding-rule" title="Permanent link">&para;</a></h3>
 <p>Một vấn đề xuất hiện khi thực hiện đa thừa kế trong <code>Kotlin</code> đó là có những property hoặc method giống nhau giữa các <code>superclass</code> ví dụ như một class kế thừa cả class <code>A</code> và interface <code>B</code>:</p>
 <div class="codehilite"><pre><span></span><span class="k">open</span> <span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
@@ -753,6 +918,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../kotlin_basic/" title="Kotlin Basic" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Trước
+                </span>
+                Kotlin Basic
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../kotlin_property_field/" title="Kotlin Property và field" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Sau
+                </span>
+                Kotlin Property và field
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

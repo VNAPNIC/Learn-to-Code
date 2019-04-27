@@ -11,8 +11,8 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://buihainam.com/kotlin/kotlin_class_inheritance/</loc>
+     <lastmod>2019-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
@@ -26,7 +26,27 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://buihainam.com/kotlin/kotlin_higher-order-function/</loc>
+     <loc>https://buihainam.com/kotlin/kotlin_inteface/</loc>
+     <lastmod>2019-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://buihainam.com/kotlin/kotlin_data_class/</loc>
+     <lastmod>2019-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://buihainam.com/kotlin/kotlin_nested_class/</loc>
+     <lastmod>2019-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://buihainam.com/kotlin/kotlin_visibility_modifiers/</loc>
+     <lastmod>2019-04-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://buihainam.com/kotlin/kotlin_higher_order_function/</loc>
      <lastmod>2019-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>

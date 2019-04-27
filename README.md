@@ -1,5 +1,7 @@
 # Learn to Code - for Free 
 
+[![Join the chat at https://gitter.im/buihainam-com/community](https://badges.gitter.im/buihainam-com/community.svg)](https://gitter.im/buihainam-com/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Website: https://buihainam.com/
 
 Fanpage: https://www.facebook.com/NankaiNotes

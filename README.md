@@ -1,10 +1,7 @@
 # Learn to Code - for Free 
 
-Website: https://buihainam.com/
 
-Fanpage: https://www.facebook.com/NankaiNotes
-
-[![Build Status](https://camo.githubusercontent.com/4687bfb03decd627d9d89a2df5846f7f73c723e4/68747470733a2f2f6261646765732e6769747465722e696d2f666c75747465722f666c75747465722e737667)](https://gitter.im/buihainam-com/community)
+[![Gitter Channel](https://camo.githubusercontent.com/4687bfb03decd627d9d89a2df5846f7f73c723e4/68747470733a2f2f6261646765732e6769747465722e696d2f666c75747465722f666c75747465722e737667)](https://gitter.im/buihainam-com/community)
 
 # Lessons
 

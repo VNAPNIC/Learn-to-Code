@@ -1,0 +1,1065 @@
+
+
+
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Tổng hợp tài liệu học lập trình">
+      
+      
+        <link rel="canonical" href="https://buihainam.com/dart/dart_dart_vs_swift_a_comparison/">
+      
+      
+        <meta name="author" content="Bùi Hải Nam">
+      
+      
+        <meta name="lang:clipboard.copy" content="Sao chép vào bộ nhớ">
+      
+        <meta name="lang:clipboard.copied" content="Sao chép xong">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Không tìm thấy tài liệu liên quan">
+      
+        <meta name="lang:search.result.one" content="1 tài liệu liên quan">
+      
+        <meta name="lang:search.result.other" content="# tài liệu liên quan">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>So sánh Dart và Swift - Bùi Hải Nam</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#00bcd4">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-139140751-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="cyan" data-md-color-accent="cyan">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#mot-so-inh-nghia" tabindex="1" class="md-skip">
+        Vào thẳng nội dung
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Bùi Hải Nam
+            </span>
+            <span class="md-header-nav__topic">
+              So sánh Dart và Swift
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Nhập để bắt đầu tìm kiếm
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/VNAPNIC/Learn-to-Code" title="Đến kho lưu trữ mã nguồn" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    VNAPNIC/Learn-to-Code
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-nav__button md-logo">
+      
+        <img src="../../img/logo.png" width="48" height="48">
+      
+    </a>
+    Bùi Hải Nam
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/VNAPNIC/Learn-to-Code" title="Đến kho lưu trữ mã nguồn" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    VNAPNIC/Learn-to-Code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Kotlin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Kotlin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kotlin/kotlin_basic/" title="Kotlin Basic" class="md-nav__link">
+      Kotlin Basic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kotlin/kotlin_class_inheritance/" title="Kotlin Class và kế thừa" class="md-nav__link">
+      Kotlin Class và kế thừa
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kotlin/kotlin_property_field/" title="Kotlin Property và field" class="md-nav__link">
+      Kotlin Property và field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kotlin/kotlin_function/" title="Kotlin Funtion" class="md-nav__link">
+      Kotlin Funtion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kotlin/kotlin_inteface/" title="Kotlin Inteface" class="md-nav__link">
+      Kotlin Inteface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kotlin/kotlin_data_class/" title="Kotlin Data class" class="md-nav__link">
+      Kotlin Data class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kotlin/kotlin_nested_class/" title="Kotlin Nested class" class="md-nav__link">
+      Kotlin Nested class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kotlin/kotlin_visibility_modifiers/" title="Kotlin Visibility Modifiers" class="md-nav__link">
+      Kotlin Visibility Modifiers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kotlin/kotlin_higher_order_function/" title="Kotlin Higher order funtion" class="md-nav__link">
+      Kotlin Higher order funtion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kotlin/kotlin_lambda/" title="Kotlin Lambda" class="md-nav__link">
+      Kotlin Lambda
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Dart
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Dart
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dart_environment_settings/" title="Dart Cài đặt môi trường" class="md-nav__link">
+      Dart Cài đặt môi trường
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dart_core/" title="Dart Basic" class="md-nav__link">
+      Dart Basic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        So sánh Dart và Swift
+      </label>
+    
+    <a href="./" title="So sánh Dart và Swift" class="md-nav__link md-nav__link--active">
+      So sánh Dart và Swift
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Mục lục</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-inh-nghia" title="Một số đinh nghĩa" class="md-nav__link">
+    Một số đinh nghĩa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-bang-so-sanh" title="1. Bảng so sánh" class="md-nav__link">
+    1. Bảng so sánh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-variables" title="2. Variables" class="md-nav__link">
+    2. Variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-declaration" title="Variable declaration" class="md-nav__link">
+    Variable declaration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-initialization" title="Variable initialization" class="md-nav__link">
+    Variable initialization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-type-inference" title="3. Type inference" class="md-nav__link">
+    3. Type inference
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-inference" title="Type inference" class="md-nav__link">
+    Type inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-types" title="Dynamic types" class="md-nav__link">
+    Dynamic types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mutable-immutable-variables" title="4. Mutable / immutable variables" class="md-nav__link">
+    4. Mutable / immutable variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mutable" title="Mutable" class="md-nav__link">
+    Mutable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immutable" title="Immutable" class="md-nav__link">
+    Immutable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-functions" title="5. Functions" class="md-nav__link">
+    5. Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-named-va-un-named-parameters" title="6. Named và un-named parameters" class="md-nav__link">
+    6. Named và un-named parameters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#named" title="Named" class="md-nav__link">
+    Named
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-named" title="Un-named" class="md-nav__link">
+    Un-named
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-optional-va-default-parameters" title="7. Optional và default parameters" class="md-nav__link">
+    7. Optional và default parameters
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Mục lục</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-inh-nghia" title="Một số đinh nghĩa" class="md-nav__link">
+    Một số đinh nghĩa
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-bang-so-sanh" title="1. Bảng so sánh" class="md-nav__link">
+    1. Bảng so sánh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-variables" title="2. Variables" class="md-nav__link">
+    2. Variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-declaration" title="Variable declaration" class="md-nav__link">
+    Variable declaration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-initialization" title="Variable initialization" class="md-nav__link">
+    Variable initialization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-type-inference" title="3. Type inference" class="md-nav__link">
+    3. Type inference
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-inference" title="Type inference" class="md-nav__link">
+    Type inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-types" title="Dynamic types" class="md-nav__link">
+    Dynamic types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mutable-immutable-variables" title="4. Mutable / immutable variables" class="md-nav__link">
+    4. Mutable / immutable variables
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mutable" title="Mutable" class="md-nav__link">
+    Mutable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#immutable" title="Immutable" class="md-nav__link">
+    Immutable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-functions" title="5. Functions" class="md-nav__link">
+    5. Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-named-va-un-named-parameters" title="6. Named và un-named parameters" class="md-nav__link">
+    6. Named và un-named parameters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#named" title="Named" class="md-nav__link">
+    Named
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-named" title="Un-named" class="md-nav__link">
+    Un-named
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-optional-va-default-parameters" title="7. Optional và default parameters" class="md-nav__link">
+    7. Optional và default parameters
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>So sánh Dart và Swift</h1>
+                
+                <p>Dart và Swift là hai ngôn ngữ lập trình yêu thích của tôi, và bài viết này tôi sẽ só sánh điểm giống và khác nhau giữa Dart và Swift nhằm múc đích:</p>
+<ul>
+<li>
+<p>Chỉ ra chi tiết các điểm khác biệt giữa 2 ngôn ngữ</p>
+</li>
+<li>
+<p>Để cho các bạn có thể chuyển từ ngôn ngữ này sang ngôn ngữ khác (hoặc sử dụng cả hai).</p>
+</li>
+</ul>
+<h3 id="mot-so-inh-nghia">Một số đinh nghĩa<a class="headerlink" href="#mot-so-inh-nghia" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Dart thường được dùng cho <a href="https://flutter.dev/">Flutter</a> (Một Framework của Google để xây dựng các ứng dụng native tuyệt đẹp chỉ bằng 1 mã duy nhất)</p>
+</li>
+<li>
+<p>Swift thường được dùng cho SDK của Apple để phát triển các ưng dụng trên IOS, macOS, tvOS và watchOS.</p>
+</li>
+</ul>
+<p>Các so sánh sau đây được thực hiện trên các tính năng chính của cả hai ngôn ngữ (từ Dart 2.1 và Swift 4.2) Khi có các phần liên quan đến từng tính năng chuyên sâu nằm ngoài phạm vi của bài viết này, tôi sẽ đính kèm các tài liệu tham khảo để các bạn có thể đọc thêm.</p>
+<h2 id="1-bang-so-sanh">1. Bảng so sánh<a class="headerlink" href="#1-bang-so-sanh" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="/img/posts/dart-vs-swift-a-comparison/table_comparison_dart_vs_swift.png" /></p>
+<h2 id="2-variables">2. Variables<a class="headerlink" href="#2-variables" title="Permanent link">&para;</a></h2>
+<h3 id="variable-declaration">Variable declaration<a class="headerlink" href="#variable-declaration" title="Permanent link">&para;</a></h3>
+<p>Dart:</p>
+<div class="codehilite"><pre><span></span><span class="kt">String</span> <span class="n">name</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">height</span><span class="p">;</span>
+</pre></div>
+
+<p>Switf: </p>
+<div class="codehilite"><pre><span></span>var name = &#39;Andrea&#39;;
+var age = 34;
+var height = 1.84;
+</pre></div>
+
+<h3 id="variable-initialization">Variable initialization<a class="headerlink" href="#variable-initialization" title="Permanent link">&para;</a></h3>
+<p>Dart:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Andrea&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="n">age</span> <span class="o">=</span> <span class="m">34</span><span class="p">;</span>
+<span class="kd">var</span> <span class="n">height</span> <span class="o">=</span> <span class="m">1.84</span><span class="p">;</span>
+</pre></div>
+
+<p>Switf: </p>
+<div class="codehilite"><pre><span></span>var name = &quot;Andrea&quot;
+var age = 34
+var height = 1.84
+</pre></div>
+
+<h2 id="3-type-inference">3. Type inference<a class="headerlink" href="#3-type-inference" title="Permanent link">&para;</a></h2>
+<h3 id="type-inference">Type inference<a class="headerlink" href="#type-inference" title="Permanent link">&para;</a></h3>
+<p>Có thể được viết như này trong Dart:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="n">arguments</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;argA&#39;</span><span class="o">:</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;argB&#39;</span><span class="o">:</span> <span class="m">42</span><span class="p">};</span> <span class="c1">// Map&lt;String, Object&gt;</span>
+</pre></div>
+
+<p>Và kiểu của <code>arguments</code> sẽ tự động được định nghĩa bở compiler.</p>
+<p>Trong Swift được viết tưng tự:</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">arguments</span> <span class="p">=</span> <span class="p">[</span> <span class="s">&quot;argA&quot;</span><span class="p">:</span> <span class="s">&quot;hello&quot;</span><span class="p">,</span> <span class="s">&quot;argB&quot;</span><span class="p">:</span> <span class="mi">42</span> <span class="p">]</span> <span class="c1">// [ String : Any ]</span>
+</pre></div>
+
+<p><strong><em>Một số chi tiết</em></strong></p>
+<p><a href="https://www.dartlang.org/guides/language/sound-dart#type-inference">Dart documentation</a>:</p>
+<blockquote>
+<p>The analyzer can infer types for fields, methods, local variables, and most generic type arguments. When the analyzer doesn't have enough information to infer a specific type, it uses the dynamic type.</p>
+</blockquote>
+<p><a href="https://docs.swift.org/swift-book/ReferenceManual/Types.html">Và của Swift</a>:</p>
+<blockquote>
+<p>Swift uses type inference extensively, allowing you to omit the type or part of the type of many variables and expressions in your code. For example, instead of writing <code>var x: Int = 0</code>, you can write <code>var x = 0</code>, omitting the type completely---the compiler correctly infers that <code>x</code> names a value of type <code>Int</code>.</p>
+</blockquote>
+<h3 id="dynamic-types">Dynamic types<a class="headerlink" href="#dynamic-types" title="Permanent link">&para;</a></h3>
+<p>Một variable có thể là bất kỳ kiểu dữ liệu nào khi được khai báo với từ khóa <code>dynamic</code> với Dart và <code>Any</code> đối với Switf</p>
+<p>Kiểu Dynamic thường được dùng khi đọc data từ SON</p>
+<h2 id="4-mutable-immutable-variables">4. Mutable / immutable variables<a class="headerlink" href="#4-mutable-immutable-variables" title="Permanent link">&para;</a></h2>
+<p>Variables có thể được khai báo là <strong><em>mutable</em></strong> hoặc <strong><em>immutable</em></strong>.</p>
+<h3 id="mutable">Mutable<a class="headerlink" href="#mutable" title="Permanent link">&para;</a></h3>
+<p>Khi khai báo variables kiểu Mutable, thì cả hai ngôn ngữ đều sử dụng từ khóa <code>var</code></p>
+<p>Dart</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="n">a</span> <span class="o">=</span> <span class="m">10</span><span class="p">;</span> <span class="c1">// int</span>
+<span class="n">a</span> <span class="o">=</span> <span class="m">20</span><span class="p">;</span> <span class="c1">// ok</span>
+</pre></div>
+
+<p>Swift</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">a</span> <span class="p">=</span> <span class="mi">10</span> <span class="c1">// Int</span>
+<span class="n">a</span> <span class="p">=</span> <span class="mi">20</span> <span class="c1">// ok</span>
+</pre></div>
+
+<h3 id="immutable">Immutable<a class="headerlink" href="#immutable" title="Permanent link">&para;</a></h3>
+<p>Khi khai báo variables kiểu Immutable, Dart sử dụng <code>final</code>, và Swift sử dụng <code>let</code>.</p>
+<p>Dart</p>
+<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">a</span> <span class="o">=</span> <span class="m">10</span><span class="p">;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="m">20</span><span class="p">;</span> <span class="c1">// &#39;a&#39;: a final variable, can only be set once.</span>
+</pre></div>
+
+<p>Swift</p>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">a</span> <span class="p">=</span> <span class="mi">10</span>
+<span class="n">a</span> <span class="p">=</span> <span class="mi">20</span> <span class="c1">// Cannot assign to value: &#39;a&#39; is a &#39;let&#39; constant</span>
+</pre></div>
+
+<p>Trong <a href="https://www.dartlang.org/guides/language/language-tour#final-and-const">Dart documentation</a> có định nghĩa hai từ khóa, <code>final</code> và <code>cost</code>, hoạt động như sau:</p>
+<blockquote>
+<p>If you never intend to change a variable, use final or const, either instead of var or in addition to a type. A final variable can be set only once; a const variable is a compile-time constant. (Const variables are implicitly final.) A final top-level or class variable is initialized the first time it’s used.</p>
+</blockquote>
+<p>Và được giải thích kỹ hơn trong bài viết trên <a href="https://news.dartlang.org/2012/06/const-static-final-oh-my.html">website của Dart</a></p>
+<blockquote>
+<p><code>final</code> means single-assignment. A final variable or field must have an initializer. Once assigned a value, a <code>final</code> variable’s value cannot be changed. final modifies variables.</p>
+</blockquote>
+<p>Sử dụng <code>final</code> để định nghĩa Immutable variables trong Dart</p>
+<p>Trong Swift, chúng được định nghĩa constants với từ khóa <code>let</code></p>
+<blockquote>
+<p>A constant declaration introduces a constant named value into your program. Constant declarations are declared using the let keyword and have the following form:</p>
+</blockquote>
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">constant</span> <span class="n">name</span><span class="p">:</span> <span class="n">type</span> <span class="p">=</span> <span class="n">expression</span>
+</pre></div>
+
+<blockquote>
+<p>A constant declaration defines an immutable binding between the constant name and the value of the initializer expression; after the value of a constant is set, it cannot be changed.</p>
+</blockquote>
+<p>Đọc thêm: <a href="https://docs.swift.org/swift-book/ReferenceManual/Declarations.html">Swift Declarations</a></p>
+<h2 id="5-functions">5. Functions<a class="headerlink" href="#5-functions" title="Permanent link">&para;</a></h2>
+<p>Functions là first-class citizens trong Swift và Dart</p>
+<p>Điều này có nghĩa là giống như các objecs, functions có thể truyền dưới dạng arguments và được lưu dưới dạng properties hoặc kết quả trả về.</p>
+<p>Bước đầu so sánh, chúng ta sẽ khởi tạo các functions không có arguments.</p>
+<p>Trong Dart, các kiểu trả về được đặt trước tên của method:</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="n">foo</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">bar</span><span class="p">();</span>
+</pre></div>
+
+<p>Trong Swift, chúng ta sử dụng <code>-&gt; T</code> làm ký hiệu hậu tố. Điều này không bắt buộc nếu nó trả về giá trị <code>void</code>:</p>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nf">foo</span><span class="p">()</span>
+<span class="kd">func</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">Int</span>
+</pre></div>
+
+<p>Đọc thêm:</p>
+<ul>
+<li>
+<p><a href="https://www.dartlang.org/guides/language/language-tour#functions">Dart Functions</a></p>
+</li>
+<li>
+<p><a href="https://docs.swift.org/swift-book/LanguageGuide/Functions.html">Swift Functions</a></p>
+</li>
+</ul>
+<h2 id="6-named-va-un-named-parameters">6. Named và un-named parameters<a class="headerlink" href="#6-named-va-un-named-parameters" title="Permanent link">&para;</a></h2>
+<p>Cả hai ngôn ngữ đều hỗ trợ <strong><em>named</em></strong> và <strong><em>un-named</em></strong> parameters</p>
+<h3 id="named">Named<a class="headerlink" href="#named" title="Permanent link">&para;</a></h3>
+<p>Trong Dart, chúng ta định nghĩa named parameters trong dấu (<code>{}</code>):</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="n">foo</span><span class="p">({</span><span class="kt">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">,</span> <span class="kt">double</span> <span class="n">height</span><span class="p">});</span>
+<span class="n">foo</span><span class="p">(</span><span class="nl">name:</span> <span class="s1">&#39;Andrea&#39;</span><span class="p">,</span> <span class="nl">age:</span> <span class="m">34</span><span class="p">,</span> <span class="nl">height:</span> <span class="m">1.84</span><span class="p">);</span>
+</pre></div>
+
+<p>Trong Swift, named parameters là mặc định:</p>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nf">foo</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="nb">Int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">Double</span><span class="p">)</span>
+<span class="n">foo</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;Andrea&quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mf">1.84</span><span class="p">)</span>
+</pre></div>
+
+<h3 id="un-named">Un-named<a class="headerlink" href="#un-named" title="Permanent link">&para;</a></h3>
+<p>Trong Dart, chúng ta định nghĩa un-named parameters bằng cách bỏ dấu (<code>{}</code>):</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="n">foo</span><span class="p">(</span><span class="kt">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">,</span> <span class="kt">double</span> <span class="n">height</span><span class="p">);</span>
+<span class="n">foo</span><span class="p">(</span><span class="s1">&#39;Andrea&#39;</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">1.84</span><span class="p">);</span>
+</pre></div>
+
+<p>Trong Swift, chúng ta định nghĩa un-named parameters bằng cách sử dụng dấu (<code>_</code>):</p>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nf">foo</span><span class="p">(</span><span class="kc">_</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="kc">_</span> <span class="n">age</span><span class="p">:</span> <span class="nb">Int</span><span class="p">,</span> <span class="kc">_</span> <span class="n">height</span><span class="p">:</span> <span class="nb">Double</span><span class="p">)</span>
+<span class="n">foo</span><span class="p">(</span><span class="s">&quot;Andrea&quot;</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mf">1.84</span><span class="p">)</span>
+</pre></div>
+
+<p>Đọc thêm: <a href="https://docs.swift.org/swift-book/LanguageGuide/Functions.html#ID166">Function Argument Labels and Parameter Names</a> trong Swift.</p>
+<h2 id="7-optional-va-default-parameters">7. Optional và default parameters<a class="headerlink" href="#7-optional-va-default-parameters" title="Permanent link">&para;</a></h2>
+<p>Cả hai ngôn ngữ đều hỗ trợ <strong><em>default parameters</em></strong></p>
+<blockquote>
+<p>Trong Swift, bạn có thể xác định một giá trị default cho bất kỳ parameter trong một function bằng các </p>
+</blockquote>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../dart_core/" title="Dart Basic" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Trước
+                </span>
+                Dart Basic
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2020 Bùi Hải Nam
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="http://finishcoding.com/" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/VNAPNIC" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://www.facebook.com/NankaiNotes" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.youtube.com/channel/UCECQ8GHamKx4H5jHMmNi2Ag" class="md-footer-social__link fa fa-youtube"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

@@ -101,3 +101,4 @@ nav:
     - Dart Cài đặt môi trường: dart/dart_environment_settings.md
     - Dart Basic: dart/dart_core.md
     - So sánh Dart và Swift: dart/dart_dart_vs_swift_a_comparison.md
+    - Dart Async: dart/dart_async_intro.md

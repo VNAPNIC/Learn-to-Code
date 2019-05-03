@@ -55,6 +55,29 @@ Một số từ khóa thường sử dụng trong generator function:
 - `yield*`: phát ra các giá trị nếu generator là đệ quy.
 - `await for`: được thiết kế để hoạt động tốt với stream.
 
+```dart
+	Iterable naturalsTo(n) sync* {
+		int k = 0;
+		while (k < n) yield k++;
+	}
+```
+
+```dart
+	Stream asynchronousNaturalsTo(n) async* {
+	  int k = 0;
+	  while (k < n) yield k++;
+	}
+```
+
+```dart
+	Iterable naturalsDownFrom(n) sync* {
+	  if ( n > 0) {
+		yield n;
+		yield* naturalsDownFrom(n-1);
+	  }
+	}
+```
+
 
 ## Stream
 

@@ -11,22 +11,27 @@ Function bất đồng bộ được khai báo có từ khóa `async` phía sau,
 
 Nếu một function đã khai báo là bất đồng bộ `async` thì trong function có thể sử dụng thêm từ khóa `await biểu_thức;` - chờ cho biểu thức thi hành xong mới thi hành các code tiếp theo của function.
 
+<iframe style="width:100%;height:500px;" src="https://dartpad.dartlang.org/c73368fdb22ce66683874c106e65a8a8"></iframe>
+
+
 ```dart
-	Future<void> showInfomation() async {
-	  var data = await getInfomation();
-	  print('This is your data -' + DateTime.now().toString());
-	  print(data);
-	}
+	Future<String> showInfomation() async {
+        var data = await getInfomation();
+        print('This is your data -' + DateTime.now().toString());
+        print(data);
+        return 'showInfomation Complete!'; //Trả về chuỗi - chứa trong Future
+    }
 ```
 
 Trả về từ hàm `async` là một đối tượng Future. Từ đối tượng này, ta có thể gán các hàm callback, được chạy mỗi khi dữ liệu hoàn thành trả về bởi hàm `async`, để gán hàm callback sử dụng phương thức: `Future.then((data) => callBack(data));`
 
 ```dart
 	main() {
-	  Future f = showInfomation();
-	  f.then((data) =>(data) { print(data); });
-	  secondFunction();
-	}
+        Future f = showInfomation();
+	    f.then((data) => notifyFinish(data))
+         .catchError((e) => print('Lỗi xảy ra - '+e.toString()));
+        secondFunction();
+    }
 ```
 
 Nếu muốn bắt lỗi trong hàm `async` cũng dùng biểu thức `try ... catch` Hoặc từ đối tượng Future trả về thì sử dụng phương thức `catchError()`
@@ -34,9 +39,8 @@ Nếu muốn bắt lỗi trong hàm `async` cũng dùng biểu thức `try ... c
 ```dart
 	main() {
 	  Future f = showInfomation();
-	  f.then((data) =>(data) { print(data); })
+	  f.then((data) =>notifyFinish(data))
 	   .catchError((e) => print('Lỗi xảy ra - '+e.toString()));
-
 	  secondFunction();
 	}
 ```
@@ -146,32 +150,21 @@ Khi thêm 1 listener trỏ vào Stream này, thì nó sẽ huỷ đi listener đ
 
 Cách để tạo ra 1 [Single-subscription Stream](https://www.dartlang.org/tutorials/language/streams#single-subscription-streams) là sử dụng [StreamController](https://api.dartlang.org/stable/2.2.0/dart-async/StreamController-class.html) với constructor mặc định.
 
+Ví dụ về Single-subcription Stream:
+<iframe style="width:100%;height:500px;" src="https://dartpad.dartlang.org/04d1cc89c2ce0226a19049badb51e6e3"></iframe>
+
 [**Broadcast Streams**](https://www.dartlang.org/tutorials/language/streams#broadcast-streams): Ngược lại với loại trên, nó cho phép tạo rất nhiều listener.
 Có thể thêm listener vào [Broadcast Streams](https://www.dartlang.org/tutorials/language/streams#broadcast-streams) bất cứ lúc nào.
 Listener mới sẽ nhận được các event kể từ thời điểm nó bắt đầu đăng ký Stream.
 
 Để tạo 1 [Broadcast Streams](https://www.dartlang.org/tutorials/language/streams#broadcast-streams), ta sử dụng factory constructor của [StreamController](https://api.dartlang.org/stable/2.2.0/dart-async/StreamController-class.html) là `StreamController.broadcast()`.
 
-```dart
-	StreamController<String> streamController = new StreamController.broadcast();
-	//Frist subscription
-	streamController.stream.listen((data) {
-		print("DataReceived1: " + data);
-	}, onDone: () {
-		print("Task Done1");
-	}, onError: (error) {
-		print("Some Error1");
-	});
-	//Second subscription
-	streamController.stream.listen((data) {
-		print("DataReceived2: " + data);
-	}, onDone: () {
-		print("Task Done2");
-	}, onError: (error) {
-		print("Some Error2");
-	});
-	
-	streamController.add("This a test data");
-```
+<iframe style="width:100%;height:500px;" src="https://dartpad.dartlang.org/69a6602331255f6cd20d5c2acaff0294"></iframe>
 
-Bài viết xin được dừng tại đây. Hi vọng bạn có thể hiểu và sử dụng được các Asynchronous operations đồng bộ trong Dart.
+##Tổng kết
+
+Bài viết đã trình bày tổng quan về xử lý đồng bộ và bất đồng bộ trong dart. Để có cái nhìn tổng quan hơn, tôi xin đưa ra một ví dụ sử dụng kết hợp những điều đã trình bày bên trên
+
+<iframe style="width:100%;height:500px;" src="https://dartpad.dartlang.org/89f55121cbefb72de5ae5d0af222d1ea"></iframe>
+
+Bài viết xin được dừng tại đây. Mong bạn có thể hiểu và sử dụng được các Asynchronous operations đồng bộ trong Dart. Trong quá trình tìm hiểu không tránh khỏi sai sót, hy vọng được sự góp ý của mọi người. 

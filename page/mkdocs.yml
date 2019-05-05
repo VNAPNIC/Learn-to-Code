@@ -91,12 +91,23 @@ nav:
     - Kotlin Class và kế thừa: kotlin/kotlin_class_inheritance.md
     - Kotlin Property và field: kotlin/kotlin_property_field.md
     - Kotlin Funtion: kotlin/kotlin_function.md
+    - Kotlin Inline function: kotlin/kotlin_inline_function.md
+    - Kotlin Higher order funtion: kotlin/kotlin_higher_order_function.md
     - Kotlin Inteface: kotlin/kotlin_inteface.md
     - Kotlin Data class: kotlin/kotlin_data_class.md
     - Kotlin Nested class: kotlin/kotlin_nested_class.md
     - Kotlin Visibility Modifiers: kotlin/kotlin_visibility_modifiers.md
-    - Kotlin Higher order funtion: kotlin/kotlin_higher_order_function.md
     - Kotlin Lambda: kotlin/kotlin_lambda.md
+    - Kotlin Collection: kotlin/kotlin_collection.md
+    - Kotlin Enum Classes: kotlin/kotlin_enum_classes.md
+    - Kotlin Overloading operator: kotlin/kotlin_overloading_operator.md
+    - Kotlin Range: kotlin/kotlin_range.md
+    - Kotlin Idioms: kotlin/kotlin_idioms.md
+    - Kotlin Exception: kotlin/kotlin_exception.md
+    - Kotlin Delegation: kotlin/kotlin_delegation.md
+    - Kotlin Delegated property: kotlin/kotlin_delegated_property.md
+    - Gọi Java code từ Kotlin: kotlin/call_java_from_kotlin.md
+    - Gọi Kotlin từ Java: kotlin/call_kotlin_from_java.md
   - Dart:
     - Dart Cài đặt môi trường: dart/dart_environment_settings.md
     - Dart Basic: dart/dart_core.md

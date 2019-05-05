@@ -149,7 +149,7 @@ Một số từ khóa thường sử dụng trong generator function:
 
 Cung cấp một chuỗi dữ liệu không đồng bộ(tương tự với observables trong Rx, LiveData trong Android JetPack).
 
-###StreamController 
+### StreamController 
 
 Có chứa 1 simple stream. sử dụng để tạo stream, kiểm soát stream(listen on, push event).
 
@@ -166,7 +166,7 @@ Có chứa 1 simple stream. sử dụng để tạo stream, kiểm soát stream(
 	streamController.add("This a test data");
 ```
 	
-###StreamSubscription
+### StreamSubscription
 
 Cung cấp các sự kiện cho listener và giữ các callbacks được sử dụng để xử lý các sự kiện.<br>
 Khi bạn định nghĩa 1 listener, bạn sẽ nhận được [StreamSubscription](https://api.dartlang.org/stable/2.2.0/dart-async/StreamSubscription-class.html) object. [StreamSubscription](https://api.dartlang.org/stable/2.2.0/dart-async/StreamSubscription-class.html) sẽ thông báo cho bạn biết có điều gì đặc biệt xảy ra trong Stream(Giá trị được đẩy ra khỏi Stream, có lỗi xảy ra, Stream bị huỷ...). Do đó, [StreamSubscription](https://api.dartlang.org/stable/2.2.0/dart-async/StreamSubscription-class.html) có thể được sử dụng để tạm dừng/tiếp tục event từ các stream khi được yêu cầu.<br>
@@ -180,7 +180,7 @@ Chú ý: Phải đảm bảo hủy [StreamSubscription](https://api.dartlang.org
 	subscription.onData((value) => print("sub_$value"));
 ```
 
-###StreamTransformer 
+### StreamTransformer 
 
 Được sử dụng để xử lý dữ liệu trước khi dữ liệu được đẩy ra ngoài. Đầu ra của [StreamTransformer](https://api.dartlang.org/stable/2.2.0/dart-async/StreamTransformer-class.html) là 1 Stream.<br>
 Một StreamTransformer có thể sử dụng trong 1 số quá trình như:
@@ -213,7 +213,7 @@ Và để bắt đầu sử dụng [StreamTransformer](https://api.dartlang.org/
 
 Có 2 loại [Stream](https://api.dartlang.org/stable/2.2.0/dart-async/Stream-class.html): [Single-subscription Stream](https://www.dartlang.org/tutorials/language/streams#single-subscription-streams), [Broadcast Streams](https://www.dartlang.org/tutorials/language/streams#broadcast-streams).
 
-###Single-subscription Stream: 
+### Single-subscription Stream: 
 
 Là loại Stream chỉ cho phép tạo duy nhất 1 listener.
 Khi thêm 1 listener trỏ vào Stream này, thì nó sẽ huỷ đi listener đầu tiên.
@@ -251,7 +251,7 @@ void main() {
 }
 ```
 
-###Broadcast Streams
+### Broadcast Streams
 
 Ngược lại với loại trên, nó cho phép tạo rất nhiều listener.
 Có thể thêm listener vào [Broadcast Streams](https://www.dartlang.org/tutorials/language/streams#broadcast-streams) bất cứ lúc nào.
@@ -288,7 +288,7 @@ main() {
 }
 ```
 
-##Tổng kết
+## Tổng kết
 
 Bài viết đã trình bày tổng quan về xử lý đồng bộ và bất đồng bộ trong dart. Để có cái nhìn tổng quan hơn, tôi xin đưa ra một ví dụ sử dụng kết hợp những điều đã trình bày bên trên
 

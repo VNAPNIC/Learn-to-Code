@@ -93,7 +93,7 @@ Nhờ vậy, `copy()` cho phép chúng ta copy như thế này:
 3\. Data class và Destructuring Declaration
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
-Với các hàm `componentN()` được sinh ra, data class có thể sử dụng cơ chế [destructuring declaration](/kotlin/kotlin_function/#destructuring-declarations)như sau:
+Với các hàm `componentN()` được sinh ra, data class có thể sử dụng cơ chế [destructuring declaration](/kotlin/kotlin_function/#destructuring-declarations) như sau:
 
 ```kotlin
   val jane = User("Jane", 35)

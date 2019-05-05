@@ -515,7 +515,7 @@ Kotlin
 
 Nếu là khối lệnh, giá trị ở cuối khối lệnh là giá trị trả về. Khi gán giá trị, nhánh else bắt buộc phải có
 
-### b. Cấu trúc when:
+### b. Cấu trúc when
 
 Cấu trúc when thay thế switch trong *Java*. Cấu trúc của when là
 

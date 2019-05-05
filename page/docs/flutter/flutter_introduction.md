@@ -1,12 +1,12 @@
 Trong số nhiều tin tức nổi lên trong năm 2018 như Pháp giành cúp thế giới FIFA hay cái chết của Stephen Hawkins; một tin tức khác cũng khá nổi bật là Google đã ra mắt Flutter 1.0 như một nền tảng phát triển ứng dụng mở. Đó là một món quà cho tất cả các nhà phát triển ứng dụng trước đây đã từng viết mã cho cả ứng dụng Android và ứng dụng iOS. Ngoài ra, nó cũng hỗ trợ phát triển ứng dụng high-performing, vô số các widget,một loạt các animation mượt mà, v.v.
 
-###Chúng ta hãy giới thiệu ngắn gọn về Flutter!
+### Chúng ta hãy giới thiệu ngắn gọn về Flutter!
 
 Flutter nói chung là một bộ công cụ phát triển phần mềm (SDK) để xây dựng các ứng dụng hiện đại. Nó cung cấp high-performance và high-fidelity cho cả Android và iOS.
 
 Jamie Notter cho biết, ***cải tiến của cải tiến đang thay đổi mở ra giá trị mới*** . Tương tự như vậy, mỗi công nghệ mới đều có những lợi thế riêng giúp chúng ta bằng cách này hay cách khác. Chúng ta hãy xem xét một số ưu điểm của Flutter để biến nó thành SDK thân thiện với nhà phát triển.
 
-###Dưới đây là 9 lý do tại sao Flutter có thể tạo sự khác biệt
+### Dưới đây là 9 lý do tại sao Flutter có thể tạo sự khác biệt
 
 1. Open-source Project
 ----------------------------------------------------------
@@ -65,7 +65,7 @@ Flutter cung cấp cho bạn quyền truy cập các tính năng gốc của thi
 
 Vì Flutter được tạo và ra mắt bởi Google, không có gì phải bàn về cộng đồng hỗ trợ của nó. Nó được hỗ trợ bởi một team mạnh và có một cộng đồng với hơn 1000 nhà phát triển luôn sẵn sàng giúp đỡ và làm cho Flutter trở nên tốt hơn.
 
-###Tóm lại!
+### Tóm lại!
 
 Để tóm tắt tất cả, chúng ta có thể nói rằng đó là một cross-platform đang trở nên phổ biến mỗi ngày. Flutter rất dễ dàng, đơn giản và cũng có tiềm năng lớn để phát triển một ứng dụng một cách dễ dàng. Rõ ràng, mất ít thời gian hơn nhiều so với việc tạo 2 ứng dụng tương tự trên các nền tảng khác nhau.
 

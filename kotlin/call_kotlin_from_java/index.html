@@ -1,0 +1,1240 @@
+
+
+
+
+<!doctype html>
+<html lang="vi" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Tổng hợp tài liệu học lập trình">
+      
+      
+        <link rel="canonical" href="https://buihainam.com/kotlin/call_kotlin_from_java/">
+      
+      
+        <meta name="author" content="Bùi Hải Nam">
+      
+      
+        <meta name="lang:clipboard.copy" content="Sao chép vào bộ nhớ">
+      
+        <meta name="lang:clipboard.copied" content="Sao chép xong">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Không tìm thấy tài liệu liên quan">
+      
+        <meta name="lang:search.result.one" content="1 tài liệu liên quan">
+      
+        <meta name="lang:search.result.other" content="# tài liệu liên quan">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/logo.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Gọi Kotlin từ Java - Bùi Hải Nam</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#00bcd4">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-139140751-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="cyan" data-md-color-accent="cyan">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#property" tabindex="1" class="md-skip">
+        Vào thẳng nội dung
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Bùi Hải Nam
+            </span>
+            <span class="md-header-nav__topic">
+              Gọi Kotlin từ Java
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Tìm kiếm" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Nhập để bắt đầu tìm kiếm
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/VNAPNIC/Learn-to-Code" title="Đến kho lưu trữ mã nguồn" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    VNAPNIC/Learn-to-Code
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://buihainam.com/" title="Bùi Hải Nam" class="md-nav__button md-logo">
+      
+        <img src="../../img/logo.png" width="48" height="48">
+      
+    </a>
+    Bùi Hải Nam
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/VNAPNIC/Learn-to-Code" title="Đến kho lưu trữ mã nguồn" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    VNAPNIC/Learn-to-Code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Kotlin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Kotlin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_basic/" title="Kotlin Basic" class="md-nav__link">
+      Kotlin Basic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_class_inheritance/" title="Kotlin Class và kế thừa" class="md-nav__link">
+      Kotlin Class và kế thừa
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_property_field/" title="Kotlin Property và field" class="md-nav__link">
+      Kotlin Property và field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_function/" title="Kotlin Funtion" class="md-nav__link">
+      Kotlin Funtion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_inline_function/" title="Kotlin Inline function" class="md-nav__link">
+      Kotlin Inline function
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_higher_order_function/" title="Kotlin Higher order funtion" class="md-nav__link">
+      Kotlin Higher order funtion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_inteface/" title="Kotlin Inteface" class="md-nav__link">
+      Kotlin Inteface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_data_class/" title="Kotlin Data class" class="md-nav__link">
+      Kotlin Data class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_nested_class/" title="Kotlin Nested class" class="md-nav__link">
+      Kotlin Nested class
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_visibility_modifiers/" title="Kotlin Visibility Modifiers" class="md-nav__link">
+      Kotlin Visibility Modifiers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_lambda/" title="Kotlin Lambda" class="md-nav__link">
+      Kotlin Lambda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_collection/" title="Kotlin Collection" class="md-nav__link">
+      Kotlin Collection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_enum_classes/" title="Kotlin Enum Classes" class="md-nav__link">
+      Kotlin Enum Classes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_overloading_operator/" title="Kotlin Overloading operator" class="md-nav__link">
+      Kotlin Overloading operator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_range/" title="Kotlin Range" class="md-nav__link">
+      Kotlin Range
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_idioms/" title="Kotlin Idioms" class="md-nav__link">
+      Kotlin Idioms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_exception/" title="Kotlin Exception" class="md-nav__link">
+      Kotlin Exception
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_delegation/" title="Kotlin Delegation" class="md-nav__link">
+      Kotlin Delegation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kotlin_delegated_property/" title="Kotlin Delegated property" class="md-nav__link">
+      Kotlin Delegated property
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../call_java_from_kotlin/" title="Gọi Java code từ Kotlin" class="md-nav__link">
+      Gọi Java code từ Kotlin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Gọi Kotlin từ Java
+      </label>
+    
+    <a href="./" title="Gọi Kotlin từ Java" class="md-nav__link md-nav__link--active">
+      Gọi Kotlin từ Java
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Mục lục</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#property" title="Property" class="md-nav__link">
+    Property
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-level-function" title="Package-level function" class="md-nav__link">
+    Package-level function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instance-field" title="Instance field" class="md-nav__link">
+    Instance field
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-field" title="Static field" class="md-nav__link">
+    Static field
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-method" title="Static method" class="md-nav__link">
+    Static method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visibility" title="Visibility" class="md-nav__link">
+    Visibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kclass" title="KClass" class="md-nav__link">
+    KClass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xu-ly-viec-xung-ot-voi-jvmname" title="Xử lý việc xung đột với @JvmName" class="md-nav__link">
+    Xử lý việc xung đột với @JvmName
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sinh-cac-ham-overload" title="Sinh các hàm overload" class="md-nav__link">
+    Sinh các hàm overload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checked-exception" title="Checked exception" class="md-nav__link">
+    Checked exception
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#null-safety" title="Null-safety" class="md-nav__link">
+    Null-safety
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Dart
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Dart
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dart/dart_environment_settings/" title="Dart Cài đặt môi trường" class="md-nav__link">
+      Dart Cài đặt môi trường
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dart/dart_core/" title="Dart Basic" class="md-nav__link">
+      Dart Basic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dart/dart_async_intro/" title="Dart Async" class="md-nav__link">
+      Dart Async
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Flutter
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Flutter
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../flutter/flutter_introduction/" title="9 lý do tại sao nên chọn Flutter" class="md-nav__link">
+      9 lý do tại sao nên chọn Flutter
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Mục lục</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#property" title="Property" class="md-nav__link">
+    Property
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-level-function" title="Package-level function" class="md-nav__link">
+    Package-level function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instance-field" title="Instance field" class="md-nav__link">
+    Instance field
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-field" title="Static field" class="md-nav__link">
+    Static field
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-method" title="Static method" class="md-nav__link">
+    Static method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visibility" title="Visibility" class="md-nav__link">
+    Visibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kclass" title="KClass" class="md-nav__link">
+    KClass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xu-ly-viec-xung-ot-voi-jvmname" title="Xử lý việc xung đột với @JvmName" class="md-nav__link">
+    Xử lý việc xung đột với @JvmName
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sinh-cac-ham-overload" title="Sinh các hàm overload" class="md-nav__link">
+    Sinh các hàm overload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checked-exception" title="Checked exception" class="md-nav__link">
+    Checked exception
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#null-safety" title="Null-safety" class="md-nav__link">
+    Null-safety
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Gọi Kotlin từ Java</h1>
+                
+                <h2 id="property">Property<a class="headerlink" href="#property" title="Permanent link">&para;</a></h2>
+<p>Một property của một class trong <em>Kotlin</em> sẽ được compile thành các thành phần sau trong <em>Java</em>:</p>
+<ul>
+<li>Một hàm getter với tên được suy ra từ tên property và thêm tiền tố <code>get</code></li>
+<li>Một hàm setter với tên được suy ra từ tên property và thêm tiền tố <code>set</code>(hàm setter chỉ được sinh với property kiểu <code>var</code>)</li>
+<li>Một field với phạm vi truy cập là <code>private</code> với tên trùng với tên property (chỉ với property có <a href="/kotlin/kotlin_property_field/#346-backing-field">backing field</a>)</li>
+</ul>
+<p>VD:</p>
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">firstName</span><span class="p">:</span> <span class="n">String</span>
+</pre></div>
+
+<p>Java</p>
+<div class="codehilite"><pre><span></span>  <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getFirstName</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">firstName</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFirstName</span><span class="o">(</span><span class="n">String</span> <span class="n">firstName</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">firstName</span> <span class="o">=</span> <span class="n">firstName</span><span class="o">;</span>
+  <span class="o">}</span>
+</pre></div>
+
+<p>Nếu tên của property bắt đầu với <code>is</code>, một tên khác được map sang với quy luật: tên của hàm getter sẽ giống với tên của property, và tên của hàm setter sẽ được sinh ra bằng cách thay thế <code>is</code> bằng <code>set</code>. VD:</p>
+<p>Kotlin</p>
+<div class="codehilite"><pre><span></span>  <span class="k">var</span> <span class="py">isOpen</span><span class="p">:</span> <span class="n">Boolean</span> <span class="p">=</span> <span class="k">true</span>
+</pre></div>
+
+<p>Java</p>
+<div class="codehilite"><pre><span></span>  <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isOpen</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isOpen</span><span class="o">(){</span>
+    <span class="k">return</span> <span class="n">isOpen</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setOpen</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isOpen</span><span class="o">){</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">isOpen</span> <span class="o">=</span> <span class="n">isOpen</span><span class="o">;</span>
+  <span class="o">}</span>
+</pre></div>
+
+<h2 id="package-level-function">Package-level function<a class="headerlink" href="#package-level-function" title="Permanent link">&para;</a></h2>
+<p>Tất cả các function và property được khai báo trong file <code>example.kt</code> và bên trong package <code>org.foo.bar</code>, bao gồm cả các extension function, được compile thành các hàm <code>static</code> và thuộc Java class <code>org.foo.bar.ExampleKt</code></p>
+<div class="codehilite"><pre><span></span>  <span class="c1">// example.kt</span>
+  <span class="k">package</span> <span class="nn">demo</span>
+
+  <span class="k">class</span> <span class="nc">Foo</span>
+
+  <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>  <span class="c1">//Java</span>
+  <span class="k">new</span> <span class="n">demo</span><span class="o">.</span><span class="na">Foo</span><span class="o">();</span>
+  <span class="n">demo</span><span class="o">.</span><span class="na">ExampleKt</span><span class="o">.</span><span class="na">bar</span><span class="o">();</span>
+</pre></div>
+
+<p>Tên của java class được sinh ra có thể thay đổi bằng cách dùng annotation <code>@JvmName</code>:</p>
+<div class="codehilite"><pre><span></span>  <span class="n">@file</span><span class="p">:</span><span class="n">JvmName</span><span class="p">(</span><span class="s">&quot;DemoUtils&quot;</span><span class="p">)</span>
+
+  <span class="k">package</span> <span class="nn">demo</span>
+
+  <span class="k">class</span> <span class="nc">Foo</span>
+
+  <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="c1">// Java</span>
+  <span class="k">new</span> <span class="n">demo</span><span class="o">.</span><span class="na">Foo</span><span class="o">();</span>
+  <span class="n">demo</span><span class="o">.</span><span class="na">DemoUtils</span><span class="o">.</span><span class="na">bar</span><span class="o">();</span>
+</pre></div>
+
+<p>Khi có nhiều file có cùng tên java class được sinh ra( cùng package và cùng tên hoặc cùng annotation <code>@JvmName</code>), sẽ có lỗi. Tuy nhiên, compiler có khả năng sinh ra một java class facade có tên xác định và gồm tất cả các khai báo từ tất cả các file mà có cùng cùng tên đó. Để enable việc sinh file facade này, sử dụng annotation <code>@JvmMultifileClass</code> ở tất cả các file cùng tên.</p>
+<div class="codehilite"><pre><span></span>  <span class="c1">// oldutils.kt</span>
+  <span class="n">@file</span><span class="p">:</span><span class="n">JvmName</span><span class="p">(</span><span class="s">&quot;Utils&quot;</span><span class="p">)</span>
+  <span class="n">@file</span><span class="p">:</span><span class="n">JvmMultifileClass</span>
+
+  <span class="k">package</span> <span class="nn">demo</span>
+
+  <span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+  <span class="c1">// newutils.kt</span>
+  <span class="n">@file</span><span class="p">:</span><span class="n">JvmName</span><span class="p">(</span><span class="s">&quot;Utils&quot;</span><span class="p">)</span>
+  <span class="n">@file</span><span class="p">:</span><span class="n">JvmMultifileClass</span>
+
+  <span class="k">package</span> <span class="nn">demo</span>
+
+  <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>  <span class="c1">// Java</span>
+  <span class="n">demo</span><span class="o">.</span><span class="na">Utils</span><span class="o">.</span><span class="na">foo</span><span class="o">();</span>
+  <span class="n">demo</span><span class="o">.</span><span class="na">Utils</span><span class="o">.</span><span class="na">bar</span><span class="o">();</span>
+</pre></div>
+
+<h2 id="instance-field">Instance field<a class="headerlink" href="#instance-field" title="Permanent link">&para;</a></h2>
+<p>Nếu bạn muốn xác định một property trong <em>Kotlin</em> là một field trong <em>Java</em>, bạn cần đánh dấu property này với annotation <code>@JvmField</code>. Field sẽ có cùng access modifier với property. Bạn có thể đánh dấu <code>@JvmField</code> nếu nó có backing field, visibility modifier không phải private, không được khai báo với từ khóa <code>open</code>, <code>override</code> hoặc <code>const</code> và không phải là một delegated property.</p>
+<div class="codehilite"><pre><span></span>  <span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">@JvmField</span> <span class="k">val</span> <span class="py">ID</span> <span class="p">=</span> <span class="n">id</span>
+  <span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>  <span class="c1">// Java</span>
+  <span class="kd">class</span> <span class="nc">JavaClient</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="n">String</span> <span class="nf">getID</span><span class="o">(</span><span class="n">C</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="n">c</span><span class="o">.</span><span class="na">ID</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</pre></div>
+
+<p>Property <a href="/kotlin/kotlin_property_field/#646-late-initialized-property-khoi-tao-cham-cac-thuoc-tinh">lateinit</a> cũng có thể được xác định là một field trong <em>Java</em>. Khi đó, visibility modifier của field sẽ giống với visibility modifier của hàm setter của property.</p>
+<h2 id="static-field"><a href="https://github.com/ngohado/Kotlin-Docs/wiki/G%E1%BB%8Di-Kotlin-t%E1%BB%AB-Java#static-field"></a>Static field<a class="headerlink" href="#static-field" title="Permanent link">&para;</a></h2>
+<p>Property trong <em>Kotlin</em> được khai báo trong một object hoặc companion object sẽ có static backing field hoặc trong tên object hoặc trong class mà chứa companion objet. Thường thường, những field này là private nhưng chúng có thể được phơi ra bằng những cách sau:</p>
+<ul>
+<li>Sử dụng annotation <code>@JvmField</code></li>
+<li>Sử dụng từ khóa <code>lateinit</code></li>
+<li>Sử dụng từ khóa <code>const</code></li>
+</ul>
+<p>Việc sử dụng <code>@JvmField</code> làm cho field có cùng visibility modifier với property.</p>
+<div class="codehilite"><pre><span></span>  <span class="k">class</span> <span class="nc">Key</span><span class="p">(</span><span class="k">val</span> <span class="py">value</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">companion</span> <span class="k">object</span> <span class="err">{</span>
+          <span class="n">@JvmField</span>
+          <span class="k">val</span> <span class="py">COMPARATOR</span><span class="p">:</span> <span class="n">Comparator</span><span class="p">&lt;</span><span class="n">Key</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">compareBy</span><span class="p">&lt;</span><span class="n">Key</span><span class="p">&gt;</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">value</span> <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>  <span class="c1">// Java</span>
+  <span class="n">Key</span><span class="o">.</span><span class="na">COMPARATOR</span><span class="o">.</span><span class="na">compare</span><span class="o">(</span><span class="n">key1</span><span class="o">,</span> <span class="n">key2</span><span class="o">);</span>
+  <span class="c1">// public static final field in Key class</span>
+</pre></div>
+
+<p>Một property lateinit bên trong một object hoặc companion object có một static backing field với cùng visibility modifier với hàm setter.</p>
+<div class="codehilite"><pre><span></span>  <span class="k">object</span> <span class="nc">Singleton</span> <span class="p">{</span>
+      <span class="k">lateinit</span> <span class="k">var</span> <span class="py">provider</span><span class="p">:</span> <span class="n">Provider</span>
+  <span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>  <span class="c1">// Java</span>
+  <span class="n">Singleton</span><span class="o">.</span><span class="na">provider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Provider</span><span class="o">();</span>
+  <span class="c1">// public static non-final field in Singleton class</span>
+</pre></div>
+
+<p>Property được đánh dấu bằng <code>const</code> ở trong class cũng như ở top-level sẽ được chuyển thành static field trong <em>Java</em>:</p>
+<div class="codehilite"><pre><span></span>  <span class="c1">// file example.kt</span>
+
+  <span class="k">object</span> <span class="nc">Obj</span> <span class="p">{</span>
+      <span class="k">const</span> <span class="k">val</span> <span class="py">CONST</span> <span class="p">=</span> <span class="m">1</span>
+  <span class="p">}</span>
+
+  <span class="k">class</span> <span class="nc">C</span> <span class="p">{</span>
+      <span class="k">companion</span> <span class="k">object</span> <span class="err">{</span>
+          <span class="k">const</span> <span class="k">val</span> <span class="py">VERSION</span> <span class="p">=</span> <span class="m">9</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">const</span> <span class="k">val</span> <span class="py">MAX</span> <span class="p">=</span> <span class="m">239</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>  <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Obj</span><span class="o">.</span><span class="na">CONST</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">ExampleKt</span><span class="o">.</span><span class="na">MAX</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="na">VERSION</span><span class="o">;</span>
+</pre></div>
+
+<h2 id="static-method">Static method<a class="headerlink" href="#static-method" title="Permanent link">&para;</a></h2>
+<p>Như được đề cập ở trên, <em>Kotlin</em> coi package-level function là static method. <em>Kotlin</em> cũng có thể sinh ra các static method cho các function được định nghĩa ở trong một object hoặc một companion object nếu bạn đánh dấu các hàm đó với <code>@JvmStatic</code>. Nếu bạn sử dụng annotation này, compiler sẽ sinh ra cả static method ở bên trong class đó và một instance method cho class đó.</p>
+<div class="codehilite"><pre><span></span>  <span class="k">class</span> <span class="nc">C</span> <span class="p">{</span>
+      <span class="k">companion</span> <span class="k">object</span> <span class="err">{</span>
+          <span class="n">@JvmStatic</span> <span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{}</span>
+          <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Bây giờ, <code>foo()</code> là hàm static trong <em>Java</em>, còn <code>bar()</code> thì không:</p>
+<div class="codehilite"><pre><span></span>  <span class="n">C</span><span class="o">.</span><span class="na">foo</span><span class="o">();</span> <span class="c1">// works fine</span>
+  <span class="n">C</span><span class="o">.</span><span class="na">bar</span><span class="o">();</span> <span class="c1">// error: not a static method</span>
+  <span class="n">C</span><span class="o">.</span><span class="na">Companion</span><span class="o">.</span><span class="na">foo</span><span class="o">();</span> <span class="c1">// instance method remains</span>
+  <span class="n">C</span><span class="o">.</span><span class="na">Companion</span><span class="o">.</span><span class="na">bar</span><span class="o">();</span> <span class="c1">// the only way it works</span>
+</pre></div>
+
+<p>Tương tự với object</p>
+<div class="codehilite"><pre><span></span>  <span class="k">object</span> <span class="nc">Obj</span> <span class="p">{</span>
+      <span class="n">@JvmStatic</span> <span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{}</span>
+      <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Và trong <em>Java</em>:</p>
+<div class="codehilite"><pre><span></span>  <span class="n">Obj</span><span class="o">.</span><span class="na">foo</span><span class="o">();</span> <span class="c1">// works fine</span>
+  <span class="n">Obj</span><span class="o">.</span><span class="na">bar</span><span class="o">();</span> <span class="c1">// error</span>
+  <span class="n">Obj</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">bar</span><span class="o">();</span> <span class="c1">// works, a call through the singleton instance</span>
+  <span class="n">Obj</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">foo</span><span class="o">();</span> <span class="c1">// works too</span>
+</pre></div>
+
+<p><code>@JvmStatic</code> có thể được áp dụng với một property của một object hoặc companion object.</p>
+<h2 id="visibility">Visibility<a class="headerlink" href="#visibility" title="Permanent link">&para;</a></h2>
+<p>Visibility modifier trong <em>Kotlin</em> sẽ được map sang <em>Java</em> theo cách sau:</p>
+<ul>
+<li>Các thành phần <code>private</code> vẫn sẽ là các thành phần <code>private</code></li>
+<li>Các khai báo <code>private</code> ở top-level được compile thành các khai báo được sử dụng trong cùng một package</li>
+<li><code>protected</code> vẫn là <code>protected</code> (lưu ý rằng <em>Java</em> cho phép truy cập các thành phần protected từ các class khác trong cùng một package còn <em>Kotlin</em> thì không, bởi vậy các class của <em>Java</em> sẽ có phạm vi truy cập rộng hơn)</li>
+<li><code>internal</code> sẽ trở thành <code>public</code> trong <em>Java</em>.</li>
+<li><code>public</code> vẫn là <code>public</code></li>
+</ul>
+<h2 id="kclass">KClass<a class="headerlink" href="#kclass" title="Permanent link">&para;</a></h2>
+<p>Thỉnh thoảng bạn cần gọi một hàm trong <em>Kotlin</em> với một tham số kiểu <code>KClass</code>. Sẽ không có class nào được tự động chuyển đổi từ <code>Class</code> thành <code>KClass</code>, bởi vậy bạn phải tự gọi clas tương tự <code>Class&lt;T&gt;.kotlin</code></p>
+<div class="codehilite"><pre><span></span>  <span class="n">kotlin</span><span class="p">.</span><span class="n">jvm</span><span class="p">.</span><span class="n">JvmClassMappingKt</span><span class="p">.</span><span class="n">getKotlinClass</span><span class="p">(</span><span class="n">MainView</span><span class="p">.</span><span class="k">class</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="xu-ly-viec-xung-ot-voi-jvmname">Xử lý việc xung đột với <code>@JvmName</code><a class="headerlink" href="#xu-ly-viec-xung-ot-voi-jvmname" title="Permanent link">&para;</a></h2>
+<p>Thỉnh thoảng chúng ta có một function trong <em>Kotlin</em>, nhưng lại cần các cái tên JVM khác nhau. VD:</p>
+<div class="codehilite"><pre><span></span>  <span class="k">fun</span> <span class="nf">List</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;.</span><span class="n">filterValid</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span>
+  <span class="k">fun</span> <span class="nf">List</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;.</span><span class="n">filterValid</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Hai hàm này không thể được định nghĩa cạnh nhau bởi JVM coi chúng giống nhau: <code>filterValid(Ljava/util/List;)Ljava/util/List;</code>. Nếu chúng ta muốn chúng có cùng tên trong <em>Kotlin</em>, chúng ta có thể đánh dấu một hàm(hoặc cả 2) với từ khóa <code>@JvmName</code> và xác định một cái tên khác như một tham số:</p>
+<div class="codehilite"><pre><span></span>  <span class="k">fun</span> <span class="nf">List</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;.</span><span class="n">filterValid</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span>
+
+  <span class="n">@JvmName</span><span class="p">(</span><span class="s">&quot;filterValidInt&quot;</span><span class="p">)</span>
+  <span class="k">fun</span> <span class="nf">List</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;.</span><span class="n">filterValid</span><span class="p">():</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span>
+</pre></div>
+
+<p>Từ <em>Kotlin</em>, chúng có thể được truy cập bởi cùng tên <code>filterValid</code>, nhưng từ <em>Java</em>, chúng sẽ có 2 tên khác nhau là <code>filterValid</code> và <code>filterValidInt</code>. Mẹo tương tự cũng được áp dụng khi chúng ta cần một property <code>x</code> và một hàm <code>getX()</code></p>
+<div class="codehilite"><pre><span></span>  <span class="k">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">Int</span>
+      <span class="n">@JvmName</span><span class="p">(</span><span class="s">&quot;getX_prop&quot;</span><span class="p">)</span>
+      <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="m">15</span>
+
+  <span class="k">fun</span> <span class="nf">getX</span><span class="p">()</span> <span class="p">=</span> <span class="m">10</span>
+</pre></div>
+
+<p>Bây giờ, hàm <code>getX()</code> sẽ trả về 10 và hàm <code>getX_prop()</code> được gọi từ <em>Java</em> sẽ trả về giá trị của <code>x</code></p>
+<h2 id="sinh-cac-ham-overload"><a href="https://github.com/ngohado/Kotlin-Docs/wiki/G%E1%BB%8Di-Kotlin-t%E1%BB%AB-Java#sinh-c%C3%A1c-h%C3%A0m-overload"></a>Sinh các hàm overload<a class="headerlink" href="#sinh-cac-ham-overload" title="Permanent link">&para;</a></h2>
+<p>Bình thường, nếu bạn viết một hàm trong <em>Kotlin</em> với các param có giá trị mặc định, hàm đó nếu được gọi trong <em>Java</em> sẽ được nhìn thấy với toàn bộ các param. Nếu bạn muốn sinh ra nhiều hàm overload của hàm đó, bạn có thể sử dụng annotation <code>@JvmOverloads</code></p>
+<div class="codehilite"><pre><span></span>  <span class="n">@JvmOverloads</span> <span class="k">fun</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;abc&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Với mỗi param có giá trị mặc định, sẽ có một hàm overload được sinh ra với param đó và tất cả các param ở bên phải của nó được bỏ đi. Với hàm <code>f</code> ở trên, sẽ có các hàm overload sau được sinh ra:</p>
+<div class="codehilite"><pre><span></span>  <span class="c1">// Java</span>
+  <span class="kt">void</span> <span class="nf">f</span><span class="o">(</span><span class="n">String</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">,</span> <span class="n">String</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+  <span class="kt">void</span> <span class="nf">f</span><span class="o">(</span><span class="n">String</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+  <span class="kt">void</span> <span class="nf">f</span><span class="o">(</span><span class="n">String</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+</pre></div>
+
+<p>Với các hàm mà không truyền vào các param có giá trị mặc định, các giá trị mặc định được khai báo trong <em>Kotlin</em> vẫn sẽ có tác dụng đối với <em>Java</em>.</p>
+<p>Annotation cũng có thể sử dụng với các hàm tạo, static method,... Tuy nhiên, annotation không thể sử dụng với abstract method, bao gồm cả các method được định nghĩa bên trong interface.</p>
+<p>Lưu ý: như đã được nói ở trong phần <a href="/kotlin/kotlin_class_inheritance/#secondary-constructors">secondary constructor</a>, nếu một lớp có các giá trị mặc định cho tất cả các constructor, một hàm tạo không tham số sẽ được sinh ra. Việc này sẽ được sinh cả trong trường hợp không sử dụng annotation <code>JvmOverloads</code></p>
+<h2 id="checked-exception">Checked exception<a class="headerlink" href="#checked-exception" title="Permanent link">&para;</a></h2>
+<p>Như chúng ta đã đề cập ở trên, <em>Kotlin</em> không có checked exception. Bởi vậy, bình thường, signature trong <em>Java</em> của một hàm viết bằng <em>Kotlin</em> không được khai báo việc throw các exception. Bởi vậy, nếu chúng ta có một hàm trong <em>Kotlin</em> như thế này:</p>
+<div class="codehilite"><pre><span></span>  <span class="c1">// example.kt</span>
+  <span class="k">package</span> <span class="nn">demo</span>
+
+  <span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="n">IOException</span><span class="p">()</span>
+  <span class="p">}</span>
+</pre></div>
+
+<p>Và nếu chúng ta muốn gọi nó từ <em>Java</em> và catch exception:</p>
+<div class="codehilite"><pre><span></span>  <span class="c1">// Java</span>
+  <span class="k">try</span> <span class="o">{</span>
+    <span class="n">demo</span><span class="o">.</span><span class="na">Example</span><span class="o">.</span><span class="na">foo</span><span class="o">();</span>
+  <span class="o">}</span>
+  <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// error: foo() không khai báo IOException trong list các exception sẽ throw</span>
+    <span class="c1">// ...</span>
+  <span class="o">}</span>
+</pre></div>
+
+<p>Chúng ta sẽ nhận được lỗi từ Java compiler bởi vì <code>foo()</code> không khai báo <code>IOException</code>. Để giải quyết vấn đề này, sử dụng annotation <code>@Throws</code>:</p>
+<div class="codehilite"><pre><span></span>  <span class="n">@Throws</span><span class="p">(</span><span class="n">IOException</span><span class="o">::</span><span class="k">class</span><span class="p">)</span>
+  <span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="n">IOException</span><span class="p">()</span>
+  <span class="p">}</span>
+</pre></div>
+
+<h2 id="null-safety">Null-safety<a class="headerlink" href="#null-safety" title="Permanent link">&para;</a></h2>
+<p>Khi gọi một hàm trong <em>Kotlin</em> từ <em>Java</em>, không có gì có thể ngăn cả chúng ta truyền một giá trị null cho một param có kiểu là non-null nữa. Đó là lý do tại sao <em>Kotlin</em> sinh ra việc check lúc runtime cho tất cả các hàm public mà yêu cầu các param có kiểu non-null. Từ đó, chúng ta lại có thể gặp lại <code>NullPointerException</code> như trong <em>Java</em>, ngay lập tức.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../call_java_from_kotlin/" title="Gọi Java code từ Kotlin" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Trước
+                </span>
+                Gọi Java code từ Kotlin
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../dart/dart_environment_settings/" title="Dart Cài đặt môi trường" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Sau
+                </span>
+                Dart Cài đặt môi trường
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2020 Bùi Hải Nam
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="http://finishcoding.com/" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/VNAPNIC" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://www.facebook.com/NankaiNotes" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://www.youtube.com/channel/UCECQ8GHamKx4H5jHMmNi2Ag" class="md-footer-social__link fa fa-youtube"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

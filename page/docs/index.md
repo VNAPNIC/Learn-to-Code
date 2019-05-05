@@ -7,8 +7,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr colspan=3>
-			<td rowspan=8 style="width:30%"><img alt="about" src="/img/posts/about/about.jpg" /></td>
+		<tr >
+			<td rowspan=8 style="width:30%">
+				<img alt="about" src="/img/posts/about/about.png">
+			</td>
 			<td>
 				<tr>
 					<td width=30%>

@@ -8,7 +8,8 @@
 ### 1. Dart
 
 - [Bắt đầu](https://buihainam.com/dart/dart_environment_settings/)
-- [Cơ bản](https://buihainam.com/http://127.0.0.1:8000/dart/dart_core/)
+- [Cơ bản](https://buihainam.com/dart/dart_core/)
+- [Dart Async](https://buihainam.com/dart_async_intro/)
 
 ### 2. Kotlin
 
@@ -22,3 +23,8 @@
 - [Data class](https://buihainam.com/kotlin/kotlin_data_class/)
 - [Nested class](https://buihainam.com/kotlin/kotlin_nested_class/)
 - [Visibility Modifiers](https://buihainam.com/kotlin/kotlin_visibility_modifiers/)
+
+
+### 3. Flutter
+
+- [9 lý do tại sao nên chọn Flutter](https://buihainam.com/flutter/flutter_introduction/)

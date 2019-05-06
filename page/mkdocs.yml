@@ -115,3 +115,4 @@ nav:
     - Dart Async: dart/dart_async_intro.md
   - Flutter:
     - 9 lý do tại sao nên chọn Flutter: flutter/flutter_introduction.md
+    - Flutter ScreenUtil: flutter/flutter_screenutil.md

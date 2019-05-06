@@ -1,8 +1,6 @@
 
 ScreenUtil là 1 plugin cho phép tích hợp, tùy biến kích cỡ màn hình và font chữ. Giúp cho giao diện người dùng hiển thị bố cục hợp lý trên các màn hình có kích thước khác nhau.
 
-*Chú ý: plugin này vẫn đang trong quá trình phát triển, do đó một số api có thể chưa có sẵn.*
-
 ## Chuẩn bị
 
 #### 1. Dependency
@@ -57,8 +55,8 @@ Khởi tạo tương ứng:
 
 Khởi tạo px size cho component:
 
-- tương ứng screen width: ```ScreenUtil.getInstance().setWidth(540),```
-- tương ứng screen height: ```ScreenUtil.getInstance().setHeight(200),```
+- Sửa đổi screen width: ```ScreenUtil.getInstance().setWidth(540),```
+- Sửa đổi screen height: ```ScreenUtil.getInstance().setHeight(200),```
 
 Bạn có thể sử dụng ScreenUtil() thay cho ScreenUtil.getInstance(), ví dụ: ```ScreenUtil().setHeight(200)```
 

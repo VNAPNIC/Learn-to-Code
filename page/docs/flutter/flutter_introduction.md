@@ -1,48 +1,48 @@
-Trong số nhiều tin tức nổi lên trong năm 2018 như Pháp giành cúp thế giới FIFA hay cái chết của Stephen Hawkins; một tin tức khác cũng khá nổi bật là Google đã ra mắt Flutter 1.0 như một nền tảng phát triển ứng dụng mở. Đó là một món quà cho tất cả các nhà phát triển ứng dụng trước đây đã từng viết mã cho cả ứng dụng Android và ứng dụng iOS. Ngoài ra, nó cũng hỗ trợ phát triển ứng dụng high-performing, vô số các widget,một loạt các animation mượt mà, v.v.
+Trong số nhiều tin tức nổi lên trong năm 2018 như Pháp giành cúp thế giới FIFA hay cái chết của Stephen Hawkins, một tin tức khác cũng khá nổi bật là Google đã ra mắt Flutter 1.0 như một nền tảng phát triển ứng dụng mở. Đó là một món quà cho tất cả các nhà phát triển ứng dụng trước đây đã từng viết code cho cả ứng dụng Android và ứng dụng iOS. Ngoài ra, nó cũng hỗ trợ phát triển ứng dụng high-performing, vô số các widget,một loạt các animation mượt mà, v.v.
 
 ### Chúng ta hãy giới thiệu ngắn gọn về Flutter!
 
 Flutter nói chung là một bộ công cụ phát triển phần mềm (SDK) để xây dựng các ứng dụng hiện đại. Nó cung cấp high-performance và high-fidelity cho cả Android và iOS.
 
-Jamie Notter cho biết, ***cải tiến của cải tiến đang thay đổi mở ra giá trị mới*** . Tương tự như vậy, mỗi công nghệ mới đều có những lợi thế riêng giúp chúng ta bằng cách này hay cách khác. Chúng ta hãy xem xét một số ưu điểm của Flutter để biến nó thành SDK thân thiện với nhà phát triển.
+Jamie Notter cho biết, ***cải tiến của cải tiến đang thay đổi và mở ra giá trị mới*** . Tương tự như vậy, mỗi công nghệ mới đều có những lợi thế riêng giúp chúng ta bằng cách này hay cách khác. Chúng ta hãy xem xét một số ưu điểm của Flutter để biến nó thành SDK thân thiện với nhà phát triển.
 
 ### Dưới đây là 9 lý do tại sao Flutter có thể tạo sự khác biệt
 
 1. Open-source Project
 ----------------------------------------------------------
 
-Nó được Google tạo ra và ra mắt dưới dạng SDK nguồn mở để phát triển các ứng dụng dựa trên thiết bị di động. Nó là miễn phí cho tất cả và có thể được sử dụng cho bất kỳ mục đích nhất định nào để phát triển ứng dụng. Nó không chỉ cung cấp cho bạn một tùy chọn miễn phí để phát triển ứng dụng mà còn cung cấp cho bạn vô số tùy chọn miễn phí, không giống như các công ty khác.
+Nó được Google tạo ra và ra mắt dưới dạng SDK mã nguồn mở để phát triển các ứng dụng dựa trên thiết bị di động. Nó hoàn toàn miễn phí và có thể được sử dụng cho bất kỳ mục đích nhất định nào để phát triển ứng dụng. Nó không chỉ cung cấp cho bạn một tùy chọn miễn phí để phát triển ứng dụng mà còn cung cấp cho bạn vô số tùy chọn miễn phí, không giống như các công ty khác.
 
 ![](/img/posts/flutter_introduction/main-qimg-95c6bacc52812bf88736423fe421931a.jpg)
 
 2. Một codebase cho Android và iOS
 ----------------------------------------------------------
 
-Flutter dựa trên codebase duy nhất để phát triển các ứng dụng hỗ trợ cả hai nền tảng Android và IOS. Nó có các widgets như là Material design cho Android và Cupertino cho iOS theo hướng dẫn của cả hai nền tảng. Điều này làm cho nhiệm vụ dễ dàng hơn rất nhiều cho các nhà phát triển vì giờ đây họ có thể hoạt động trên cả Android và iOS. Nó cũng tránh được những rắc rối của việc chuyển đổi. Ngoài tất cả những điều này, nó cũng cho phép bạn tự do phân biệt ứng dụng của mình. Hơn nữa, Flutter cũng hỗ trợ nền tảng Fuchsia được nhiều người tin là sẽ thay thế Android trong tương lai gần.
+Flutter dựa trên codebase duy nhất để phát triển các ứng dụng hỗ trợ cả hai nền tảng Android và IOS. Nó có các widgets như là Material design cho Android và Cupertino cho iOS theo hướng dẫn của cả hai nền tảng. Điều này làm cho nhiệm vụ dễ dàng hơn rất nhiều cho các nhà phát triển vì giờ đây họ có thể phát triển ứng dụng trên cả Android và iOS. Nó cũng tránh được những rắc rối của việc chuyển đổi.Flutter cũng hỗ trợ nền tảng Fuchsia được nhiều người tin là sẽ thay thế Android trong tương lai gần.
 
 3. Dart
 ----------------------------------------------------------
 
-Toàn bộ khuôn khổ của Flutter dựa trên Dart. Nó là ngôn ngữ lập trình được phát triển bởi Google và hỗ trợ tất cả các OS. Dart rất dễ học, ổn định, có khả năng mở rộng cao và có thể deployable. Nó có hỗ trợ mạnh mẽ với một số libraries và tools.
+Toàn bộ khuôn khổ của Flutter dựa trên Dart. Nó là ngôn ngữ lập trình được phát triển bởi Google và hỗ trợ tất cả các OS. Dart rất dễ học, ổn định, có khả năng mở rộng cao và deployable. Nó có hỗ trợ với một số libraries và tools tốt nhất hiện nay.
 
-Việc sử dụng Dart cho Flutter giúp bạn sử dụng trình biên dịch Just-in-Time cải thiện quy trình phát triển. Dart trong Flutter cung cấp cho bạn một native performance cho các nền tảng khác nhau, chuyển tiếp mượt mà và animations ở 60 FPS. Bạn cũng có thể có quyền truy cập vào bộ sưu tập ngày càng tăng của các Dart libraries và tools.
+Việc sử dụng Dart cho Flutter giúp bạn sử dụng compiler Just-in-Time để cải thiện quy trình phát triển. Dart trong Flutter cung cấp cho bạn một native performance cho các nền tảng khác nhau, chuyển tiếp mượt mà và animations ở 60 FPS. Bạn cũng có thể có quyền truy cập vào bộ sưu tập ngày càng tăng của Dart libraries và tools.
 
 4. Hot Reload
 ----------------------------------------------------------
 
-Flutter được hỗ trợ bởi một tính năng Hot Reload. Điều đó có nghĩa là nếu bạn thực hiện bất kỳ thay đổi nào trong mã thì bạn có thể thấy chúng ngay lập tức mà không cần chờ đợi hoặc khởi động lại ứng dụng. Thông thường, phải mất vài giây để kiểm tra các thay đổi. Điều này giúp các nhà thiết kế thêm các tính năng mới, sửa lỗi và thử nghiệm ứng dụng hiệu quả hơn.
+Flutter được hỗ trợ tính năng Hot Reload. Điều đó có nghĩa là nếu bạn thực hiện bất kỳ thay đổi nào trong mã thì bạn có thể thấy chúng ngay lập tức mà không cần chờ đợi hoặc khởi động lại ứng dụng. Thông thường, phải mất vài giây để kiểm tra các thay đổi. Điều này giúp các nhà thiết kế thêm các tính năng mới, sửa lỗi và thử nghiệm ứng dụng hiệu quả hơn.
 
 Mặc dù nó có một vài hạn chế khi so sánh với phát triển ứng dụng native nhưng nó rất tiên tiến. Trong khi phát triền ứng dụng native, các nhà phát triển phải chờ vài phút để kiểm tra những thay đổi họ đã thực hiện.
 
 5. Widgets
 ----------------------------------------------------------
 
-Widgets là thành phần thiết yếu của bất kỳ ứng dụng nào. Một widget có thể là một button, menu, font và nhiều thứ khác. Những thứ này cần phải nhanh, mở rộng và hoàn toàn tùy biến được. Bằng cách sử dụng Flutter, bạn sẽ có được một thư viện widget với nhiều loại widget để sử dụng trong khi xây dựng ứng dụng của mình. Chúng nhanh, trông tự nhiên và có thể được tùy chỉnh dễ dàng.
+Widgets là thành phần thiết yếu của bất kỳ ứng dụng nào. Một widget có thể là một button, menu, font và nhiều thứ khác. Những thứ này đòi hỏi cần phải nhanh, mở rộng và hoàn toàn tùy biến được. Bằng cách sử dụng Flutter, bạn sẽ có được một bộ thư viện widget với nhiều loại widget để sử dụng trong khi xây dựng ứng dụng của mình. Chúng nhanh, trông tự nhiên và có thể được tùy chỉnh dễ dàng.
 
 6. MVP
 ----------------------------------------------------------
 
-MVP hoặc minimum viable product là một sản phẩm được thiết kế với các tính năng tối thiểu để làm hài lòng khách hàng ở giai đoạn đầu. Nó cũng được sử dụng để lấy feedback cho những cải tiến trong tương lai. Vì vậy, nếu bạn là một trong những nhà phát triển, những người cần MVP của ứng dụng cho khách hàng hoặc nhà đầu tư của họ thì Flutter sẽ là một lựa chọn tuyệt vời. Nó đặc biệt hữu ích nếu bạn có ít thời gian hơn và bạn muốn đưa ra ý tưởng rõ ràng về ứng dụng cho khách hàng của mình.
+MVP hoặc minimum viable product là một sản phẩm được thiết kế với các tính năng tối thiểu để có thể làm hài lòng khách hàng ở giai đoạn đầu. Nó cũng được sử dụng để lấy feedback cho những cải tiến trong tương lai. Vì vậy, nếu bạn là một trong những nhà phát triển, những người cần MVP của ứng dụng cho khách hàng thì Flutter sẽ là một lựa chọn tuyệt vời. Nó đặc biệt hữu ích nếu bạn có ít thời gian hơn và bạn muốn đưa ra ý tưởng rõ ràng về ứng dụng cho khách hàng của mình.
 
 7. Nhanh và nhanh
 ----------------------------------------------------------

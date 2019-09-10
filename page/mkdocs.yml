@@ -13,6 +13,7 @@ edit_uri: ""
 copyright: 'Copyright &copy; 2019 - 2020 Bùi Hải Nam'
 
 # Configuratio
+# install material theme : "pip install mkdocs-material"
 theme:
   logo: 'img/logo.png'
   favicon: 'img/logo.png'
@@ -48,6 +49,7 @@ extra:
       link: 'https://www.youtube.com/channel/UCECQ8GHamKx4H5jHMmNi2Ag'
       
 # Extensions
+# run cmd "pip install pymdown-extensions"
 markdown_extensions:
   - markdown.extensions.admonition
   - markdown.extensions.codehilite:
@@ -86,6 +88,15 @@ google_analytics:
 # Page tree
 nav:
   - About: index.md
+  - Programming:
+    - Lập trình tuyến tính là gì: programming/lap-trinh-tuyen-tinh-la-gi-uu-nhuoc-diem.md
+    - Lập trình cấu trúc là gì: programming/lap-trinh-cau-truc-la-gi-uu-nhuoc-diem.md
+    - Lập trình hướng đối tượng là gì: programming/lap-trinh-huong-doi-tuong-la-gi-uu-nhuoc-diem.md
+    - So sánh POP với OOP: programming/oop-vs-pop.md
+    
+  - Java:
+    - Ngôn ngữ Java là gì: java/ngon-ngu-java-la-gi.md
+    - OOP Trong Java: java/cac-tinh-chat-huong-doi-tuong-cua-java.md
   - Kotlin:
     - Kotlin Basic: kotlin/kotlin_basic.md
     - Kotlin Class và kế thừa: kotlin/kotlin_class_inheritance.md

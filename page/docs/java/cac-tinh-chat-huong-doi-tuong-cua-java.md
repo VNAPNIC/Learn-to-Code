@@ -1,4 +1,4 @@
-Các tính chất hướng đối tượng của Java (OOP trong Java)
+Các tính chất hướng đối tượng của Java ([OOP](/programming/lap-trinh-huong-doi-tuong-la-gi-uu-nhuoc-diem/) trong Java)
 
 Lập trình hướng đối tượng có 4 tính chất: tính trừu tượng, tính đóng gói, tính kế thừa, tính đa hình. Java là một ngôn ngữ lập trình hướng đối tượng nên bản thân nó cũng mang 4 tính chất đó.
 

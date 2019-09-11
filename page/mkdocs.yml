@@ -93,10 +93,17 @@ nav:
     - Lập trình cấu trúc là gì: programming/lap-trinh-cau-truc-la-gi-uu-nhuoc-diem.md
     - Lập trình hướng đối tượng là gì: programming/lap-trinh-huong-doi-tuong-la-gi-uu-nhuoc-diem.md
     - So sánh POP với OOP: programming/oop-vs-pop.md
-    
   - Java:
     - Ngôn ngữ Java là gì: java/ngon-ngu-java-la-gi.md
     - OOP Trong Java: java/cac-tinh-chat-huong-doi-tuong-cua-java.md
+  - JUnit:
+    - JUnit là gì: junit/junit-la-gi-vi-du-junit-voi-eclipse-maven.md
+    - Assertions là gì: junit/assertions-la-gi-code-vi-du-junit-voi-assertions.md
+    - Test runner và Test suite: junit/test-runner-va-test-suite-tao-bo-test-voi-junit.md
+    - Thứ tự chạy các test case trong JUnit: junit/thu-tu-chay-cac-test-case-trong-junit-vi-du.md
+    - JUnit Expected Exceptions: junit/junit-expected-exceptions-code-vi-du-test-exception-voi-junit.md
+    - JUnit với Matchers và assertThat: junit/vi-du-junit-voi-matchers-va-assertthat.md
+    - JUnit Ignoring và Timeout với test case: junit/vi-du-junit-ignoring-tests-va-timeout-voi-test-case.md
   - Kotlin:
     - Kotlin Basic: kotlin/kotlin_basic.md
     - Kotlin Class và kế thừa: kotlin/kotlin_class_inheritance.md

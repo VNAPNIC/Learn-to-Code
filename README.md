@@ -5,13 +5,28 @@
 
 # Lessons
 
-### 1. Dart
+### Java
+
+- [Ngôn ngữ Java là gì](https://buihainam.com/java/ngon-ngu-java-la-gi/)
+- [OOP Trong Java](https://buihainam.com/java/cac-tinh-chat-huong-doi-tuong-cua-java/)
+
+### JUnit
+
+- [JUnit là gì](https://buihainam.com/junit/junit-la-gi-vi-du-junit-voi-eclipse-maven/)
+- [Assertions là gì](https://buihainam.com/junit/assertions-la-gi-code-vi-du-junit-voi-assertions/)
+- [Test runner và Test suite](https://buihainam.com/junit/test-runner-va-test-suite-tao-bo-test-voi-junit/)
+- [Thứ tự chạy các test case trong JUnit](https://buihainam.com/junit/thu-tu-chay-cac-test-case-trong-junit-vi-du/)
+- [JUnit Expected Exceptions](https://buihainam.com/junit/junit-expected-exceptions-code-vi-du-test-exception-voi-junit/)
+- [JUnit với Matchers và assertThat](https://buihainam.com/junit/vi-du-junit-voi-matchers-va-assertthat/)
+- [JUnit Ignoring và Timeout với test case](https://buihainam.com/junit/vi-du-junit-ignoring-tests-va-timeout-voi-test-case/)
+
+### Dart
 
 - [Bắt đầu](https://buihainam.com/dart/dart_environment_settings/)
 - [Cơ bản](https://buihainam.com/dart/dart_core/)
 - [Dart Async](https://buihainam.com/dart_async_intro/)
 
-### 2. Kotlin
+### Kotlin
 
 - [Kotlin Basic](https://buihainam.com/kotlin/kotlin_basic/)
 - [Kotlin Class và kế thừa](https://buihainam.com/kotlin/kotlin_class_inheritance/)
@@ -36,6 +51,7 @@
 - [Gọi Java code từ Kotlin](https://buihainam.com/kotlin/call_java_from_kotlin/)
 
 
-### 3. Flutter
+### Flutter
 
 - [9 lý do tại sao nên chọn Flutter](https://buihainam.com/flutter/flutter_introduction/)
+- [Flutter ScreenUtil](https://buihainam.com/flutter/flutter_screenutil/)

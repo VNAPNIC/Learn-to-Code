@@ -2,202 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://buihainam.com/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/programming/lap-trinh-tuyen-tinh-la-gi-uu-nhuoc-diem/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/programming/lap-trinh-cau-truc-la-gi-uu-nhuoc-diem/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/programming/lap-trinh-huong-doi-tuong-la-gi-uu-nhuoc-diem/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/programming/oop-vs-pop/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/java/ngon-ngu-java-la-gi/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/java/cac-tinh-chat-huong-doi-tuong-cua-java/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/junit/junit-la-gi-vi-du-junit-voi-eclipse-maven/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/junit/assertions-la-gi-code-vi-du-junit-voi-assertions/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/junit/test-runner-va-test-suite-tao-bo-test-voi-junit/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/junit/thu-tu-chay-cac-test-case-trong-junit-vi-du/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/junit/junit-expected-exceptions-code-vi-du-test-exception-voi-junit/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/junit/vi-du-junit-voi-matchers-va-assertthat/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/junit/vi-du-junit-ignoring-tests-va-timeout-voi-test-case/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/kotlin/kotlin_basic/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/kotlin/kotlin_class_inheritance/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/kotlin/kotlin_property_field/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/kotlin/kotlin_function/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/kotlin_inline_function/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/kotlin_higher_order_function/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/kotlin/kotlin_inteface/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/kotlin/kotlin_data_class/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/kotlin/kotlin_nested_class/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/kotlin/kotlin_visibility_modifiers/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://buihainam.com/kotlin/kotlin_higher_order_function/</loc>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/kotlin/kotlin_lambda/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/kotlin_collection/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/kotlin_enum_classes/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/kotlin_overloading_operator/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/kotlin_range/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/kotlin_idioms/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/kotlin_exception/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/kotlin_delegation/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/kotlin_delegated_property/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/call_java_from_kotlin/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/kotlin/call_kotlin_from_java/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/dart/dart_environment_settings/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://buihainam.com/dart/dart_core/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://buihainam.com/dart/dart_async_intro/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/flutter/flutter_introduction/</loc>
-     <lastmod>2019-09-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://buihainam.com/flutter/flutter_screenutil/</loc>
-     <lastmod>2019-09-11</lastmod>
+     <loc>https://buihainam.com/dart/dart_dart_vs_swift_a_comparison/</loc>
+     <lastmod>2019-04-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

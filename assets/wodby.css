@@ -1,0 +1,54 @@
+li.md-source__fact {
+	color: white;
+}
+
+.stack-page-link-wrapper {
+    float: right;
+    margin-right: 20px;
+    font-size: 1.4rem;
+}
+
+.stack-page-link-wrapper a {
+    opacity: .7;
+}
+
+.md-nav__link[data-md-state=blur] {
+    color: rgba(0,0,0,.30);
+}
+
+/*.md-content [href^="http://"]:not(.md-icon)::after,*/
+/*.md-content [href^="https://"]:not(.md-icon)::after,*/
+/*.external-icon [href^="http://"]:not(.md-icon)::after,*/
+/*.external-icon [href^="https://"]:not(.md-icon)::after {*/
+    /*content: "\f08e";*/
+    /*font-family: FontAwesome;*/
+    /*font-size: 12px;*/
+    /*font-style: normal;*/
+    /*font-weight: normal;*/
+    /*padding-left: 5px;*/
+    /*line-height: 10px;*/
+/*}*/
+
+.md-header, .md-tabs {
+    background-color: #333333 !important;
+}
+
+.md-footer-meta, .md-footer-nav {
+    background-color: #0000008a !important;
+}
+
+.md-source__facts {
+    
+}
+
+.md-tabs__item {
+    float: left;
+}
+
+.md-tabs__item.api-reference {
+    float: right;
+}
+
+.api-reference i {
+    font-size: 12px;
+}

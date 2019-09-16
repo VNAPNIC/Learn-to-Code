@@ -92,6 +92,8 @@ markdown_extensions:
 # Page tree
 nav:
   - About: index.md
+  - Oracle Certified:
+    - SCJP, OCPJP: oraclecertified/ocpjpvsscjp.md
   - Programming:
     - Lập trình tuyến tính là gì: programming/lap-trinh-tuyen-tinh-la-gi-uu-nhuoc-diem.md
     - Lập trình cấu trúc là gì: programming/lap-trinh-cau-truc-la-gi-uu-nhuoc-diem.md
